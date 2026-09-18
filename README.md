@@ -6,7 +6,7 @@ Every message you send is measured by a System One model, [TypeSafe Jev](https:/
 
 Live: https://werewolf.asfarlab.fun
 
-![Seven villagers at a long table at dusk, all watching a hooded stranger](public/og.png)
+![Seven villagers at a long table at dusk, all watching a hooded stranger](public/og.jpg)
 
 ```
 Mara → you   calm question

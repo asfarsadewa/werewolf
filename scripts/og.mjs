@@ -1,10 +1,11 @@
-// Renders public/og.png (1200x630) for link previews. Run with `npm run og`.
+// Renders public/og.jpg (1200x630) for link previews. Run with `npm run og`.
 // The key art in scripts/og-art was painted once by gpt-image-2.5-sunburst
 // from the village and the eight character sprites (prompt alongside it);
 // this script sets the wordmark, tagline and a belief-cell motif on a paper
 // band in the game's own type, so the words are never left to the model.
 
 import { Resvg } from "@resvg/resvg-js";
+import jpeg from "jpeg-js";
 import { existsSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
@@ -12,7 +13,7 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const cache = path.join(root, "node_modules", ".cache", "og-fonts");
-const out = path.join(root, "public", "og.png");
+const out = path.join(root, "public", "og.jpg");
 const art = path.join(root, "scripts", "og-art", "keyart.jpg");
 
 const FONTS = [
@@ -104,10 +105,12 @@ async function main() {
     fitTo: { mode: "width", value: W },
     font: { fontFiles, loadSystemFonts: false, defaultFontFamily: "IBM Plex Mono" },
   });
-  const png = resvg.render().asPng();
-  await writeFile(out, png);
+  const image = resvg.render();
+  // JPEG keeps the painted card under 400 KB; a PNG of it is over a megabyte.
+  const { data } = jpeg.encode({ data: Buffer.from(image.pixels), width: image.width, height: image.height }, 88);
+  await writeFile(out, data);
   await writeFile(path.join(cache, "og.svg"), svg);
-  console.log(`wrote ${path.relative(root, out)} (${png.length} bytes)`);
+  console.log(`wrote ${path.relative(root, out)} (${data.length} bytes)`);
 }
 
 main().catch((e) => {
