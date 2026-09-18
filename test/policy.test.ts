@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { openQuestionFor } from "../src/engine/facts";
 import { createGame, reduce } from "../src/engine/game";
 import { PERSONALITY } from "../src/engine/personality";
 import { aiVotes, planTurn, renderLine, seerCheck, voteLine, wolfKill, wolfPartner } from "../src/engine/policy";
@@ -124,7 +125,7 @@ describe("planTurn", () => {
     const third = s.queue[1].speaker;
     const line2 = L.find((l) => l.who === s.players[second].personality && l.intent === "question")!;
     s = reduce(s, { t: "ai", speaker: second, lineId: line2.id, target: third, m: measure() }, L);
-    expect(s.minds[third].asked).toEqual({ by: second, at: s.log.length - 1 });
+    expect(openQuestionFor(s, third)).toEqual({ by: second, at: s.log.length - 1 });
     expect(planTurn(s, third, L).intent).toBe("answer");
   });
 

@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
+import { openQuestionFor } from "../src/engine/facts";
 import { createGame, reduce } from "../src/engine/game";
+import { HUMAN } from "../src/engine/roster";
 import { NAMES } from "../src/engine/roster";
 import {
   JUDGE_QUESTION_COUNT,
@@ -55,6 +57,57 @@ describe("questions", () => {
     const ts = buildTurnState(s, kip, ["Here."]);
     expect(ts.asked_of_speaker).toBe("Stranger: Kip, why did you go quiet?");
     expect(ts.candidates).toEqual(["Here."]);
+  });
+
+  it("sends the human's reply with the question that was put to them", () => {
+    let s = createGame("dodge", { humanRole: "villager" });
+    const mara = s.players.findIndex((p) => p.name === "Mara");
+    const ask = L.find((l) => l.who === "mara" && l.intent === "question")!;
+    s.queue.unshift({ speaker: mara });
+    // Mara asks; the judge happened to score the question low, which must not matter.
+    s = reduce(s, { t: "ai", speaker: mara, lineId: ask.id, target: HUMAN, m: measure({ nouls: { asks_question: 0.3 } }) }, L);
+    const askedAt = s.log.length - 1;
+    expect(openQuestionFor(s, HUMAN)).toEqual({ by: mara, at: askedAt });
+    s = reduce(s, { t: "human", text: "Why aren't we talking about Kip?" }, L);
+    const at = s.log.length - 1;
+    const asked = s.log[askedAt];
+    const js = buildJudgeState(s, at);
+    expect(js.asked_of_speaker).toBe(`Mara: ${asked.kind === "message" ? asked.text : ""}`);
+    expect(js.accusations_against_speaker).toEqual([]);
+    // Having replied, the human owes nothing until asked again.
+    expect(openQuestionFor(s, HUMAN)).toBeNull();
+  });
+
+  it("sends a villager's answer with the question it answers", () => {
+    let s = createGame("answer", { humanRole: "villager" });
+    const rook = s.players.findIndex((p) => p.name === "Rook");
+    s = reduce(s, { t: "human", text: "Rook, where were you last night?", m: measure({ nouls: { asks_question: 0.9 }, intent: "question", target: "Rook" }) }, L);
+    const answer = L.find((l) => l.who === "rook" && l.intent === "answer")!;
+    s.queue.unshift({ speaker: rook });
+    s = reduce(s, { t: "ai", speaker: rook, lineId: answer.id, target: null }, L);
+    const at = s.log.length - 1;
+    expect(buildJudgeState(s, at).asked_of_speaker).toBe("Stranger: Rook, where were you last night?");
+    expect(openQuestionFor(s, rook)).toBeNull();
+    // A defence in between does not close the question; only an answer or a dodge does.
+    let d = createGame("defend", { humanRole: "villager" });
+    d = reduce(d, { t: "human", text: "Rook, where were you? I think you are a wolf.", m: measure({ nouls: { asks_question: 0.9, accuses_without_evidence: 0.9 }, intent: "accuse", target: "Rook" }) }, L);
+    const defend = L.find((l) => l.who === "rook" && l.intent === "defend_self")!;
+    d.queue.unshift({ speaker: rook });
+    d = reduce(d, { t: "ai", speaker: rook, lineId: defend.id, target: null }, L);
+    expect(openQuestionFor(d, rook)).not.toBeNull();
+  });
+
+  it("a question does not outlive its day", () => {
+    let s = createGame("stale", { humanRole: "villager" });
+    const rook = s.players.findIndex((p) => p.name === "Rook");
+    s = reduce(s, { t: "human", text: "Rook, well?", m: measure({ nouls: { asks_question: 0.9 }, intent: "question", target: "Rook" }) }, L);
+    expect(openQuestionFor(s, rook)).not.toBeNull();
+    s.queue = [];
+    s = reduce(s, { t: "call_vote" }, L);
+    for (const k of Object.keys(s.votes)) s.votes[Number(k)] = null;
+    s = reduce(s, { t: "vote", target: null }, L);
+    s = reduce(s, { t: "night" }, L);
+    expect(openQuestionFor(s, rook)).toBeNull();
   });
 
   it("lists accusations against the speaker", () => {

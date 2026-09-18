@@ -39,7 +39,6 @@ function newMind(id: number, players: Player[]): Mind {
     logOdds: players.map(() => prior),
     grudges: players.map(() => 0),
     accusedToday: [],
-    asked: null,
     checks: {},
     claimed: false,
     unrevealed: [],
@@ -148,12 +147,6 @@ function pushMessage(state: GameState, entry: Extract<LogEntry, { kind: "message
   return state.log.length - 1;
 }
 
-/** Records an AI's answer being given: the pending question is closed. */
-function closeQuestion(state: GameState, speaker: number): void {
-  const mind = state.minds[speaker];
-  if (mind) mind.asked = null;
-}
-
 function revealed(players: Player[], id: number): boolean {
   return !players[id].alive;
 }
@@ -182,10 +175,6 @@ export function applyMeasurements(state: GameState, at: number, m: Measurements)
       if (!t.accusedToday.includes(speaker)) t.accusedToday.push(speaker);
       t.grudges[speaker] += 1;
     }
-  }
-  if (validTarget !== null && n.asks_question >= THRESHOLDS.asks_question) {
-    const t = state.minds[validTarget];
-    if (t) t.asked = { by: speaker, at };
   }
   if (speaker === HUMAN) {
     state.rebuke = n.addresses_system >= THRESHOLDS.addresses_system || n.off_topic >= THRESHOLDS.off_topic;
@@ -458,10 +447,7 @@ function resolveNight(state: GameState, choice: { kill?: number; check?: number 
   state.phase = "day";
   state.humanMessagesLeft = HUMAN_MESSAGES_PER_DAY;
   state.rebuke = false;
-  for (const mind of Object.values(state.minds)) {
-    mind.accusedToday = [];
-    mind.asked = null;
-  }
+  for (const mind of Object.values(state.minds)) mind.accusedToday = [];
   state.queue = dayQueue(state, kill);
 }
 
@@ -503,12 +489,7 @@ export function reduce(input: GameState, action: Action, library: readonly LineS
         candidates: plan.candidates.map((c) => c.id),
       });
       state.queue.shift();
-      if (line.intent === "question" && target !== null) {
-        const asked = state.minds[target];
-        if (asked) asked.asked = { by: action.speaker, at };
-      }
       if (line.intent === "rebuke") state.rebuke = false;
-      if (line.intent === "answer" || line.intent === "deflect") closeQuestion(state, action.speaker);
       if (line.intent === "claim_seer" || line.intent === "counter_claim") {
         const mind = state.minds[action.speaker];
         if (mind && !plan.measured) mind.claimed = true;

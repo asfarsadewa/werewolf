@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { credibility, normalised, priorLogOdds, sigmoid, standing } from "../src/engine/belief";
+import { openQuestionFor } from "../src/engine/facts";
 import { createGame, reduce } from "../src/engine/game";
 import { LOG_ODDS_MAX, LOG_ODDS_MIN, PERSONALITY, THRESHOLDS } from "../src/engine/personality";
 import { HUMAN } from "../src/engine/roster";
@@ -195,7 +196,7 @@ describe("what a speaker gives away", () => {
 
   it("questions and rebukes are bookkeeping, not belief", () => {
     const s = say(createGame("ask"), measure({ nouls: { asks_question: 0.9, addresses_system: 0.9 }, target: "Rook", intent: "question" }));
-    expect(s.minds[id(s, "Rook")].asked).toEqual({ by: HUMAN, at: s.log.length - 1 });
+    expect(openQuestionFor(s, id(s, "Rook"))).toEqual({ by: HUMAN, at: s.log.length - 1 });
     expect(s.rebuke).toBe(true);
     expect(s.updates).toHaveLength(0);
   });

@@ -97,8 +97,6 @@ export interface Mind {
   grudges: number[];
   /** Player ids that accused this mind today. */
   accusedToday: number[];
-  /** Open question put to this mind: who asked, and at which log index. */
-  asked: { by: number; at: number } | null;
   /** Seer only: checked player id -> wolf. */
   checks: Record<number, boolean>;
   /** Seer only: has claimed. */

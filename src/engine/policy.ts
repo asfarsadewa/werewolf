@@ -3,7 +3,7 @@
 // thing the model adds is which authored line, out of the candidates, is said.
 
 import { normalised, roomMean, standing } from "./belief";
-import { hasOpenQuestion, messages, targetFacts } from "./facts";
+import { hasOpenQuestion, messages, openQuestionFor, targetFacts } from "./facts";
 import type { Intent, LineSpec, Need, Personality, Tone } from "./lines/types";
 import { PERSONALITY } from "./personality";
 import { scoped, type Rng } from "./rng";
@@ -141,7 +141,7 @@ export function planTurn(state: GameState, speaker: number, library: readonly Li
   const partner = isWolf ? wolfPartner(players, speaker) : null;
   const myStanding = standing(state.minds, players, speaker);
   const accused = mind.accusedToday.length > 0;
-  const asked = mind.asked !== null;
+  const asked = openQuestionFor(state, speaker) !== null;
   const otherClaims = state.claims.filter((c) => c.claimant !== speaker && players[c.claimant].alive);
   const dawn = state.log.find((e) => e.kind === "dawn" && e.day === state.day);
   const ctx: Context = {

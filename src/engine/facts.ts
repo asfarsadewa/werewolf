@@ -101,35 +101,46 @@ export function accusationsAgainst(state: GameState, speaker: number, before: nu
   return out.slice(-limit);
 }
 
-/** Whether a question put to `id` is still waiting for an answer. */
-export function hasOpenQuestion(state: GameState, id: number): boolean {
-  const mind = state.minds[id];
-  if (mind) return mind.asked !== null;
-  // The human has no mind: look for a question aimed at them since they last spoke today.
+/**
+ * The question still waiting for `id`'s answer, read from today's log up to
+ * (not including) `before`. A question opens when someone asks `id`: an
+ * authored question line, or a measured message whose question signal crossed
+ * its threshold. It closes when `id` answers: any message from the human, an
+ * answer or deflect line from a villager. Everyone is read from the same
+ * record, so a villager's answer and the human's reply both reach the judge
+ * together with the question they were given.
+ */
+export function openQuestionFor(state: GameState, id: number, before = state.log.length): { by: number; at: number } | null {
   const names = state.players.map((p) => p.name);
-  let open = false;
-  for (const e of state.log) {
+  let open: { by: number; at: number } | null = null;
+  for (let i = 0; i < before && i < state.log.length; i++) {
+    const e = state.log[i];
     if (e.kind !== "message" || e.day !== state.day) continue;
     if (e.speaker === id) {
-      open = false;
+      const answers = e.lineId === undefined || e.intent === "answer" || e.intent === "deflect";
+      if (answers) open = null;
       continue;
     }
-    // An authored question counts as one whatever the judge made of it; a
-    // measured message counts when the question signal crossed its threshold.
-    if (e.intent === "question" && e.target === id) open = true;
-    else if (e.measurements) {
+    if (e.intent === "question" && e.target === id) {
+      open = { by: e.speaker, at: i };
+    } else if (e.measurements) {
       const t = targetOf(e, e.measurements.choices.target, names);
-      if (t === id && e.measurements.nouls.asks_question >= THRESHOLDS.asks_question) open = true;
+      if (t === id && e.measurements.nouls.asks_question >= THRESHOLDS.asks_question) open = { by: e.speaker, at: i };
     }
   }
   return open;
 }
 
-/** The open question put to `speaker`, if any. */
-export function questionFor(state: GameState, speaker: number): string | null {
-  const mind = state.minds[speaker];
-  if (!mind?.asked) return null;
-  const e = state.log[mind.asked.at];
+/** Whether a question put to `id` is still waiting for an answer. */
+export function hasOpenQuestion(state: GameState, id: number, before?: number): boolean {
+  return openQuestionFor(state, id, before) !== null;
+}
+
+/** The open question put to `speaker`, as "Name: text", or null. */
+export function questionFor(state: GameState, speaker: number, before?: number): string | null {
+  const q = openQuestionFor(state, speaker, before);
+  if (!q) return null;
+  const e = state.log[q.at];
   return e && e.kind === "message" ? `${name(state, e.speaker)}: ${e.text}` : null;
 }
 

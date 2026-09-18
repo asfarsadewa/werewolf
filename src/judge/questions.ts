@@ -167,7 +167,7 @@ export function buildJudgeState(state: GameState, at: number): JudgeState {
     speaker_earlier_statements: earlierStatements(state, e.speaker, at),
     recent: recentTalk(state, at),
     accusations_against_speaker: accusationsAgainst(state, e.speaker, at),
-    asked_of_speaker: questionFor(state, e.speaker),
+    asked_of_speaker: questionFor(state, e.speaker, at),
   };
 }
 
@@ -256,7 +256,7 @@ export function buildTurnState(state: GameState, speaker: number, candidates: st
     speaker_earlier_statements: earlierStatements(state, speaker, at),
     recent: recentTalk(state, at),
     accusations_against_speaker: accusationsAgainst(state, speaker, at),
-    asked_of_speaker: questionFor(state, speaker),
+    asked_of_speaker: questionFor(state, speaker, at),
   };
 }
 
