@@ -6,6 +6,8 @@ Every message you send is measured by a System One model, [TypeSafe Jev](https:/
 
 Live: https://werewolf.asfarlab.fun
 
+![Seven villagers at a long table at dusk, all watching a hooded stranger](public/og.png)
+
 ```
 Mara → you   calm question
 Stranger. Your vote. Explain it.
@@ -49,7 +51,7 @@ Two of them are wolves. They run the same policy on a pretend mind that does not
 
 Nothing is generated while the game runs. Everything below is produced once by a script and committed.
 
-- **Sprites**: gpt-image-2.5-sunburst, one style reference then edits (`public/sprites/PROMPTS.md`).
+- **Sprites and key art**: gpt-image-2.5-sunburst, one style reference then edits (`public/sprites/PROMPTS.md`); the share card's scene was painted from the village and the eight sprites (`scripts/og-art/keyart.prompt.txt`) and `npm run og` sets the type on it.
 - **Voice**: Gemini TTS (`gemini-3.1-flash-tts-preview`), one clip per authored line plus one clip per (voice, name, tone) for the vocative; `npm run voice` renders whatever is missing (`scripts/voice.ts`).
 - **Sound**: ElevenLabs text-to-sound-effects, fourteen foley cues (`public/audio/PROMPTS.md`).
 - **Music**: Lyria 3.5, three tracks: title, day, night.
