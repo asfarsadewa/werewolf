@@ -11,7 +11,7 @@ Milestones 1 to 6 are built in one pass; see DECISIONS.md D11 to D18 for what ch
 | 3 | Web client | Done. Transcript, belief board, standing meter, why-trace, vote and night panels, resume |
 | 4 | Wolf mirror and seer policy | Done. Mirror runs in the same request as the line pick; the seer claims after a find or when cornered |
 | 5 | Replay and report | Done. Scrubber over the belief history, end-of-game report, copyable recording |
-| 6 | Production | Turnstile, session tokens, rate limits, deploy to werewolf.asfarlab.fun |
+| 6 | Production | Done. Turnstile once per game, session tokens, rate limits; live at https://werewolf.asfarlab.fun, source at https://github.com/asfarsadewa/werewolf |
 | 7 | Later | Durable Object multiplayer, doctor and hunter roles, spectator mode |
 
 Beyond the spec: sprites, voice acting, sound effects and music, all pre-rendered (D11, D12).
