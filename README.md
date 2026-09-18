@@ -45,7 +45,7 @@ The lines themselves are measured too. `npm run calibrate` runs every authored l
 | Rook | keeps a ledger: contradictions and bad votes cost most |
 | Sol | moves late and little, then decides |
 
-Two of them are wolves. They run the same policy on a pretend mind that does not know the roles, prefer to accuse whoever the room already suspects, never vote for their partner, and at night kill the villager whose beliefs are most correct.
+Two of them are wolves. They run the same policy on a pretend mind that does not know the roles, so the board predicts what they do; their only daytime edge is a small shield on their partner, a preference that gives way when their own public row and the room both point at the partner, at which point they bus. Their real edge is the mirror and the night, when they kill the villager whose beliefs are most correct.
 
 ## Presentation
 

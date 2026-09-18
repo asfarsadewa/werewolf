@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { openQuestionFor } from "../src/engine/facts";
 import { createGame, reduce } from "../src/engine/game";
-import { PERSONALITY } from "../src/engine/personality";
-import { aiVotes, planTurn, renderLine, seerCheck, voteLine, wolfKill, wolfPartner } from "../src/engine/policy";
+import { PARTNER_SHIELD, PERSONALITY, TARGET_ROOM_WEIGHT } from "../src/engine/personality";
+import { aiVotes, planTurn, renderLine, seerCheck, targetUtility, voteChoice, voteLine, wolfKill, wolfPartner } from "../src/engine/policy";
 import { HUMAN } from "../src/engine/roster";
 import type { GameState } from "../src/engine/types";
 import { FIXTURE_LINES, accuseBare, accuseWithEvidence, measure } from "./fixtures";
@@ -149,18 +149,47 @@ describe("planTurn", () => {
     expect(plan.mirror).toBe(false);
   });
 
-  it("wolves mirror their candidates and ride the room", () => {
+  it("target utility is the same rule for everyone, with a wolf's partner shielded at the margin", () => {
+    const s = seedWhere((g) => g.players[HUMAN].role === "villager");
+    const wolf = s.players.find((p) => p.role === "wolf")!.id;
+    const partner = wolfPartner(s.players, wolf)!;
+    const villager = s.players.find((p) => p.id !== HUMAN && p.role === "villager")!.id;
+    const u = targetUtility(s, wolf);
+    const own = s.minds[wolf];
+    // The prior row: two wolves among seven, for own belief and for the room alike.
+    const board = (_id: number) => (1 - TARGET_ROOM_WEIGHT) * (2 / 7) + TARGET_ROOM_WEIGHT * (2 / 7);
+    expect(u[wolf]).toBe(-Infinity);
+    expect(u[villager]).toBeCloseTo(board(villager), 2);
+    expect(u[partner]).toBeCloseTo(board(partner) - PARTNER_SHIELD, 2);
+    expect(own.logOdds[partner]).toBe(own.logOdds[villager]);
+    // A villager's utility carries no shield for anyone.
+    const v = targetUtility(s, villager);
+    for (const p of s.players) if (p.alive && p.id !== villager) expect(v[p.id]).toBeCloseTo(board(p.id), 2);
+  });
+
+  it("a wolf whose public row clearly points at its partner turns on them; a small lead is shielded", () => {
     let s = seedWhere((g) => g.players[HUMAN].role === "villager");
     const wolf = s.players.find((p) => p.role === "wolf")!.id;
     const partner = wolfPartner(s.players, wolf)!;
-    // The room suspects a villager; the wolf's own pretend mind suspects its partner most.
     const victim = s.players.find((p) => p.id !== HUMAN && p.role === "villager")!.id;
-    for (const m of Object.values(s.minds)) if (m.id !== wolf) m.logOdds[victim] = 1.2;
-    s.minds[wolf].logOdds[partner] = 2;
-    const plan = planTurn(s, wolf, L);
-    expect(plan.target).not.toBe(partner);
-    expect(plan.target).toBe(victim);
+    // The wolf's own pretend mind has come to suspect its partner strongly.
+    s.minds[wolf].logOdds[partner] = 2.5;
+    let plan = planTurn(s, wolf, L);
+    expect(plan.target).toBe(partner);
     expect(plan.mirror).toBe(true);
+    // A partner leading a villager by less than the shield is spared.
+    s = seedWhere((g) => g.players[HUMAN].role === "villager");
+    s.minds[wolf].logOdds[partner] = 1.2;
+    s.minds[wolf].logOdds[victim] = 1.0;
+    const u = targetUtility(s, wolf);
+    expect(u[partner]).toBeLessThan(u[victim]);
+    plan = planTurn(s, wolf, L);
+    expect(plan.target).toBe(victim);
+    // The same row on a villager would name the leader.
+    const other = s.players.find((p) => p.id !== HUMAN && p.role === "villager" && p.id !== victim)!.id;
+    s.minds[other].logOdds[partner] = 1.2;
+    s.minds[other].logOdds[victim] = 1.0;
+    expect(planTurn(s, other, L).target).toBe(partner);
   });
 
   it("never repeats a line it said recently when others exist", () => {
@@ -175,19 +204,29 @@ describe("planTurn", () => {
 });
 
 describe("votes, kills and checks", () => {
-  it("AI wolves never vote for their partner and villagers vote their top suspect", () => {
+  it("everyone votes their top utility; a wolf buses once the partner already leads the count", () => {
     for (const seed of ["v1", "v2", "v3"]) {
-      let s = createGame(seed, { humanRole: "villager" });
+      const s = createGame(seed, { humanRole: "villager" });
       for (const m of Object.values(s.minds)) m.logOdds = m.logOdds.map((_, i) => (i * 3 + m.id) % 5);
       const votes = aiVotes(s);
       expect(votes).toHaveLength(7);
       for (const v of votes) {
-        const voter = s.players[v.voter];
-        if (voter.role === "wolf") expect(v.target).not.toBe(wolfPartner(s.players, v.voter));
         expect(v.target).not.toBe(v.voter);
         if (v.target !== null) expect(s.players[v.target].alive).toBe(true);
       }
     }
+    const s = createGame("bus", { humanRole: "villager" });
+    const wolf = s.players.find((p) => p.role === "wolf" && p.personality !== "tomas")!.id;
+    const partner = wolfPartner(s.players, wolf)!;
+    const victim = s.players.find((p) => p.id !== HUMAN && p.role === "villager")!.id;
+    // Partner barely leads a villager in the wolf's public row: shielded, the wolf votes the villager.
+    s.minds[wolf].logOdds[partner] = 1.0;
+    s.minds[wolf].logOdds[victim] = 0.95;
+    expect(voteChoice(s, wolf, {})).toBe(victim);
+    // Two votes already on the partner: the shield is dropped and the wolf votes with the room.
+    expect(voteChoice(s, wolf, { [partner]: 2 })).toBe(partner);
+    // One vote is not a lead worth buying cover for.
+    expect(voteChoice(s, wolf, { [partner]: 1 })).toBe(victim);
   });
 
   it("Tomas votes with the plurality when his own suspect is not clear", () => {

@@ -5,7 +5,7 @@
 import { normalised, roomMean, standing } from "./belief";
 import { hasOpenQuestion, messages, openQuestionFor, targetFacts } from "./facts";
 import type { Intent, LineSpec, Need, Personality, Tone } from "./lines/types";
-import { PERSONALITY } from "./personality";
+import { BUS_LEAD, PARTNER_SHIELD, PERSONALITY, TARGET_ROOM_WEIGHT } from "./personality";
 import { scoped, type Rng } from "./rng";
 import type { GameState, Player, TargetFact } from "./types";
 
@@ -37,6 +37,34 @@ export function wolfPartner(players: Player[], self: number): number | null {
 /** Mean normalised belief in each player across living AI minds, excluding one mind. */
 export function roomBelief(state: GameState, except: number): number[] {
   return roomMean(state.minds, state.players, except);
+}
+
+/**
+ * How much `self` wants to name each living other as a suspect: own belief
+ * blended with the room's, the same rule for villager and wolf, so the board
+ * predicts behaviour. A wolf's partner is shielded by a fixed margin, which
+ * is a preference, not a prohibition: when the wolf's own public row and the
+ * room both point at the partner clearly enough, the wolf turns on them.
+ * Entries for the dead and for `self` are -Infinity.
+ */
+export function targetUtility(state: GameState, self: number): number[] {
+  const players = state.players;
+  const mind = state.minds[self];
+  const own = normalised(mind, players);
+  const room = roomBelief(state, self);
+  const partner = players[self].role === "wolf" ? wolfPartner(players, self) : null;
+  const u = new Array<number>(players.length).fill(-Infinity);
+  for (const id of livingOthers(players, self)) {
+    u[id] = (1 - TARGET_ROOM_WEIGHT) * own[id] + TARGET_ROOM_WEIGHT * room[id];
+    if (id === partner) u[id] -= PARTNER_SHIELD;
+  }
+  return u;
+}
+
+function best(u: readonly number[], ids: readonly number[]): number | null {
+  let top: number | null = null;
+  for (const id of ids) if (top === null || u[id] > u[top]) top = id;
+  return top;
 }
 
 function spokeToday(state: GameState, id: number): boolean {
@@ -138,7 +166,6 @@ export function planTurn(state: GameState, speaker: number, library: readonly Li
   const beliefs = normalised(mind, players);
   const others = livingOthers(players, speaker);
   const isWolf = me.role === "wolf";
-  const partner = isWolf ? wolfPartner(players, speaker) : null;
   const myStanding = standing(state.minds, players, speaker);
   const accused = mind.accusedToday.length > 0;
   const asked = openQuestionFor(state, speaker) !== null;
@@ -157,12 +184,6 @@ export function planTurn(state: GameState, speaker: number, library: readonly Li
   let target: number | null = null;
   let fact: TargetFact | undefined;
   let extraIntents: Intent[] = [];
-
-  const suspectAmong = (ids: number[]): number | null => {
-    let best: number | null = null;
-    for (const id of ids) if (best === null || beliefs[id] > beliefs[best]) best = id;
-    return best;
-  };
 
   if (event) {
     intent = event;
@@ -187,19 +208,9 @@ export function planTurn(state: GameState, speaker: number, library: readonly Li
     intent = "answer";
     if (isWolf) extraIntents = ["deflect"];
   } else {
-    const pool = others.filter((id) => id !== partner);
-    let suspect = suspectAmong(pool);
-    let suspicion = suspect === null ? 0 : beliefs[suspect];
-    if (isWolf && suspect !== null) {
-      // Wolves ride the room: accuse whoever the table already suspects.
-      const room = roomBelief(state, speaker);
-      let best = suspect;
-      for (const id of pool) if (room[id] > room[best]) best = id;
-      if (room[best] >= 0.35) {
-        suspect = best;
-        suspicion = Math.max(beliefs[best], room[best]);
-      }
-    }
+    const utility = targetUtility(state, speaker);
+    const suspect = best(utility, others);
+    const suspicion = suspect === null ? 0 : utility[suspect];
     if (suspect !== null && suspicion >= spec.accuseAt) {
       target = suspect;
       const facts = targetFacts(state, suspect);
@@ -213,7 +224,7 @@ export function planTurn(state: GameState, speaker: number, library: readonly Li
       // Vouch for someone under fire whom this mind trusts.
       let underFire: number | null = null;
       let fireLevel = 0;
-      for (const id of pool) {
+      for (const id of others) {
         const s = standing(state.minds, players, id);
         if (s > fireLevel) {
           fireLevel = s;
@@ -291,6 +302,34 @@ export function voteLine(state: GameState, voter: number, target: number, librar
   return lines[0] ?? null;
 }
 
+function leader(cast: Readonly<Record<number, number>>): number | null {
+  let lead: number | null = null;
+  for (const [id, n] of Object.entries(cast)) if (lead === null || n > cast[lead]) lead = Number(id);
+  return lead;
+}
+
+/** One AI's vote, given the votes already cast today. */
+export function voteChoice(state: GameState, voter: number, cast: Readonly<Record<number, number>>): number | null {
+  const mind = state.minds[voter];
+  const spec = PERSONALITY[mind.personality];
+  const me = state.players[voter];
+  const others = livingOthers(state.players, voter);
+  const utility = targetUtility(state, voter);
+  const lead = leader(cast);
+  if (me.role === "wolf") {
+    // Busing: once the partner already leads the cast votes, the shield is worthless
+    // and voting with the room buys the wolf cover.
+    const partner = wolfPartner(state.players, voter);
+    if (partner !== null && lead === partner && (cast[partner] ?? 0) >= BUS_LEAD) utility[partner] += PARTNER_SHIELD;
+  }
+  let target = best(utility, others);
+  if (spec.weights.herd > 0 && lead !== null && lead !== voter && target !== null && normalised(mind, state.players)[target] < 0.6) {
+    // The herd votes with the current plurality unless its own suspect is clear.
+    target = lead;
+  }
+  return target;
+}
+
 /** AI votes, in seeded order, each seeing the votes already cast. */
 export function aiVotes(state: GameState): { voter: number; target: number | null }[] {
   const rng = scoped(state.seed, "votes", state.day);
@@ -298,25 +337,7 @@ export function aiVotes(state: GameState): { voter: number; target: number | nul
   const cast: Record<number, number> = {};
   const out: { voter: number; target: number | null }[] = [];
   for (const voter of order) {
-    const mind = state.minds[voter];
-    const spec = PERSONALITY[mind.personality];
-    const me = state.players[voter];
-    const partner = me.role === "wolf" ? wolfPartner(state.players, voter) : null;
-    const beliefs = normalised(mind, state.players);
-    const pool = livingOthers(state.players, voter).filter((id) => id !== partner);
-    let target: number | null = null;
-    if (me.role === "wolf") {
-      const room = roomBelief(state, voter);
-      for (const id of pool) if (target === null || room[id] > room[target]) target = id;
-    } else {
-      for (const id of pool) if (target === null || beliefs[id] > beliefs[target]) target = id;
-      if (spec.weights.herd > 0 && Object.keys(cast).length) {
-        // The herd votes with the current plurality unless its own suspect is clear.
-        let lead: number | null = null;
-        for (const [id, n] of Object.entries(cast)) if (lead === null || n > cast[lead]) lead = Number(id);
-        if (lead !== null && lead !== voter && target !== null && beliefs[target] < 0.6) target = lead;
-      }
-    }
+    const target = voteChoice(state, voter, cast);
     if (target !== null) cast[target] = (cast[target] ?? 0) + 1;
     out.push({ voter, target });
   }

@@ -155,6 +155,17 @@ export const THRESHOLDS = {
 
 export type Signal = keyof typeof THRESHOLDS;
 
+/**
+ * Whom to accuse or vote for is a utility over the living others, the same
+ * for every mind: own belief blended with the room's. Wolves subtract a
+ * shield from their partner, so the partner must lead the runner-up by this
+ * margin before a wolf turns on them. Once the partner already leads the cast
+ * votes by BUS_LEAD, the shield is pointless and the wolf votes with the room.
+ */
+export const TARGET_ROOM_WEIGHT = 0.2;
+export const PARTNER_SHIELD = 0.12;
+export const BUS_LEAD = 2;
+
 /** Log-odds bounds; beliefs never become certainties by accumulation. */
 export const LOG_ODDS_MIN = -6;
 export const LOG_ODDS_MAX = 6;
