@@ -1,6 +1,8 @@
 # Werewolf with calibrated villagers
 
-Status: draft spec, 2026-09-17. No code yet.
+Status: draft spec, 2026-09-17. Built 2026-09-18; see `docs/PLAN.md` for state.
+
+Amendments since the draft, each argued in `docs/DECISIONS.md`: presentation is in scope and pre-rendered (D11); lines carry at most one name, as a leading vocative, and facts are shown as notes (D12); the human is Stranger (D13); Turnstile once per game then a signed session (D14); single package (D15); a speaker's credibility discounts their words (D16); questions never stack on one player and wolves ride the room (D17); two AI rounds and three human messages per day (D18). Thresholds and weights as shipped live in `src/engine/personality.ts`, and `scripts/calibrate.ts` measures every authored line with the judge.
 
 One human plays Werewolf against seven AI villagers. The villagers never generate text. Their brains are TypeSafe Jev: every message in the game is measured in one request, each villager keeps a probability over who the wolves are, and those probabilities drive what they say, whom they accuse, and how they vote. You can watch the beliefs move as you type. The number is honest, so winning means actually being persuasive.
 

@@ -1,37 +1,44 @@
 # Plan
 
-## Next session: start here
+## Status, 2026-09-18
 
-1. **Design pass on the belief board before any engine code.** Produce the token system (reuse the human-compiler palette and type), an ASCII wireframe of the game screen (transcript left, board right, standing meter, vote and night panels), and decide the heatmap encoding: cell colour scale, how a cell shows its trend, how a click opens the explanation trace. The board's readability decides whether the game is fun; it is the one aesthetic risk worth taking.
-2. **Decide the repo layout** (see DECISIONS.md, open item). Recommendation: single package, same shape as human-compiler.
-3. **Scaffold** with the same toolchain as human-compiler: Vite, `@cloudflare/vite-plugin`, React 19, TypeScript project references (app, worker, node), Vitest, `wrangler.jsonc`, `.dev.vars.example`, MIT licence, README, `.gitignore`. Pin React in `optimizeDeps.include` and set `holdUntilCrawlEnd: false`.
-4. **Milestone 1, engine.** Roles and dealing from a seed, day and night state machine, votes, win conditions, `Mind`, belief updates with thresholds and personality weights, the claim resolver, the policy, and a terminal game driven by a mocked judge. Tests green before the model is touched.
+Milestones 1 to 6 are built in one pass; see DECISIONS.md D11 to D18 for what changed from the spec on the way. What remains is playtesting and tuning.
 
-## Milestones
-
-| # | Milestone | Done when |
+| # | Milestone | State |
 | --- | --- | --- |
-| 1 | Engine plus terminal game with a mocked judge | A scripted game replays deterministically; rules, beliefs, policy and claims are unit tested |
-| 2 | Judge package against the real model | Recorded answers for ten games; a tuning harness replays them with new weights and reports wolf-catch rate |
-| 3 | Web client | Transcript, belief board, standing meter, vote and night panels, live updates |
-| 4 | Wolf mirror and seer policy | AI wolves pick least-suspicious lines; the seer reveals by rule 7.4 |
-| 5 | Replay and report | Scrubbable belief history aligned with the transcript; end-of-game compiler-style report |
-| 6 | Production | Turnstile on game start, rate limit, deploy to a custom domain on asfarlab.fun, public repo |
+| 1 | Engine plus a mocked judge | Done. `src/engine`, 96 tests, deterministic replay |
+| 2 | Judge against the real model | Done. `src/judge/questions.ts`; no recorded corpus yet (see below) |
+| 3 | Web client | Done. Transcript, belief board, standing meter, why-trace, vote and night panels, resume |
+| 4 | Wolf mirror and seer policy | Done. Mirror runs in the same request as the line pick; the seer claims after a find or when cornered |
+| 5 | Replay and report | Done. Scrubber over the belief history, end-of-game report, copyable recording |
+| 6 | Production | Turnstile, session tokens, rate limits, deploy to werewolf.asfarlab.fun |
 | 7 | Later | Durable Object multiplayer, doctor and hunter roles, spectator mode |
 
-## Test plan (from the spec)
+Beyond the spec: sprites, voice acting, sound effects and music, all pre-rendered (D11, D12).
 
-- Belief updates: fixture measurements produce exact deltas per personality; below-threshold signals produce zero.
-- Policy: given a mind, intent and target are fixed; every intent has at least one line per personality and tone.
-- Claims: single claim, counter-claim, false result, revealed roles.
-- Rules: dealing per seed, phase order, vote ties, win conditions.
-- Properties: beliefs bounded, normalisation keeps the expected wolf count, revealed roles fix beliefs for everyone.
-- Full game snapshot from a recorded stream.
-- Judge: every question id present in a built request; recorded answers map to the measurement shape; probabilities within [0, 1].
-- Content lint: every `(intent, personality, tone)` has a line; every slot in a line can be filled from state.
+## Next
 
-## Budget targets
+1. **Tuning harness.** Record ten real games (the client can copy a recording), replay them under `test/` with new weights and thresholds, and report how often the village voted out a wolf and how often the human's standing moved for the wrong reason. Thresholds live in `src/engine/personality.ts`; a recording is `{ seed, humanRole, actions }`.
+2. **Playtests for distinctness.** If two villagers feel alike after five games, their weights are too close. Candidates: Ines and Sol both sit calm; Tomas's herd pull may need to be larger to read.
+3. **Hard mode** is built but unmeasured: does hiding the board make a better game, or only a quieter one?
+4. **Content gaps.** When the policy falls back to chatter because no line fit, log it; each fallback is a line to author. The lint keeps coverage; it cannot judge fit.
+5. **Wolf mirror from day one** (open item from the spec). Currently on from the first turn.
 
-- Under a fifth of a second from sending a message to the board moving.
-- About a cent per game.
-- Sixty judgments per minute per IP is the rate limit; a human cannot exceed it by typing.
+## Test plan
+
+- Belief updates: fixture measurements produce exact deltas per personality; below-threshold signals produce zero. (`test/belief.test.ts`)
+- Policy: intent and target are fixed given a mind; event lines are single and unmeasured; questions never stack on one player. (`test/policy.test.ts`)
+- Claims: lone claim, counter-claim, false result exposed by a reveal. (`test/belief.test.ts`)
+- Rules: dealing per seed, phase order, vote ties, night roles, win conditions, replay identity. (`test/rules.test.ts`)
+- Judge: every question id present, answers map to the measurement shape, mirror picks the least suspicious line. (`test/judge.test.ts`)
+- Content lint: coverage per intent and tone, vocative slot rule, needs, text rules. (`test/lines.test.ts`)
+- Worker: session tokens, request validation, Turnstile verifier. (`test/worker.test.ts`)
+
+Nothing that touches the model runs in the test suite.
+
+## Budget
+
+- One judgment per message, about 21 questions, a few hundred milliseconds observed.
+- One pick per villager turn (plus the mirror for wolves), about 2 to 8 candidates.
+- A game is 60 to 120 requests, on the order of a cent of Jev.
+- Rate limits: 90 judgments per minute per session and per IP; 10 new games per minute per IP.

@@ -1,0 +1,38 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "werewolf",
+  "main": "./src/worker/index.ts",
+  "compatibility_date": "2026-09-17",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "routes": [{ "pattern": "werewolf.asfarlab.fun", "custom_domain": true }],
+  "vars": {
+    // Turnstile site keys are public. The secret lives in the TURNSTILE_SECRET secret.
+    "TURNSTILE_SITE_KEY": "0x4AAAAAAE71xM46w_8YxSSd",
+    // Comma-separated hostnames that siteverify must report. Never localhost in production.
+    "TURNSTILE_HOSTNAMES": "werewolf.asfarlab.fun"
+  },
+  "ratelimits": [
+    {
+      // Judgments per minute, keyed by game session and again by IP.
+      "name": "JUDGE_LIMITER",
+      "namespace_id": "1002",
+      "simple": { "limit": 90, "period": 60 }
+    },
+    {
+      // Session starts per minute per IP.
+      "name": "SESSION_LIMITER",
+      "namespace_id": "1003",
+      "simple": { "limit": 10, "period": 60 }
+    }
+  ],
+  "upload_source_maps": true
+}

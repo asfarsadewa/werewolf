@@ -1,0 +1,5028 @@
+{
+ "model": "gemini-3.1-flash-tts-preview",
+ "version": 1,
+ "clips": {
+  "mara.accuse_evidence.nervous.1": {
+   "seconds": 6.8,
+   "bytes": 27693,
+   "hash": "12bd3c0f663c"
+  },
+  "mara.accuse_evidence.calm.1": {
+   "seconds": 3.33,
+   "bytes": 13773,
+   "hash": "0cd50f89f1bb"
+  },
+  "mara.accuse_evidence.aggressive.1": {
+   "seconds": 5.97,
+   "bytes": 24333,
+   "hash": "52c66f7c9813"
+  },
+  "mara.accuse_evidence.aggressive.3": {
+   "seconds": 8.4,
+   "bytes": 34029,
+   "hash": "c3e5e5009d31"
+  },
+  "mara.accuse_evidence.calm.2": {
+   "seconds": 2.55,
+   "bytes": 10701,
+   "hash": "639550079a6c"
+  },
+  "mara.accuse_evidence.nervous.2": {
+   "seconds": 5.55,
+   "bytes": 22701,
+   "hash": "d3eb651944bf"
+  },
+  "mara.accuse_evidence.aggressive.2": {
+   "seconds": 5.64,
+   "bytes": 23085,
+   "hash": "94bb2385abec"
+  },
+  "mara.accuse_evidence.calm.3": {
+   "seconds": 6.63,
+   "bytes": 27021,
+   "hash": "e9d680f0ef71"
+  },
+  "mara.accuse_evidence.sarcastic.3": {
+   "seconds": 9.11,
+   "bytes": 36909,
+   "hash": "aa85096ffc19"
+  },
+  "mara.accuse_evidence.sarcastic.2": {
+   "seconds": 7.68,
+   "bytes": 31149,
+   "hash": "008fe31ee9b9"
+  },
+  "mara.accuse_bare.calm.2": {
+   "seconds": 6.34,
+   "bytes": 25869,
+   "hash": "24d48e389a03"
+  },
+  "mara.accuse_evidence.sarcastic.1": {
+   "seconds": 3.63,
+   "bytes": 15021,
+   "hash": "a4b9c70b1d9d"
+  },
+  "mara.accuse_bare.nervous.1": {
+   "seconds": 5.07,
+   "bytes": 20781,
+   "hash": "7bd137381c97"
+  },
+  "mara.accuse_bare.calm.1": {
+   "seconds": 3.69,
+   "bytes": 15213,
+   "hash": "cf3ca9fa5806"
+  },
+  "mara.accuse_evidence.pleading.2": {
+   "seconds": 6.21,
+   "bytes": 25293,
+   "hash": "6be212d39791"
+  },
+  "mara.accuse_evidence.pleading.1": {
+   "seconds": 8.82,
+   "bytes": 35757,
+   "hash": "b098a5729280"
+  },
+  "mara.accuse_bare.sarcastic.1": {
+   "seconds": 6.55,
+   "bytes": 26637,
+   "hash": "8ef94123c6ac"
+  },
+  "mara.accuse_bare.aggressive.2": {
+   "seconds": 5.59,
+   "bytes": 22797,
+   "hash": "cb1f38d07015"
+  },
+  "mara.accuse_bare.aggressive.1": {
+   "seconds": 2.62,
+   "bytes": 10893,
+   "hash": "3a23967f1961"
+  },
+  "mara.accuse_bare.pleading.1": {
+   "seconds": 6.1,
+   "bytes": 24909,
+   "hash": "f80cc5fb4d8d"
+  },
+  "mara.accuse_bare.pleading.2": {
+   "seconds": 3.72,
+   "bytes": 15309,
+   "hash": "cb1f1d0e41aa"
+  },
+  "mara.accuse_bare.nervous.2": {
+   "seconds": 9.44,
+   "bytes": 38253,
+   "hash": "eafc389ceff3"
+  },
+  "mara.accuse_bare.sarcastic.2": {
+   "seconds": 9.34,
+   "bytes": 37773,
+   "hash": "e3c2cf173649"
+  },
+  "mara.defend_self.calm.1": {
+   "seconds": 6.99,
+   "bytes": 28461,
+   "hash": "1b8e478bfb23"
+  },
+  "mara.defend_self.aggressive.2": {
+   "seconds": 5.19,
+   "bytes": 21261,
+   "hash": "772c6c00e829"
+  },
+  "mara.defend_self.aggressive.1": {
+   "seconds": 5.55,
+   "bytes": 22701,
+   "hash": "506e544d2ad1"
+  },
+  "mara.defend_self.calm.2": {
+   "seconds": 6.68,
+   "bytes": 27213,
+   "hash": "c209630e0f1d"
+  },
+  "mara.defend_self.sarcastic.1": {
+   "seconds": 8.18,
+   "bytes": 33165,
+   "hash": "fc0a6eda3008"
+  },
+  "mara.defend_self.nervous.1": {
+   "seconds": 7.21,
+   "bytes": 29325,
+   "hash": "4a4ae91894ae"
+  },
+  "mara.defend_self.nervous.2": {
+   "seconds": 5.75,
+   "bytes": 23469,
+   "hash": "c559b226c5d0"
+  },
+  "mara.defend_self.pleading.1": {
+   "seconds": 6.76,
+   "bytes": 27501,
+   "hash": "62fdffe02940"
+  },
+  "mara.defend_self.sarcastic.2": {
+   "seconds": 8.04,
+   "bytes": 32589,
+   "hash": "d5a3f71aa911"
+  },
+  "mara.defend_other.nervous.2": {
+   "seconds": 5.6,
+   "bytes": 22893,
+   "hash": "ced0dcd23fe3"
+  },
+  "mara.defend_other.calm.1": {
+   "seconds": 5.2,
+   "bytes": 21261,
+   "hash": "8a04f7b38181"
+  },
+  "mara.defend_other.calm.2": {
+   "seconds": 6.8,
+   "bytes": 27693,
+   "hash": "5514ddfeecf8"
+  },
+  "mara.defend_other.aggressive.2": {
+   "seconds": 5.33,
+   "bytes": 21837,
+   "hash": "86ebe3cfdbba"
+  },
+  "mara.defend_other.aggressive.1": {
+   "seconds": 4.52,
+   "bytes": 18573,
+   "hash": "53cc715e693f"
+  },
+  "mara.defend_other.sarcastic.1": {
+   "seconds": 8.54,
+   "bytes": 34605,
+   "hash": "f90f72ed30f2"
+  },
+  "mara.defend_other.nervous.1": {
+   "seconds": 5.73,
+   "bytes": 23373,
+   "hash": "fc77ec4cdc36"
+  },
+  "mara.defend_self.pleading.2": {
+   "seconds": 7.92,
+   "bytes": 32109,
+   "hash": "ae639d889ee9"
+  },
+  "mara.defend_other.pleading.1": {
+   "seconds": 6.51,
+   "bytes": 26541,
+   "hash": "4615e02058a3"
+  },
+  "mara.defend_other.pleading.2": {
+   "seconds": 5.77,
+   "bytes": 23565,
+   "hash": "72ca2007454f"
+  },
+  "mara.question.calm.1": {
+   "seconds": 3.08,
+   "bytes": 12813,
+   "hash": "e47abf66706b"
+  },
+  "mara.question.calm.2": {
+   "seconds": 2.82,
+   "bytes": 11757,
+   "hash": "419a6baf27ee"
+  },
+  "mara.question.nervous.1": {
+   "seconds": 4.19,
+   "bytes": 17229,
+   "hash": "a2560e242896"
+  },
+  "mara.question.aggressive.1": {
+   "seconds": 3.77,
+   "bytes": 15501,
+   "hash": "963ed79d8ab9"
+  },
+  "mara.question.nervous.2": {
+   "seconds": 3.94,
+   "bytes": 16269,
+   "hash": "fbb4972804c2"
+  },
+  "mara.defend_other.sarcastic.2": {
+   "seconds": 8.04,
+   "bytes": 32589,
+   "hash": "b4bf0adf82ec"
+  },
+  "mara.question.aggressive.2": {
+   "seconds": 2.22,
+   "bytes": 9357,
+   "hash": "c832b1140d2a"
+  },
+  "mara.question.sarcastic.1": {
+   "seconds": 4.49,
+   "bytes": 18381,
+   "hash": "3dd6a43a5c79"
+  },
+  "mara.question.pleading.2": {
+   "seconds": 3.77,
+   "bytes": 15597,
+   "hash": "0120d877bb43"
+  },
+  "mara.question.pleading.1": {
+   "seconds": 4.28,
+   "bytes": 17613,
+   "hash": "61e405c375e9"
+  },
+  "mara.question.sarcastic.2": {
+   "seconds": 6.06,
+   "bytes": 24717,
+   "hash": "39ac0d4b0f52"
+  },
+  "mara.answer.calm.1": {
+   "seconds": 4.78,
+   "bytes": 19629,
+   "hash": "f9b234ebb2bd"
+  },
+  "mara.answer.calm.2": {
+   "seconds": 6.21,
+   "bytes": 25293,
+   "hash": "5c5d7de31ab9"
+  },
+  "mara.answer.nervous.1": {
+   "seconds": 5.39,
+   "bytes": 22029,
+   "hash": "d85bab3a366b"
+  },
+  "mara.answer.nervous.2": {
+   "seconds": 4.98,
+   "bytes": 20397,
+   "hash": "dbd97f223256"
+  },
+  "mara.answer.aggressive.1": {
+   "seconds": 3.79,
+   "bytes": 15597,
+   "hash": "d76634de9394"
+  },
+  "mara.answer.aggressive.2": {
+   "seconds": 5.35,
+   "bytes": 21837,
+   "hash": "40b305af1f77"
+  },
+  "mara.answer.sarcastic.1": {
+   "seconds": 5.55,
+   "bytes": 22701,
+   "hash": "019c8aeb1083"
+  },
+  "mara.answer.sarcastic.2": {
+   "seconds": 6.18,
+   "bytes": 25197,
+   "hash": "dac077853598"
+  },
+  "mara.answer.pleading.1": {
+   "seconds": 5.9,
+   "bytes": 24045,
+   "hash": "d34e0f0c6880"
+  },
+  "mara.answer.pleading.2": {
+   "seconds": 4.19,
+   "bytes": 17229,
+   "hash": "b57ddf1a5146"
+  },
+  "mara.deflect.calm.2": {
+   "seconds": 4.11,
+   "bytes": 16941,
+   "hash": "0b1106f565ec"
+  },
+  "mara.deflect.nervous.1": {
+   "seconds": 4.66,
+   "bytes": 19053,
+   "hash": "232c04320c01"
+  },
+  "mara.deflect.calm.1": {
+   "seconds": 4.92,
+   "bytes": 20205,
+   "hash": "749f1fce589e"
+  },
+  "mara.deflect.aggressive.1": {
+   "seconds": 3.27,
+   "bytes": 13581,
+   "hash": "b64ef26bbd7d"
+  },
+  "mara.deflect.nervous.2": {
+   "seconds": 5.23,
+   "bytes": 21453,
+   "hash": "edff07bf0ad7"
+  },
+  "mara.deflect.aggressive.2": {
+   "seconds": 4.09,
+   "bytes": 16845,
+   "hash": "005cf46587b0"
+  },
+  "mara.deflect.sarcastic.1": {
+   "seconds": 5.91,
+   "bytes": 24141,
+   "hash": "4e65060223ea"
+  },
+  "mara.deflect.sarcastic.2": {
+   "seconds": 6.5,
+   "bytes": 26445,
+   "hash": "486512b59153"
+  },
+  "mara.chatter.calm.1": {
+   "seconds": 3.19,
+   "bytes": 13197,
+   "hash": "82c5c7a8c8dd"
+  },
+  "mara.chatter.calm.2": {
+   "seconds": 4.56,
+   "bytes": 18765,
+   "hash": "49ea1c5b45ab"
+  },
+  "mara.deflect.pleading.1": {
+   "seconds": 4.78,
+   "bytes": 19629,
+   "hash": "33a8d98d67d8"
+  },
+  "mara.deflect.pleading.2": {
+   "seconds": 5.3,
+   "bytes": 21645,
+   "hash": "aa3c3c1a8e36"
+  },
+  "mara.chatter.nervous.1": {
+   "seconds": 2.5,
+   "bytes": 10509,
+   "hash": "69520ad6b0c3"
+  },
+  "mara.chatter.nervous.2": {
+   "seconds": 3.52,
+   "bytes": 14541,
+   "hash": "4b4f433cc669"
+  },
+  "mara.chatter.aggressive.1": {
+   "seconds": 4.29,
+   "bytes": 17613,
+   "hash": "98781d051117"
+  },
+  "mara.chatter.aggressive.2": {
+   "seconds": 3.79,
+   "bytes": 15597,
+   "hash": "a100b364c89b"
+  },
+  "mara.chatter.pleading.1": {
+   "seconds": 4.02,
+   "bytes": 16557,
+   "hash": "a48734110037"
+  },
+  "mara.chatter.sarcastic.2": {
+   "seconds": 4.99,
+   "bytes": 20397,
+   "hash": "b055e27e296e"
+  },
+  "mara.claim_seer.calm.1": {
+   "seconds": 3.73,
+   "bytes": 15405,
+   "hash": "68ad5c749bbd"
+  },
+  "mara.chatter.pleading.2": {
+   "seconds": 4.85,
+   "bytes": 19821,
+   "hash": "f7f83e360cc2"
+  },
+  "mara.chatter.sarcastic.1": {
+   "seconds": 8.02,
+   "bytes": 32589,
+   "hash": "cf4d47d47637"
+  },
+  "mara.claim_seer.nervous.1": {
+   "seconds": 4.18,
+   "bytes": 17229,
+   "hash": "1d225394617a"
+  },
+  "mara.claim_seer.aggressive.1": {
+   "seconds": 3.93,
+   "bytes": 16173,
+   "hash": "54b76debd832"
+  },
+  "mara.counter_claim.calm.1": {
+   "seconds": 6.31,
+   "bytes": 25773,
+   "hash": "39a04861af56"
+  },
+  "mara.reveal_wolf.nervous.1": {
+   "seconds": 3.77,
+   "bytes": 15597,
+   "hash": "59a09f3e218b"
+  },
+  "mara.reveal_wolf.calm.1": {
+   "seconds": 2.35,
+   "bytes": 9837,
+   "hash": "ee584ca8c148"
+  },
+  "mara.reveal_wolf.aggressive.1": {
+   "seconds": 3.69,
+   "bytes": 15213,
+   "hash": "52b19b9cc60b"
+  },
+  "mara.counter_claim.nervous.1": {
+   "seconds": 5.63,
+   "bytes": 22989,
+   "hash": "6407522944d0"
+  },
+  "mara.counter_claim.aggressive.1": {
+   "seconds": 4.78,
+   "bytes": 19629,
+   "hash": "9d0f5ce11361"
+  },
+  "mara.reveal_clear.nervous.1": {
+   "seconds": 3.75,
+   "bytes": 15501,
+   "hash": "5cd8b2e1581a"
+  },
+  "mara.reveal_clear.calm.1": {
+   "seconds": 2.78,
+   "bytes": 11565,
+   "hash": "94a40785798d"
+  },
+  "mara.reveal_clear.aggressive.1": {
+   "seconds": 5.13,
+   "bytes": 20973,
+   "hash": "a63f1fc5a2a2"
+  },
+  "mara.vote.aggressive.1": {
+   "seconds": 2.36,
+   "bytes": 9933,
+   "suspect": true,
+   "hash": "7cacea5aee36"
+  },
+  "mara.vote.nervous.1": {
+   "seconds": 3.79,
+   "bytes": 15597,
+   "hash": "356dd5f5b31d"
+  },
+  "mara.vote.calm.1": {
+   "seconds": 5.04,
+   "bytes": 20685,
+   "hash": "f29074e9a9b1"
+  },
+  "mara.vote.sarcastic.1": {
+   "seconds": 3.77,
+   "bytes": 15597,
+   "hash": "9fd67c7814ac"
+  },
+  "mara.greet.calm.1": {
+   "seconds": 4.24,
+   "bytes": 17421,
+   "hash": "de78d64cf29a"
+  },
+  "mara.greet.nervous.1": {
+   "seconds": 4.68,
+   "bytes": 19149,
+   "hash": "d957ca0cf332"
+  },
+  "mara.greet.aggressive.1": {
+   "seconds": 6,
+   "bytes": 24429,
+   "hash": "1db9d6bc1eca"
+  },
+  "mara.mourn.calm.1": {
+   "seconds": 3.7,
+   "bytes": 15309,
+   "hash": "6fed4bfb8b1f"
+  },
+  "mara.mourn.nervous.1": {
+   "seconds": 3.69,
+   "bytes": 15213,
+   "hash": "6ff2465f2c37"
+  },
+  "mara.rebuke.calm.1": {
+   "seconds": 3.53,
+   "bytes": 14637,
+   "hash": "c1ee0418b73c"
+  },
+  "mara.rebuke.nervous.1": {
+   "seconds": 2.78,
+   "bytes": 11565,
+   "hash": "b49875461b27"
+  },
+  "mara.mourn.aggressive.1": {
+   "seconds": 6.48,
+   "bytes": 26445,
+   "hash": "cd296fd6a98e"
+  },
+  "mara.rebuke.aggressive.1": {
+   "seconds": 4.34,
+   "bytes": 17805,
+   "hash": "061cb76f303e"
+  },
+  "tomas.accuse_evidence.calm.1": {
+   "seconds": 4.75,
+   "bytes": 19437,
+   "hash": "6b156130cee3"
+  },
+  "tomas.accuse_evidence.calm.3": {
+   "seconds": 7.13,
+   "bytes": 28941,
+   "hash": "555285cd4052"
+  },
+  "tomas.accuse_evidence.nervous.1": {
+   "seconds": 6.88,
+   "bytes": 27981,
+   "hash": "81391ce3ece1"
+  },
+  "tomas.accuse_evidence.calm.2": {
+   "seconds": 4.01,
+   "bytes": 16557,
+   "hash": "830ddb5c2d71"
+  },
+  "tomas.accuse_evidence.aggressive.1": {
+   "seconds": 2.78,
+   "bytes": 11565,
+   "hash": "c6d9e0ec08ce"
+  },
+  "tomas.accuse_evidence.aggressive.3": {
+   "seconds": 4.73,
+   "bytes": 19341,
+   "hash": "18aff7e3f524"
+  },
+  "tomas.accuse_evidence.aggressive.2": {
+   "seconds": 5.05,
+   "bytes": 20685,
+   "hash": "2b99194f2ac0"
+  },
+  "tomas.accuse_evidence.nervous.2": {
+   "seconds": 4.24,
+   "bytes": 17421,
+   "hash": "7d1cd344baa8"
+  },
+  "tomas.accuse_evidence.sarcastic.1": {
+   "seconds": 8.04,
+   "bytes": 32685,
+   "hash": "edeb75cc2f84"
+  },
+  "tomas.accuse_bare.nervous.1": {
+   "seconds": 4.98,
+   "bytes": 20397,
+   "hash": "9ef20f3ee717"
+  },
+  "tomas.accuse_evidence.sarcastic.2": {
+   "seconds": 10.45,
+   "bytes": 42285,
+   "hash": "2614056ddcbb"
+  },
+  "tomas.accuse_bare.calm.1": {
+   "seconds": 5.69,
+   "bytes": 23181,
+   "hash": "945d5b8e6ee2"
+  },
+  "tomas.accuse_evidence.pleading.2": {
+   "seconds": 7.88,
+   "bytes": 32013,
+   "hash": "779f07ae9816"
+  },
+  "tomas.accuse_bare.nervous.2": {
+   "seconds": 4.68,
+   "bytes": 19149,
+   "hash": "202ce7cebf94"
+  },
+  "tomas.accuse_bare.aggressive.1": {
+   "seconds": 2.99,
+   "bytes": 12429,
+   "hash": "a15f50a59d67"
+  },
+  "tomas.accuse_bare.calm.2": {
+   "seconds": 4.95,
+   "bytes": 20301,
+   "hash": "014b6b1406bf"
+  },
+  "tomas.accuse_bare.aggressive.2": {
+   "seconds": 1.95,
+   "bytes": 8301,
+   "hash": "84b06822a1b5"
+  },
+  "tomas.accuse_bare.pleading.1": {
+   "seconds": 3.2,
+   "bytes": 13293,
+   "hash": "61988159a0b1"
+  },
+  "tomas.accuse_bare.pleading.2": {
+   "seconds": 4.62,
+   "bytes": 18957,
+   "hash": "760c20994cc4"
+  },
+  "tomas.accuse_bare.sarcastic.1": {
+   "seconds": 8.92,
+   "bytes": 36141,
+   "hash": "f197df2e5524"
+  },
+  "tomas.defend_self.calm.2": {
+   "seconds": 4.65,
+   "bytes": 19053,
+   "hash": "ef36db69177b"
+  },
+  "tomas.defend_self.calm.1": {
+   "seconds": 6.15,
+   "bytes": 25101,
+   "hash": "72d0776d15d3"
+  },
+  "tomas.accuse_bare.sarcastic.2": {
+   "seconds": 7.17,
+   "bytes": 29133,
+   "hash": "a703adb25115"
+  },
+  "tomas.defend_self.nervous.2": {
+   "seconds": 4.18,
+   "bytes": 17229,
+   "hash": "d68ced6e07a9"
+  },
+  "tomas.defend_self.nervous.1": {
+   "seconds": 4.83,
+   "bytes": 19821,
+   "hash": "3a2b1782bc46"
+  },
+  "tomas.defend_self.aggressive.1": {
+   "seconds": 2.13,
+   "bytes": 8973,
+   "hash": "ced30f3f92f6"
+  },
+  "tomas.defend_self.aggressive.2": {
+   "seconds": 2.88,
+   "bytes": 12045,
+   "hash": "fb15cc04a870"
+  },
+  "tomas.defend_self.sarcastic.2": {
+   "seconds": 8.88,
+   "bytes": 36045,
+   "hash": "9a17629d8a3f"
+  },
+  "tomas.defend_self.sarcastic.1": {
+   "seconds": 11.77,
+   "bytes": 47565,
+   "hash": "41c1d65b2fdf"
+  },
+  "tomas.defend_other.calm.1": {
+   "seconds": 4.87,
+   "bytes": 19917,
+   "hash": "ba5c264fb9c8"
+  },
+  "tomas.defend_self.pleading.1": {
+   "seconds": 6.47,
+   "bytes": 26349,
+   "hash": "219ed7dde62f"
+  },
+  "tomas.defend_self.pleading.2": {
+   "seconds": 5.5,
+   "bytes": 22509,
+   "hash": "79a71011a2f0"
+  },
+  "tomas.defend_other.nervous.2": {
+   "seconds": 5.19,
+   "bytes": 21261,
+   "hash": "8d8cd75648e4"
+  },
+  "tomas.defend_other.calm.2": {
+   "seconds": 4.77,
+   "bytes": 19533,
+   "hash": "5656c016af4c"
+  },
+  "tomas.defend_other.aggressive.1": {
+   "seconds": 2.73,
+   "bytes": 11373,
+   "hash": "16d2c11186dd"
+  },
+  "tomas.defend_other.nervous.1": {
+   "seconds": 5.36,
+   "bytes": 21933,
+   "hash": "06c54567e3d6"
+  },
+  "tomas.defend_other.aggressive.2": {
+   "seconds": 2.64,
+   "bytes": 10989,
+   "hash": "12aec4056555"
+  },
+  "tomas.defend_other.pleading.1": {
+   "seconds": 4.04,
+   "bytes": 16653,
+   "hash": "b30dc934ff77"
+  },
+  "tomas.defend_other.sarcastic.1": {
+   "seconds": 7.29,
+   "bytes": 29613,
+   "hash": "f286c208b2f1"
+  },
+  "tomas.question.calm.1": {
+   "seconds": 4.05,
+   "bytes": 16653,
+   "hash": "850751aa23f7"
+  },
+  "tomas.defend_other.sarcastic.2": {
+   "seconds": 6.72,
+   "bytes": 27309,
+   "hash": "a7befb4b5e2d"
+  },
+  "tomas.defend_other.pleading.2": {
+   "seconds": 4.96,
+   "bytes": 20301,
+   "hash": "2a345bc1ce25"
+  },
+  "tomas.question.calm.2": {
+   "seconds": 2.16,
+   "bytes": 9165,
+   "hash": "59cb971331d2"
+  },
+  "tomas.question.nervous.1": {
+   "seconds": 3.12,
+   "bytes": 12909,
+   "hash": "9502fd943a14"
+  },
+  "tomas.question.nervous.2": {
+   "seconds": 3.93,
+   "bytes": 16173,
+   "hash": "9a8ce8d8f2b3"
+  },
+  "tomas.question.aggressive.1": {
+   "seconds": 2.49,
+   "bytes": 10413,
+   "hash": "e25b2bf30a84"
+  },
+  "tomas.question.aggressive.3": {
+   "seconds": 2.83,
+   "bytes": 11757,
+   "hash": "184b1dcc3ae3"
+  },
+  "tomas.question.aggressive.2": {
+   "seconds": 2.4,
+   "bytes": 10125,
+   "hash": "b14d12dd6044"
+  },
+  "tomas.question.pleading.2": {
+   "seconds": 2.94,
+   "bytes": 12237,
+   "hash": "1b2aca7b3eb9"
+  },
+  "tomas.question.pleading.1": {
+   "seconds": 4.71,
+   "bytes": 19341,
+   "hash": "1fce751b1651"
+  },
+  "tomas.answer.calm.2": {
+   "seconds": 3.84,
+   "bytes": 15789,
+   "hash": "c49baab79a07"
+  },
+  "tomas.question.sarcastic.1": {
+   "seconds": 5.71,
+   "bytes": 23277,
+   "hash": "07d0a46d8382"
+  },
+  "tomas.question.sarcastic.2": {
+   "seconds": 5.03,
+   "bytes": 20589,
+   "hash": "a99ddbdb91f5"
+  },
+  "tomas.answer.calm.1": {
+   "seconds": 6.7,
+   "bytes": 27309,
+   "hash": "a8a18c6ce00f"
+  },
+  "tomas.answer.nervous.2": {
+   "seconds": 3.06,
+   "bytes": 12717,
+   "hash": "a56f5bdbe5da"
+  },
+  "tomas.answer.aggressive.1": {
+   "seconds": 4.29,
+   "bytes": 17613,
+   "hash": "19eceac77755"
+  },
+  "tomas.answer.nervous.1": {
+   "seconds": 5.4,
+   "bytes": 22125,
+   "hash": "05056bbb7e5a"
+  },
+  "tomas.answer.aggressive.2": {
+   "seconds": 2.81,
+   "bytes": 11757,
+   "hash": "6ce3b882b4c3"
+  },
+  "tomas.answer.sarcastic.2": {
+   "seconds": 7.06,
+   "bytes": 28653,
+   "hash": "31799c502585"
+  },
+  "tomas.answer.pleading.1": {
+   "seconds": 5.2,
+   "bytes": 21261,
+   "hash": "ef8dc3fba012"
+  },
+  "tomas.answer.sarcastic.1": {
+   "seconds": 7.19,
+   "bytes": 29229,
+   "hash": "9525c79e2236"
+  },
+  "tomas.answer.pleading.2": {
+   "seconds": 4.45,
+   "bytes": 18285,
+   "hash": "fb33466de668"
+  },
+  "tomas.deflect.calm.1": {
+   "seconds": 3.85,
+   "bytes": 15885,
+   "hash": "48e7fa88bd4a"
+  },
+  "tomas.deflect.calm.2": {
+   "seconds": 4.68,
+   "bytes": 19245,
+   "hash": "701e64a83cf7"
+  },
+  "tomas.deflect.nervous.1": {
+   "seconds": 4.22,
+   "bytes": 17325,
+   "hash": "82957072ff8b"
+  },
+  "tomas.deflect.nervous.2": {
+   "seconds": 4.09,
+   "bytes": 16845,
+   "hash": "35af627d0a61"
+  },
+  "tomas.deflect.aggressive.1": {
+   "seconds": 3.71,
+   "bytes": 15309,
+   "hash": "51df7b8bb3a7"
+  },
+  "tomas.deflect.aggressive.2": {
+   "seconds": 3.37,
+   "bytes": 13965,
+   "hash": "5550298bb778"
+  },
+  "tomas.deflect.pleading.1": {
+   "seconds": 3.79,
+   "bytes": 15693,
+   "hash": "14dbee55c55b"
+  },
+  "tomas.deflect.sarcastic.1": {
+   "seconds": 6.54,
+   "bytes": 26637,
+   "hash": "2b2a944a274e"
+  },
+  "tomas.deflect.sarcastic.2": {
+   "seconds": 5.18,
+   "bytes": 21165,
+   "hash": "9a39c8c098c8"
+  },
+  "tomas.deflect.pleading.2": {
+   "seconds": 4.67,
+   "bytes": 19149,
+   "hash": "5e4d4bfcd03a"
+  },
+  "tomas.chatter.calm.2": {
+   "seconds": 3.86,
+   "bytes": 15885,
+   "hash": "9874b7cfb112"
+  },
+  "tomas.chatter.calm.1": {
+   "seconds": 4.4,
+   "bytes": 18093,
+   "hash": "43d173c81382"
+  },
+  "tomas.chatter.nervous.2": {
+   "seconds": 3.59,
+   "bytes": 14829,
+   "hash": "abbf04a47720"
+  },
+  "tomas.chatter.aggressive.2": {
+   "seconds": 3.76,
+   "bytes": 15501,
+   "hash": "058b13b40e59"
+  },
+  "tomas.chatter.aggressive.1": {
+   "seconds": 3.69,
+   "bytes": 15213,
+   "hash": "a5ef537e8675"
+  },
+  "tomas.chatter.sarcastic.2": {
+   "seconds": 6.35,
+   "bytes": 25869,
+   "hash": "1fa0bee644f3"
+  },
+  "tomas.chatter.sarcastic.1": {
+   "seconds": 7.77,
+   "bytes": 31533,
+   "hash": "8f4c4ead70b9"
+  },
+  "tomas.chatter.pleading.2": {
+   "seconds": 3.91,
+   "bytes": 16077,
+   "hash": "dd88fa00edb0"
+  },
+  "tomas.claim_seer.calm.1": {
+   "seconds": 7.4,
+   "bytes": 30093,
+   "hash": "9f1042a8a34f"
+  },
+  "tomas.chatter.pleading.1": {
+   "seconds": 6.2,
+   "bytes": 25293,
+   "hash": "4d202537c5a8"
+  },
+  "tomas.claim_seer.aggressive.1": {
+   "seconds": 4.43,
+   "bytes": 18189,
+   "hash": "4095431f22a5"
+  },
+  "tomas.claim_seer.nervous.1": {
+   "seconds": 3.96,
+   "bytes": 16269,
+   "hash": "5ab21d873e5d"
+  },
+  "tomas.counter_claim.calm.1": {
+   "seconds": 4.66,
+   "bytes": 19149,
+   "hash": "25546e8527ec"
+  },
+  "tomas.counter_claim.aggressive.1": {
+   "seconds": 3.06,
+   "bytes": 12717,
+   "hash": "aba623e5aa19"
+  },
+  "tomas.reveal_wolf.aggressive.1": {
+   "seconds": 3.96,
+   "bytes": 16269,
+   "hash": "a2ad83a41ddb"
+  },
+  "tomas.counter_claim.nervous.1": {
+   "seconds": 4.23,
+   "bytes": 17421,
+   "hash": "f869f07cf8d7"
+  },
+  "tomas.reveal_wolf.calm.1": {
+   "seconds": 4.14,
+   "bytes": 17037,
+   "hash": "2fc7301632be"
+  },
+  "tomas.reveal_clear.calm.1": {
+   "seconds": 3.49,
+   "bytes": 14445,
+   "hash": "3bd9194111ba"
+  },
+  "tomas.reveal_wolf.nervous.1": {
+   "seconds": 4.84,
+   "bytes": 19821,
+   "hash": "59ef391b8510"
+  },
+  "tomas.reveal_clear.nervous.1": {
+   "seconds": 4.57,
+   "bytes": 18765,
+   "hash": "894730e593c8"
+  },
+  "tomas.vote.calm.1": {
+   "seconds": 3.24,
+   "bytes": 13389,
+   "hash": "bffa50611c3a"
+  },
+  "tomas.reveal_clear.aggressive.1": {
+   "seconds": 4.68,
+   "bytes": 19245,
+   "hash": "6a9d7fe87056"
+  },
+  "tomas.vote.nervous.1": {
+   "seconds": 2.49,
+   "bytes": 10413,
+   "hash": "2e8cb997e958"
+  },
+  "tomas.greet.calm.1": {
+   "seconds": 3.25,
+   "bytes": 13485,
+   "hash": "5dbc18e49302"
+  },
+  "tomas.vote.aggressive.1": {
+   "seconds": 2.4,
+   "bytes": 10029,
+   "hash": "1480b2f806af"
+  },
+  "tomas.vote.pleading.1": {
+   "seconds": 3.04,
+   "bytes": 12621,
+   "hash": "449bc84307da"
+  },
+  "tomas.vote.sarcastic.1": {
+   "seconds": 4.02,
+   "bytes": 16557,
+   "hash": "76beb4e48f8b"
+  },
+  "tomas.greet.nervous.1": {
+   "seconds": 4.12,
+   "bytes": 16941,
+   "hash": "2187fea616e8"
+  },
+  "tomas.mourn.calm.1": {
+   "seconds": 4.58,
+   "bytes": 18765,
+   "hash": "99b1a913c481"
+  },
+  "tomas.greet.aggressive.1": {
+   "seconds": 3.16,
+   "bytes": 13101,
+   "hash": "46af9fc1e5a6"
+  },
+  "tomas.rebuke.calm.1": {
+   "seconds": 3.86,
+   "bytes": 15885,
+   "hash": "cc0b817f790b"
+  },
+  "tomas.mourn.nervous.1": {
+   "seconds": 5.4,
+   "bytes": 22125,
+   "hash": "f9a9246d0351"
+  },
+  "tomas.mourn.aggressive.1": {
+   "seconds": 4.27,
+   "bytes": 17613,
+   "hash": "56f8da5a0840"
+  },
+  "tomas.rebuke.aggressive.1": {
+   "seconds": 2.72,
+   "bytes": 11373,
+   "hash": "95d7c16e8cf7"
+  },
+  "tomas.rebuke.nervous.1": {
+   "seconds": 3.17,
+   "bytes": 13197,
+   "hash": "1d85e56fc5c9"
+  },
+  "bel.accuse_evidence.calm.1": {
+   "seconds": 6.22,
+   "bytes": 25389,
+   "hash": "582665460708"
+  },
+  "bel.accuse_evidence.calm.3": {
+   "seconds": 5.84,
+   "bytes": 23853,
+   "hash": "e6b47f57a23a"
+  },
+  "bel.accuse_evidence.calm.2": {
+   "seconds": 4.33,
+   "bytes": 17805,
+   "hash": "64268e47d154"
+  },
+  "bel.accuse_evidence.nervous.1": {
+   "seconds": 4.97,
+   "bytes": 20397,
+   "hash": "39509dd368ed"
+  },
+  "bel.accuse_evidence.nervous.2": {
+   "seconds": 6.41,
+   "bytes": 26157,
+   "hash": "1b01e816748b"
+  },
+  "bel.accuse_evidence.aggressive.1": {
+   "seconds": 4.18,
+   "bytes": 17229,
+   "hash": "fc4158ceacdb"
+  },
+  "bel.accuse_evidence.aggressive.3": {
+   "seconds": 4.2,
+   "bytes": 17229,
+   "hash": "6c4027df839a"
+  },
+  "bel.accuse_evidence.aggressive.2": {
+   "seconds": 4.09,
+   "bytes": 16845,
+   "hash": "a7bf98ec06db"
+  },
+  "bel.accuse_evidence.sarcastic.2": {
+   "seconds": 8.94,
+   "bytes": 36237,
+   "hash": "2813213054d4"
+  },
+  "bel.accuse_evidence.sarcastic.1": {
+   "seconds": 7.04,
+   "bytes": 28653,
+   "hash": "23a9d302d8bd"
+  },
+  "bel.accuse_evidence.pleading.1": {
+   "seconds": 8.09,
+   "bytes": 32877,
+   "hash": "38c26ded5b7a"
+  },
+  "bel.accuse_evidence.sarcastic.3": {
+   "seconds": 8.9,
+   "bytes": 36045,
+   "hash": "5fd7a3323169"
+  },
+  "bel.accuse_bare.nervous.1": {
+   "seconds": 6.48,
+   "bytes": 26349,
+   "hash": "e7701ac59c45"
+  },
+  "bel.accuse_evidence.pleading.2": {
+   "seconds": 6.66,
+   "bytes": 27117,
+   "hash": "8acd1d25a68d"
+  },
+  "bel.accuse_bare.calm.2": {
+   "seconds": 6.09,
+   "bytes": 24813,
+   "hash": "a6872a930d5d"
+  },
+  "bel.accuse_bare.calm.1": {
+   "seconds": 7.04,
+   "bytes": 28653,
+   "hash": "a223bea13995"
+  },
+  "bel.accuse_bare.nervous.2": {
+   "seconds": 5.41,
+   "bytes": 22125,
+   "hash": "be0a45b3f564"
+  },
+  "bel.accuse_bare.aggressive.2": {
+   "seconds": 3.73,
+   "bytes": 15405,
+   "hash": "133dc685b0b3"
+  },
+  "bel.accuse_bare.aggressive.1": {
+   "seconds": 5,
+   "bytes": 20493,
+   "hash": "1a79e7483d15"
+  },
+  "bel.accuse_bare.pleading.2": {
+   "seconds": 7.05,
+   "bytes": 28653,
+   "hash": "c2e82bf373ae"
+  },
+  "bel.accuse_bare.pleading.1": {
+   "seconds": 5.58,
+   "bytes": 22797,
+   "hash": "7769fa424a9c"
+  },
+  "bel.accuse_bare.sarcastic.1": {
+   "seconds": 6.27,
+   "bytes": 25581,
+   "hash": "70dcd9592a08"
+  },
+  "bel.accuse_bare.sarcastic.2": {
+   "seconds": 10.07,
+   "bytes": 40749,
+   "hash": "ca735cfe945e"
+  },
+  "bel.defend_self.calm.1": {
+   "seconds": 6.35,
+   "bytes": 25869,
+   "hash": "5dbd0a9ae2b5"
+  },
+  "bel.defend_self.calm.2": {
+   "seconds": 5.6,
+   "bytes": 22893,
+   "hash": "d9df690db1b3"
+  },
+  "bel.defend_self.nervous.1": {
+   "seconds": 6.36,
+   "bytes": 25965,
+   "hash": "de9050fc46a6"
+  },
+  "bel.defend_self.nervous.2": {
+   "seconds": 5.37,
+   "bytes": 21933,
+   "hash": "752b63d64e53"
+  },
+  "bel.defend_self.aggressive.1": {
+   "seconds": 7.68,
+   "bytes": 31149,
+   "hash": "e71399092ef1"
+  },
+  "bel.defend_self.sarcastic.1": {
+   "seconds": 7.67,
+   "bytes": 31149,
+   "hash": "dc8ed57492be"
+  },
+  "bel.defend_self.aggressive.2": {
+   "seconds": 6.41,
+   "bytes": 26157,
+   "hash": "fb839bc1ef1b"
+  },
+  "bel.defend_self.sarcastic.2": {
+   "seconds": 7.72,
+   "bytes": 31341,
+   "hash": "e6b4936d36b8"
+  },
+  "bel.defend_self.pleading.1": {
+   "seconds": 6.26,
+   "bytes": 25485,
+   "hash": "c69f3c0d3559"
+  },
+  "bel.defend_self.pleading.2": {
+   "seconds": 5.44,
+   "bytes": 22221,
+   "hash": "09de50e510a0"
+  },
+  "bel.defend_other.calm.1": {
+   "seconds": 5.09,
+   "bytes": 20877,
+   "hash": "93ea69be69ff"
+  },
+  "bel.defend_other.nervous.1": {
+   "seconds": 3.25,
+   "bytes": 13485,
+   "hash": "8b5e732071b1"
+  },
+  "bel.defend_other.calm.2": {
+   "seconds": 5.46,
+   "bytes": 22317,
+   "hash": "7e72bdf451df"
+  },
+  "bel.defend_other.aggressive.2": {
+   "seconds": 3.91,
+   "bytes": 16173,
+   "hash": "41a348bc974e"
+  },
+  "bel.defend_other.nervous.2": {
+   "seconds": 2.79,
+   "bytes": 11661,
+   "hash": "015aab6e7fba"
+  },
+  "bel.defend_other.aggressive.1": {
+   "seconds": 5.65,
+   "bytes": 23085,
+   "hash": "fd71a7810c0c"
+  },
+  "bel.defend_other.sarcastic.1": {
+   "seconds": 7.53,
+   "bytes": 30573,
+   "hash": "ea1a30e0bca0"
+  },
+  "bel.defend_other.sarcastic.2": {
+   "seconds": 9.03,
+   "bytes": 36621,
+   "hash": "7af19f69a8b4"
+  },
+  "bel.defend_other.pleading.2": {
+   "seconds": 6.93,
+   "bytes": 28173,
+   "hash": "719191228511"
+  },
+  "bel.defend_other.pleading.1": {
+   "seconds": 5.62,
+   "bytes": 22989,
+   "hash": "8c4236501238"
+  },
+  "bel.question.nervous.1": {
+   "seconds": 3.57,
+   "bytes": 14733,
+   "hash": "2e8485c84921"
+  },
+  "bel.question.calm.1": {
+   "seconds": 5.47,
+   "bytes": 22413,
+   "hash": "f7992cf06902"
+  },
+  "bel.question.nervous.2": {
+   "seconds": 3.03,
+   "bytes": 12621,
+   "hash": "fb5d9b976473"
+  },
+  "bel.question.calm.2": {
+   "seconds": 3.7,
+   "bytes": 15309,
+   "hash": "5f527649ca0b"
+  },
+  "bel.question.aggressive.2": {
+   "seconds": 1.86,
+   "bytes": 7917,
+   "hash": "0cf12e61f602"
+  },
+  "bel.question.aggressive.1": {
+   "seconds": 4.74,
+   "bytes": 19437,
+   "hash": "53ebda8133d1"
+  },
+  "bel.question.sarcastic.2": {
+   "seconds": 4.17,
+   "bytes": 17133,
+   "hash": "d3b83c13473b"
+  },
+  "bel.question.sarcastic.1": {
+   "seconds": 8.52,
+   "bytes": 34509,
+   "hash": "24178fbec917"
+  },
+  "bel.question.pleading.1": {
+   "seconds": 4.54,
+   "bytes": 18669,
+   "hash": "36544b184c87"
+  },
+  "bel.question.pleading.2": {
+   "seconds": 6.33,
+   "bytes": 25773,
+   "hash": "e300b3502542"
+  },
+  "bel.answer.nervous.1": {
+   "seconds": 3.86,
+   "bytes": 15885,
+   "hash": "7a213aa236d8"
+  },
+  "bel.answer.calm.1": {
+   "seconds": 6.92,
+   "bytes": 28173,
+   "hash": "69f342161bbe"
+  },
+  "bel.answer.calm.2": {
+   "seconds": 5.29,
+   "bytes": 21645,
+   "hash": "2d92e09cc383"
+  },
+  "bel.answer.nervous.2": {
+   "seconds": 4.95,
+   "bytes": 20301,
+   "hash": "26ab86a2d0c5"
+  },
+  "bel.answer.aggressive.1": {
+   "seconds": 3.96,
+   "bytes": 16269,
+   "hash": "b994512406b1"
+  },
+  "bel.answer.aggressive.2": {
+   "seconds": 3.33,
+   "bytes": 13773,
+   "hash": "14426447e7c1"
+  },
+  "bel.answer.sarcastic.2": {
+   "seconds": 4.5,
+   "bytes": 18477,
+   "hash": "5b6bff6d8b54"
+  },
+  "bel.answer.pleading.1": {
+   "seconds": 4.19,
+   "bytes": 17229,
+   "hash": "a8dc4c5cc322"
+  },
+  "bel.deflect.calm.2": {
+   "seconds": 3.26,
+   "bytes": 13485,
+   "hash": "9080847c9792"
+  },
+  "bel.answer.sarcastic.1": {
+   "seconds": 6.52,
+   "bytes": 26541,
+   "hash": "7c0b77efce73"
+  },
+  "bel.deflect.calm.1": {
+   "seconds": 4.12,
+   "bytes": 16941,
+   "hash": "09a58562a37c"
+  },
+  "bel.answer.pleading.2": {
+   "seconds": 3.5,
+   "bytes": 14445,
+   "hash": "74b68a465aef"
+  },
+  "bel.deflect.nervous.2": {
+   "seconds": 3.55,
+   "bytes": 14637,
+   "hash": "5b4036d123da"
+  },
+  "bel.deflect.nervous.1": {
+   "seconds": 5.55,
+   "bytes": 22701,
+   "hash": "8ec3aeb2ee56"
+  },
+  "bel.deflect.aggressive.1": {
+   "seconds": 3.82,
+   "bytes": 15789,
+   "hash": "453f4eed545a"
+  },
+  "bel.deflect.aggressive.2": {
+   "seconds": 4.68,
+   "bytes": 19149,
+   "hash": "b581466bb420"
+  },
+  "bel.deflect.pleading.2": {
+   "seconds": 3.82,
+   "bytes": 15789,
+   "hash": "eb42ace24557"
+  },
+  "bel.deflect.sarcastic.1": {
+   "seconds": 6.24,
+   "bytes": 25485,
+   "hash": "ec4a4ad0383c"
+  },
+  "bel.deflect.sarcastic.2": {
+   "seconds": 5.51,
+   "bytes": 22509,
+   "hash": "aeb8b884abb6"
+  },
+  "bel.chatter.calm.1": {
+   "seconds": 7.02,
+   "bytes": 28557,
+   "hash": "cde81a1fd347"
+  },
+  "bel.chatter.calm.2": {
+   "seconds": 6.16,
+   "bytes": 25101,
+   "hash": "5e783c2fc472"
+  },
+  "bel.chatter.nervous.1": {
+   "seconds": 4.03,
+   "bytes": 16653,
+   "hash": "e52943e3b951"
+  },
+  "bel.chatter.nervous.2": {
+   "seconds": 4.45,
+   "bytes": 18285,
+   "hash": "b0656632591e"
+  },
+  "bel.chatter.aggressive.1": {
+   "seconds": 4.41,
+   "bytes": 18093,
+   "hash": "af43a9937dce"
+  },
+  "bel.chatter.aggressive.2": {
+   "seconds": 3.32,
+   "bytes": 13773,
+   "hash": "5e8a7f8e07ad"
+  },
+  "bel.chatter.sarcastic.2": {
+   "seconds": 5.97,
+   "bytes": 24333,
+   "hash": "40dd0bf3603a"
+  },
+  "bel.chatter.sarcastic.1": {
+   "seconds": 5.1,
+   "bytes": 20877,
+   "hash": "a8c657b509f1"
+  },
+  "bel.chatter.pleading.1": {
+   "seconds": 4.56,
+   "bytes": 18765,
+   "hash": "14c04e41dbaf"
+  },
+  "bel.chatter.pleading.2": {
+   "seconds": 6.67,
+   "bytes": 27117,
+   "hash": "6ad75168ebcd"
+  },
+  "bel.claim_seer.aggressive.1": {
+   "seconds": 3.49,
+   "bytes": 14445,
+   "hash": "f52af90581d3"
+  },
+  "bel.claim_seer.nervous.1": {
+   "seconds": 4.04,
+   "bytes": 16653,
+   "hash": "d1a7e8481d02"
+  },
+  "bel.claim_seer.calm.1": {
+   "seconds": 6.61,
+   "bytes": 26925,
+   "hash": "f1bfbc0e438f"
+  },
+  "bel.counter_claim.calm.1": {
+   "seconds": 5.91,
+   "bytes": 24141,
+   "hash": "27f53881dd08"
+  },
+  "bel.counter_claim.nervous.1": {
+   "seconds": 3.74,
+   "bytes": 15405,
+   "hash": "503c36e42a0a"
+  },
+  "bel.reveal_wolf.calm.1": {
+   "seconds": 4.64,
+   "bytes": 19053,
+   "hash": "dccd76f90c9a"
+  },
+  "bel.counter_claim.aggressive.1": {
+   "seconds": 5.36,
+   "bytes": 21933,
+   "hash": "e8544c649c7c"
+  },
+  "bel.reveal_wolf.nervous.1": {
+   "seconds": 3.04,
+   "bytes": 12621,
+   "hash": "6c4473f7215c"
+  },
+  "bel.reveal_wolf.aggressive.1": {
+   "seconds": 3.28,
+   "bytes": 13581,
+   "hash": "b2e06032fc35"
+  },
+  "bel.reveal_clear.calm.1": {
+   "seconds": 4,
+   "bytes": 16461,
+   "hash": "529593c668ea"
+  },
+  "bel.reveal_clear.aggressive.1": {
+   "seconds": 5.68,
+   "bytes": 23181,
+   "hash": "deb5b106f01f"
+  },
+  "bel.vote.calm.1": {
+   "seconds": 4.24,
+   "bytes": 17421,
+   "hash": "77641632bd58"
+  },
+  "bel.vote.nervous.1": {
+   "seconds": 3,
+   "bytes": 12429,
+   "hash": "94cb2af900a3"
+  },
+  "bel.reveal_clear.nervous.1": {
+   "seconds": 3.81,
+   "bytes": 15693,
+   "hash": "87d08e5240c9"
+  },
+  "bel.vote.aggressive.1": {
+   "seconds": 2.21,
+   "bytes": 9357,
+   "hash": "5799b5549351"
+  },
+  "bel.greet.calm.1": {
+   "seconds": 4.18,
+   "bytes": 17229,
+   "hash": "0acf40850695"
+  },
+  "bel.vote.sarcastic.1": {
+   "seconds": 4.75,
+   "bytes": 19437,
+   "hash": "f008789ea38a"
+  },
+  "bel.greet.aggressive.1": {
+   "seconds": 3.98,
+   "bytes": 16365,
+   "hash": "274834335295"
+  },
+  "bel.greet.nervous.1": {
+   "seconds": 6.82,
+   "bytes": 27789,
+   "hash": "30552cdd3675"
+  },
+  "bel.mourn.calm.1": {
+   "seconds": 4.58,
+   "bytes": 18765,
+   "hash": "1d3150f09edd"
+  },
+  "bel.mourn.nervous.1": {
+   "seconds": 5.21,
+   "bytes": 21357,
+   "hash": "d46f014ec36f"
+  },
+  "bel.mourn.aggressive.1": {
+   "seconds": 4.71,
+   "bytes": 19341,
+   "hash": "f5564d9029c3"
+  },
+  "bel.rebuke.calm.1": {
+   "seconds": 5,
+   "bytes": 20493,
+   "hash": "2627d4bb945d"
+  },
+  "bel.rebuke.nervous.1": {
+   "seconds": 1.78,
+   "bytes": 7629,
+   "hash": "f1444ea17487"
+  },
+  "bel.rebuke.aggressive.1": {
+   "seconds": 3.34,
+   "bytes": 13869,
+   "hash": "537e2e532a74"
+  },
+  "bel.rebuke.sarcastic.1": {
+   "seconds": 4.16,
+   "bytes": 17133,
+   "hash": "19b5dd65f5d2"
+  },
+  "ines.accuse_evidence.calm.1": {
+   "seconds": 10.17,
+   "bytes": 41133,
+   "hash": "8d94070d39b4"
+  },
+  "ines.accuse_evidence.calm.2": {
+   "seconds": 3.94,
+   "bytes": 16269,
+   "hash": "eb20c8606fc1"
+  },
+  "ines.accuse_evidence.nervous.1": {
+   "seconds": 8.48,
+   "bytes": 34413,
+   "hash": "31e043905b2c"
+  },
+  "ines.accuse_evidence.nervous.2": {
+   "seconds": 7.31,
+   "bytes": 29709,
+   "hash": "e9f17f1edb21"
+  },
+  "ines.accuse_evidence.calm.3": {
+   "seconds": 6.6,
+   "bytes": 26829,
+   "hash": "06ff4cfc5f95"
+  },
+  "ines.accuse_evidence.aggressive.1": {
+   "seconds": 5.27,
+   "bytes": 21549,
+   "hash": "8770f82d9e0c"
+  },
+  "ines.accuse_evidence.aggressive.2": {
+   "seconds": 5,
+   "bytes": 20493,
+   "hash": "2037bbf2125b"
+  },
+  "ines.accuse_evidence.aggressive.3": {
+   "seconds": 5.68,
+   "bytes": 23181,
+   "hash": "098ea1762261"
+  },
+  "ines.accuse_evidence.sarcastic.1": {
+   "seconds": 9.46,
+   "bytes": 38349,
+   "hash": "7121f5c455e1"
+  },
+  "ines.accuse_evidence.sarcastic.2": {
+   "seconds": 9.04,
+   "bytes": 36621,
+   "hash": "6d9ab83a2399"
+  },
+  "ines.accuse_bare.calm.1": {
+   "seconds": 5.18,
+   "bytes": 21165,
+   "hash": "b959b11fa1c2"
+  },
+  "ines.accuse_evidence.pleading.2": {
+   "seconds": 8.73,
+   "bytes": 35373,
+   "hash": "3f1aaf32a4a3"
+  },
+  "ines.accuse_bare.nervous.1": {
+   "seconds": 4.31,
+   "bytes": 17709,
+   "hash": "e3cdadae2f5b"
+  },
+  "ines.accuse_evidence.pleading.1": {
+   "seconds": 10.38,
+   "bytes": 41997,
+   "hash": "e7f87dfc3edf"
+  },
+  "ines.accuse_bare.calm.2": {
+   "seconds": 5.3,
+   "bytes": 21645,
+   "hash": "3e9c0ff503a1"
+  },
+  "ines.accuse_bare.nervous.2": {
+   "seconds": 4.93,
+   "bytes": 20205,
+   "hash": "735eb40d8657"
+  },
+  "ines.accuse_bare.aggressive.1": {
+   "seconds": 5.49,
+   "bytes": 22413,
+   "hash": "6c4067ec8840"
+  },
+  "ines.accuse_bare.aggressive.2": {
+   "seconds": 2.68,
+   "bytes": 11181,
+   "hash": "a183cbb832c2"
+  },
+  "ines.accuse_bare.pleading.1": {
+   "seconds": 6.07,
+   "bytes": 24717,
+   "hash": "eff1af685eaf"
+  },
+  "ines.accuse_bare.sarcastic.1": {
+   "seconds": 8.46,
+   "bytes": 34317,
+   "hash": "5db370dcce19"
+  },
+  "ines.accuse_bare.pleading.2": {
+   "seconds": 7.08,
+   "bytes": 28845,
+   "hash": "ae207e3b5cf6"
+  },
+  "ines.accuse_bare.sarcastic.2": {
+   "seconds": 6.62,
+   "bytes": 26925,
+   "hash": "2f5d367cfa2c"
+  },
+  "ines.defend_self.calm.1": {
+   "seconds": 5.49,
+   "bytes": 22413,
+   "hash": "2aaba32eba7a"
+  },
+  "ines.defend_self.calm.2": {
+   "seconds": 7.07,
+   "bytes": 28749,
+   "hash": "f75c3905dff0"
+  },
+  "ines.defend_self.nervous.2": {
+   "seconds": 8.01,
+   "bytes": 32493,
+   "hash": "642ea6225cd0"
+  },
+  "ines.defend_self.aggressive.1": {
+   "seconds": 5.33,
+   "bytes": 21837,
+   "hash": "871b7acf0ee9"
+  },
+  "ines.defend_self.nervous.1": {
+   "seconds": 5.05,
+   "bytes": 20685,
+   "hash": "f899cd637473"
+  },
+  "ines.defend_self.aggressive.2": {
+   "seconds": 5,
+   "bytes": 20493,
+   "hash": "27d2845adc40"
+  },
+  "ines.defend_self.sarcastic.1": {
+   "seconds": 10.1,
+   "bytes": 40845,
+   "hash": "28bf30636e2f"
+  },
+  "ines.defend_self.sarcastic.2": {
+   "seconds": 8.16,
+   "bytes": 33069,
+   "hash": "02e97e9d3742"
+  },
+  "ines.defend_self.pleading.1": {
+   "seconds": 6.75,
+   "bytes": 27501,
+   "hash": "3a25575a4dfc"
+  },
+  "ines.defend_other.nervous.1": {
+   "seconds": 5.72,
+   "bytes": 23373,
+   "hash": "c06fd5d754cf"
+  },
+  "ines.defend_self.pleading.2": {
+   "seconds": 5.81,
+   "bytes": 23661,
+   "hash": "d3babdf24738"
+  },
+  "ines.defend_other.calm.1": {
+   "seconds": 4.98,
+   "bytes": 20397,
+   "hash": "59bf3d7f7449"
+  },
+  "ines.defend_other.calm.2": {
+   "seconds": 4.8,
+   "bytes": 19725,
+   "hash": "ad285002a4b1"
+  },
+  "ines.defend_other.nervous.2": {
+   "seconds": 4.56,
+   "bytes": 18765,
+   "hash": "07940496f952"
+  },
+  "ines.defend_other.aggressive.1": {
+   "seconds": 6.17,
+   "bytes": 25197,
+   "hash": "6397ee6cbcec"
+  },
+  "ines.defend_other.aggressive.2": {
+   "seconds": 5.61,
+   "bytes": 22893,
+   "hash": "ce7a9f4d27f4"
+  },
+  "ines.defend_other.sarcastic.1": {
+   "seconds": 10.59,
+   "bytes": 42861,
+   "hash": "5302bd75676a"
+  },
+  "ines.defend_other.pleading.1": {
+   "seconds": 7.12,
+   "bytes": 28941,
+   "hash": "a980054bf0c3"
+  },
+  "ines.defend_other.sarcastic.2": {
+   "seconds": 9.04,
+   "bytes": 36621,
+   "hash": "ce24c35febda"
+  },
+  "ines.question.calm.2": {
+   "seconds": 3.8,
+   "bytes": 15693,
+   "hash": "0122b97693cd"
+  },
+  "ines.defend_other.pleading.2": {
+   "seconds": 6.62,
+   "bytes": 26925,
+   "hash": "c0e14d572fe0"
+  },
+  "ines.question.nervous.1": {
+   "seconds": 3.69,
+   "bytes": 15213,
+   "hash": "d2e925e7dbea"
+  },
+  "ines.question.nervous.2": {
+   "seconds": 3.04,
+   "bytes": 12621,
+   "hash": "8ee9343a3ac2"
+  },
+  "ines.question.aggressive.1": {
+   "seconds": 4.08,
+   "bytes": 16845,
+   "hash": "ec281ad15b55"
+  },
+  "ines.question.aggressive.2": {
+   "seconds": 3.48,
+   "bytes": 14445,
+   "hash": "20c454534c17"
+  },
+  "ines.question.sarcastic.1": {
+   "seconds": 6.83,
+   "bytes": 27789,
+   "hash": "504b935e66e7"
+  },
+  "ines.question.sarcastic.2": {
+   "seconds": 4.25,
+   "bytes": 17517,
+   "hash": "84f36ec97881"
+  },
+  "ines.question.pleading.1": {
+   "seconds": 6.18,
+   "bytes": 25197,
+   "hash": "19794197e869"
+  },
+  "ines.question.pleading.2": {
+   "seconds": 4.93,
+   "bytes": 20205,
+   "hash": "f5578e4b2cf3"
+  },
+  "ines.question.calm.1": {
+   "seconds": 4.12,
+   "bytes": 16941,
+   "hash": "5d34b4268549"
+  },
+  "ines.answer.nervous.1": {
+   "seconds": 5.25,
+   "bytes": 21453,
+   "hash": "bde0b2f76c1b"
+  },
+  "ines.answer.calm.1": {
+   "seconds": 5.37,
+   "bytes": 21933,
+   "hash": "0b553e25068f"
+  },
+  "ines.answer.calm.2": {
+   "seconds": 6.83,
+   "bytes": 27789,
+   "hash": "b97c50fbf5cf"
+  },
+  "ines.answer.nervous.2": {
+   "seconds": 4.6,
+   "bytes": 18861,
+   "hash": "642ff29f849b"
+  },
+  "ines.answer.aggressive.1": {
+   "seconds": 4.61,
+   "bytes": 18957,
+   "hash": "5f254743f0ab"
+  },
+  "ines.answer.aggressive.2": {
+   "seconds": 2.97,
+   "bytes": 12333,
+   "hash": "30922d185226"
+  },
+  "ines.answer.sarcastic.1": {
+   "seconds": 6.42,
+   "bytes": 26157,
+   "hash": "8943683e7e9d"
+  },
+  "ines.answer.sarcastic.2": {
+   "seconds": 6.44,
+   "bytes": 26253,
+   "hash": "adfda13f2572"
+  },
+  "ines.answer.pleading.1": {
+   "seconds": 4.54,
+   "bytes": 18669,
+   "hash": "545b9f3333ef"
+  },
+  "ines.answer.pleading.2": {
+   "seconds": 4.78,
+   "bytes": 19629,
+   "hash": "5b69c2302fb7"
+  },
+  "ines.deflect.calm.1": {
+   "seconds": 5.26,
+   "bytes": 21549,
+   "hash": "c6bcdcc7c599"
+  },
+  "ines.deflect.nervous.1": {
+   "seconds": 4.34,
+   "bytes": 17805,
+   "hash": "f7b795b68a7e"
+  },
+  "ines.deflect.calm.2": {
+   "seconds": 4.35,
+   "bytes": 17901,
+   "hash": "0fed469316f1"
+  },
+  "ines.deflect.nervous.2": {
+   "seconds": 4.6,
+   "bytes": 18861,
+   "hash": "64fd57ece0dc"
+  },
+  "ines.deflect.aggressive.1": {
+   "seconds": 4.1,
+   "bytes": 16845,
+   "hash": "135d0a1a61c7"
+  },
+  "ines.deflect.aggressive.2": {
+   "seconds": 4.3,
+   "bytes": 17709,
+   "hash": "04dc3e077d10"
+  },
+  "ines.deflect.pleading.2": {
+   "seconds": 4.22,
+   "bytes": 17325,
+   "hash": "e25f6fb546fe"
+  },
+  "ines.deflect.pleading.1": {
+   "seconds": 4.64,
+   "bytes": 19053,
+   "hash": "5e3504fc3b63"
+  },
+  "ines.deflect.sarcastic.1": {
+   "seconds": 7.84,
+   "bytes": 31821,
+   "hash": "d956ff5a73e1"
+  },
+  "ines.deflect.sarcastic.2": {
+   "seconds": 6.25,
+   "bytes": 25485,
+   "hash": "7982182b6eb5"
+  },
+  "ines.chatter.calm.1": {
+   "seconds": 7,
+   "bytes": 28461,
+   "hash": "1c212b9b8aa0"
+  },
+  "ines.chatter.nervous.1": {
+   "seconds": 5.3,
+   "bytes": 21645,
+   "hash": "aac1a7933efa"
+  },
+  "ines.chatter.calm.2": {
+   "seconds": 3.92,
+   "bytes": 16173,
+   "hash": "df8971ef8157"
+  },
+  "ines.chatter.nervous.2": {
+   "seconds": 4.41,
+   "bytes": 18093,
+   "hash": "173465e8f2d0"
+  },
+  "ines.chatter.aggressive.2": {
+   "seconds": 4.3,
+   "bytes": 17709,
+   "hash": "e2b3d70ae2e2"
+  },
+  "ines.chatter.sarcastic.2": {
+   "seconds": 6.3,
+   "bytes": 25677,
+   "hash": "468c2a1dd51f"
+  },
+  "ines.chatter.sarcastic.1": {
+   "seconds": 9.33,
+   "bytes": 37773,
+   "hash": "67e89669869a"
+  },
+  "ines.chatter.pleading.1": {
+   "seconds": 5.31,
+   "bytes": 21741,
+   "hash": "9065e4e2de5f"
+  },
+  "ines.claim_seer.nervous.1": {
+   "seconds": 4.3,
+   "bytes": 17709,
+   "hash": "0b38fcf2d7bb"
+  },
+  "ines.claim_seer.calm.1": {
+   "seconds": 6.53,
+   "bytes": 26637,
+   "hash": "8aa4f0660d0d"
+  },
+  "ines.chatter.pleading.2": {
+   "seconds": 5.95,
+   "bytes": 24333,
+   "hash": "e314600f138b"
+  },
+  "ines.chatter.aggressive.1": {
+   "seconds": 4.37,
+   "bytes": 17997,
+   "hash": "10afb220c55a"
+  },
+  "ines.claim_seer.aggressive.1": {
+   "seconds": 4.53,
+   "bytes": 18573,
+   "hash": "3cc305860e3c"
+  },
+  "ines.counter_claim.calm.1": {
+   "seconds": 5.57,
+   "bytes": 22701,
+   "hash": "3d45f9cc9878"
+  },
+  "ines.counter_claim.aggressive.1": {
+   "seconds": 4.65,
+   "bytes": 19053,
+   "hash": "cf550cacc315"
+  },
+  "ines.counter_claim.nervous.1": {
+   "seconds": 5.95,
+   "bytes": 24237,
+   "hash": "8a1bd0f07af4"
+  },
+  "ines.reveal_wolf.aggressive.1": {
+   "seconds": 5.85,
+   "bytes": 23853,
+   "hash": "08b831c655cc"
+  },
+  "ines.reveal_wolf.nervous.1": {
+   "seconds": 4.49,
+   "bytes": 18381,
+   "hash": "3966dd556547"
+  },
+  "ines.reveal_wolf.calm.1": {
+   "seconds": 4.76,
+   "bytes": 19533,
+   "hash": "256c709cf25f"
+  },
+  "ines.reveal_clear.nervous.1": {
+   "seconds": 3.52,
+   "bytes": 14541,
+   "hash": "31fbeb5917cc"
+  },
+  "ines.reveal_clear.calm.1": {
+   "seconds": 4.9,
+   "bytes": 20109,
+   "hash": "08380c8df23a"
+  },
+  "ines.reveal_clear.aggressive.1": {
+   "seconds": 7.09,
+   "bytes": 28845,
+   "hash": "e11bc980211f"
+  },
+  "ines.vote.nervous.1": {
+   "seconds": 3.98,
+   "bytes": 16365,
+   "hash": "d18458462187"
+  },
+  "ines.vote.calm.1": {
+   "seconds": 4.6,
+   "bytes": 18861,
+   "hash": "2fac0d45dbb5"
+  },
+  "ines.vote.aggressive.1": {
+   "seconds": 3.76,
+   "bytes": 15501,
+   "hash": "b15783356405"
+  },
+  "ines.greet.calm.1": {
+   "seconds": 6.31,
+   "bytes": 25773,
+   "hash": "7d909fd048ba"
+  },
+  "ines.greet.nervous.1": {
+   "seconds": 5.56,
+   "bytes": 22701,
+   "hash": "31fd9fedf158"
+  },
+  "ines.vote.pleading.1": {
+   "seconds": 5.53,
+   "bytes": 22605,
+   "hash": "062d28e50035"
+  },
+  "ines.greet.aggressive.1": {
+   "seconds": 4.82,
+   "bytes": 19725,
+   "hash": "050c5fa59f8a"
+  },
+  "ines.mourn.nervous.1": {
+   "seconds": 4.07,
+   "bytes": 16749,
+   "hash": "172648dab7dc"
+  },
+  "ines.mourn.calm.1": {
+   "seconds": 6.12,
+   "bytes": 25005,
+   "hash": "2f95146c3b9f"
+  },
+  "ines.mourn.aggressive.1": {
+   "seconds": 5.03,
+   "bytes": 20589,
+   "hash": "91cc793e4ce4"
+  },
+  "ines.rebuke.calm.1": {
+   "seconds": 4.54,
+   "bytes": 18669,
+   "hash": "89f7652143cb"
+  },
+  "ines.rebuke.nervous.1": {
+   "seconds": 3.07,
+   "bytes": 12717,
+   "hash": "7059f733c79a"
+  },
+  "ines.rebuke.aggressive.1": {
+   "seconds": 2.79,
+   "bytes": 11661,
+   "hash": "3df1c379e8b4"
+  },
+  "kip.accuse_evidence.calm.1": {
+   "seconds": 3.56,
+   "bytes": 14733,
+   "hash": "fe65d4b16734"
+  },
+  "kip.accuse_evidence.calm.2": {
+   "seconds": 4.05,
+   "bytes": 16653,
+   "hash": "fc6d8114d09d"
+  },
+  "kip.accuse_evidence.calm.3": {
+   "seconds": 6.57,
+   "bytes": 26733,
+   "hash": "3a05473d6fb5"
+  },
+  "kip.accuse_evidence.nervous.2": {
+   "seconds": 4.49,
+   "bytes": 18477,
+   "hash": "dcfaca4a7485"
+  },
+  "kip.accuse_evidence.aggressive.1": {
+   "seconds": 3.44,
+   "bytes": 14253,
+   "hash": "0b597e4add1e"
+  },
+  "kip.accuse_evidence.nervous.1": {
+   "seconds": 7.66,
+   "bytes": 31149,
+   "hash": "9716fe7e2412"
+  },
+  "kip.accuse_evidence.aggressive.2": {
+   "seconds": 2.72,
+   "bytes": 11373,
+   "hash": "60ea25ddb6af"
+  },
+  "kip.accuse_evidence.aggressive.3": {
+   "seconds": 2.86,
+   "bytes": 11949,
+   "hash": "663a4be7729a"
+  },
+  "kip.accuse_evidence.sarcastic.3": {
+   "seconds": 9.06,
+   "bytes": 36717,
+   "hash": "8d7d41f23764"
+  },
+  "kip.accuse_evidence.sarcastic.2": {
+   "seconds": 7.11,
+   "bytes": 28941,
+   "hash": "4ad26a890bca"
+  },
+  "kip.accuse_evidence.pleading.1": {
+   "seconds": 6.71,
+   "bytes": 27309,
+   "hash": "174f1797aaf1"
+  },
+  "kip.accuse_evidence.pleading.2": {
+   "seconds": 7.79,
+   "bytes": 31629,
+   "hash": "706562864575"
+  },
+  "kip.accuse_bare.calm.2": {
+   "seconds": 6.21,
+   "bytes": 25293,
+   "hash": "d49d0e74a949"
+  },
+  "kip.accuse_bare.nervous.1": {
+   "seconds": 5.26,
+   "bytes": 21549,
+   "hash": "5a833d81d07a"
+  },
+  "kip.accuse_bare.calm.1": {
+   "seconds": 5.44,
+   "bytes": 22221,
+   "hash": "7da058ef4d55"
+  },
+  "kip.accuse_bare.nervous.2": {
+   "seconds": 5.73,
+   "bytes": 23373,
+   "hash": "83ec302b86e6"
+  },
+  "kip.accuse_evidence.sarcastic.1": {
+   "seconds": 7.31,
+   "bytes": 29709,
+   "hash": "3e7acbdbf842"
+  },
+  "kip.accuse_bare.aggressive.1": {
+   "seconds": 3.35,
+   "bytes": 13869,
+   "hash": "5154f6d63299"
+  },
+  "kip.accuse_bare.aggressive.2": {
+   "seconds": 2.58,
+   "bytes": 10797,
+   "hash": "8f554ab4c603"
+  },
+  "kip.accuse_bare.sarcastic.2": {
+   "seconds": 6.61,
+   "bytes": 26925,
+   "hash": "a9e6e914475f"
+  },
+  "kip.accuse_bare.pleading.1": {
+   "seconds": 4.58,
+   "bytes": 18765,
+   "hash": "99fd424a5023"
+  },
+  "kip.accuse_bare.sarcastic.1": {
+   "seconds": 4.59,
+   "bytes": 18861,
+   "hash": "3d9b7b48fc29"
+  },
+  "kip.accuse_bare.pleading.2": {
+   "seconds": 3.7,
+   "bytes": 15213,
+   "hash": "3d4e3913fd2d"
+  },
+  "kip.defend_self.calm.2": {
+   "seconds": 4.04,
+   "bytes": 16653,
+   "hash": "66c7f9ab9e47"
+  },
+  "kip.defend_self.nervous.1": {
+   "seconds": 6.8,
+   "bytes": 27693,
+   "hash": "ec02c6982349"
+  },
+  "kip.defend_self.nervous.2": {
+   "seconds": 4.41,
+   "bytes": 18093,
+   "hash": "cebdfc74d875"
+  },
+  "kip.defend_self.aggressive.1": {
+   "seconds": 3.13,
+   "bytes": 13005,
+   "hash": "0d98591abf2e"
+  },
+  "kip.defend_self.aggressive.2": {
+   "seconds": 2.93,
+   "bytes": 12237,
+   "hash": "8cadf66ca81b"
+  },
+  "kip.defend_self.sarcastic.2": {
+   "seconds": 6.82,
+   "bytes": 27789,
+   "hash": "673b4b7b0385"
+  },
+  "kip.defend_self.pleading.1": {
+   "seconds": 4.46,
+   "bytes": 18285,
+   "hash": "94c7c1841c07"
+  },
+  "kip.defend_self.sarcastic.1": {
+   "seconds": 9.61,
+   "bytes": 38925,
+   "hash": "e6e3afd02e9b"
+  },
+  "kip.defend_self.pleading.2": {
+   "seconds": 4.95,
+   "bytes": 20301,
+   "hash": "57756feca0db"
+  },
+  "kip.defend_other.calm.1": {
+   "seconds": 3.22,
+   "bytes": 13389,
+   "hash": "5eb6fbaed3a6"
+  },
+  "kip.defend_self.calm.1": {
+   "seconds": 4.49,
+   "bytes": 18477,
+   "hash": "5d02663faa75"
+  },
+  "kip.defend_other.calm.2": {
+   "seconds": 3.7,
+   "bytes": 15309,
+   "hash": "4c3cf2b142fe"
+  },
+  "kip.defend_other.nervous.1": {
+   "seconds": 4.02,
+   "bytes": 16557,
+   "hash": "cfc826fd6e93"
+  },
+  "kip.defend_other.aggressive.1": {
+   "seconds": 3.66,
+   "bytes": 15117,
+   "hash": "8e69c5e7afac"
+  },
+  "kip.defend_other.nervous.2": {
+   "seconds": 5.05,
+   "bytes": 20685,
+   "hash": "620b91cfdebd"
+  },
+  "kip.defend_other.aggressive.2": {
+   "seconds": 4.04,
+   "bytes": 16653,
+   "hash": "4928c389a61a"
+  },
+  "kip.question.calm.1": {
+   "seconds": 2.76,
+   "bytes": 11469,
+   "hash": "4b669c972862"
+  },
+  "kip.defend_other.sarcastic.2": {
+   "seconds": 7.41,
+   "bytes": 30093,
+   "hash": "411f86ff6cec"
+  },
+  "kip.defend_other.pleading.2": {
+   "seconds": 5.9,
+   "bytes": 24045,
+   "hash": "aa1e0a63ecf2"
+  },
+  "kip.defend_other.pleading.1": {
+   "seconds": 5.21,
+   "bytes": 21357,
+   "hash": "59ed34c16ccf"
+  },
+  "kip.defend_other.sarcastic.1": {
+   "seconds": 6.51,
+   "bytes": 26541,
+   "hash": "1505af34e218"
+  },
+  "kip.question.calm.2": {
+   "seconds": 2.97,
+   "bytes": 12333,
+   "hash": "f35a3d007dac"
+  },
+  "kip.question.nervous.1": {
+   "seconds": 2.87,
+   "bytes": 11949,
+   "hash": "312bcfa2d7c1"
+  },
+  "kip.question.aggressive.1": {
+   "seconds": 2.41,
+   "bytes": 10125,
+   "hash": "a3603d4d43cd"
+  },
+  "kip.question.aggressive.2": {
+   "seconds": 2.59,
+   "bytes": 10797,
+   "hash": "5b518e7cdc45"
+  },
+  "kip.question.sarcastic.2": {
+   "seconds": 3.32,
+   "bytes": 13773,
+   "hash": "a9050e0aa7f3"
+  },
+  "kip.question.sarcastic.1": {
+   "seconds": 3.5,
+   "bytes": 14445,
+   "hash": "eb368e8be697"
+  },
+  "kip.question.nervous.2": {
+   "seconds": 2.98,
+   "bytes": 12429,
+   "hash": "4f96f7122aa4"
+  },
+  "kip.question.pleading.2": {
+   "seconds": 3.65,
+   "bytes": 15117,
+   "hash": "657f372fbdd3"
+  },
+  "kip.question.pleading.1": {
+   "seconds": 5,
+   "bytes": 20493,
+   "hash": "36658dd93598"
+  },
+  "kip.answer.aggressive.1": {
+   "seconds": 2.2,
+   "bytes": 9261,
+   "hash": "ac9ec04c5a92"
+  },
+  "kip.answer.calm.1": {
+   "seconds": 5.72,
+   "bytes": 23373,
+   "hash": "5915e334a562"
+  },
+  "kip.answer.nervous.2": {
+   "seconds": 3.66,
+   "bytes": 15117,
+   "hash": "2fd5e2657731"
+  },
+  "kip.answer.aggressive.2": {
+   "seconds": 2.99,
+   "bytes": 12429,
+   "hash": "6e46ec4e2c9a"
+  },
+  "kip.answer.nervous.1": {
+   "seconds": 4.85,
+   "bytes": 19917,
+   "hash": "42194ef69e1a"
+  },
+  "kip.answer.calm.2": {
+   "seconds": 5.63,
+   "bytes": 22989,
+   "hash": "38fe4bde9acf"
+  },
+  "kip.answer.sarcastic.2": {
+   "seconds": 4.74,
+   "bytes": 19437,
+   "hash": "10e01a93d970"
+  },
+  "kip.answer.sarcastic.1": {
+   "seconds": 5.42,
+   "bytes": 22125,
+   "hash": "d27b31aac88f"
+  },
+  "kip.deflect.calm.1": {
+   "seconds": 3.93,
+   "bytes": 16173,
+   "hash": "d1befc7e7487"
+  },
+  "kip.answer.pleading.1": {
+   "seconds": 4.28,
+   "bytes": 17613,
+   "hash": "214aa8fc3bd5"
+  },
+  "kip.answer.pleading.2": {
+   "seconds": 5.45,
+   "bytes": 22317,
+   "hash": "a551aca70ebb"
+  },
+  "kip.deflect.nervous.1": {
+   "seconds": 5.24,
+   "bytes": 21453,
+   "hash": "c6e06afc12e5"
+  },
+  "kip.deflect.calm.2": {
+   "seconds": 4.39,
+   "bytes": 18093,
+   "hash": "9b6d4ac7f9e2"
+  },
+  "kip.deflect.nervous.2": {
+   "seconds": 3.99,
+   "bytes": 16461,
+   "hash": "7c08d574443f"
+  },
+  "kip.deflect.aggressive.2": {
+   "seconds": 3.01,
+   "bytes": 12525,
+   "hash": "1921aff57237"
+  },
+  "kip.deflect.aggressive.1": {
+   "seconds": 3.38,
+   "bytes": 13965,
+   "hash": "52444a03fea0"
+  },
+  "kip.deflect.sarcastic.1": {
+   "seconds": 3.92,
+   "bytes": 16173,
+   "hash": "f97472f0fc82"
+  },
+  "kip.deflect.sarcastic.2": {
+   "seconds": 4.69,
+   "bytes": 19245,
+   "hash": "1e413c602950"
+  },
+  "kip.deflect.pleading.1": {
+   "seconds": 4.59,
+   "bytes": 18861,
+   "hash": "9e15c5638a5d"
+  },
+  "kip.deflect.pleading.2": {
+   "seconds": 3.55,
+   "bytes": 14733,
+   "hash": "0c8b7bd89c01"
+  },
+  "kip.chatter.calm.1": {
+   "seconds": 3.46,
+   "bytes": 14349,
+   "hash": "91d7e9c22557"
+  },
+  "kip.chatter.calm.2": {
+   "seconds": 4.19,
+   "bytes": 17229,
+   "hash": "69208b4d97e8"
+  },
+  "kip.chatter.nervous.2": {
+   "seconds": 3.86,
+   "bytes": 15885,
+   "hash": "4737eb952c08"
+  },
+  "kip.chatter.nervous.1": {
+   "seconds": 4.91,
+   "bytes": 20109,
+   "hash": "5d558a7090d8"
+  },
+  "kip.chatter.aggressive.1": {
+   "seconds": 3.61,
+   "bytes": 14925,
+   "hash": "32c6d968ba4b"
+  },
+  "kip.chatter.aggressive.2": {
+   "seconds": 3.97,
+   "bytes": 16365,
+   "hash": "b4885df558b4"
+  },
+  "kip.chatter.pleading.2": {
+   "seconds": 3.27,
+   "bytes": 13581,
+   "hash": "b6c12c51db48"
+  },
+  "kip.chatter.sarcastic.1": {
+   "seconds": 5.71,
+   "bytes": 23373,
+   "hash": "726e43fba69a"
+  },
+  "kip.chatter.pleading.1": {
+   "seconds": 3.92,
+   "bytes": 16173,
+   "hash": "6b5e843c5a85"
+  },
+  "kip.claim_seer.aggressive.1": {
+   "seconds": 2.86,
+   "bytes": 11949,
+   "hash": "c80464986785"
+  },
+  "kip.claim_seer.nervous.1": {
+   "seconds": 3.57,
+   "bytes": 14733,
+   "hash": "27883f408d92"
+  },
+  "kip.claim_seer.calm.1": {
+   "seconds": 5.55,
+   "bytes": 22701,
+   "hash": "911af4ff0ab3"
+  },
+  "kip.counter_claim.calm.1": {
+   "seconds": 4.03,
+   "bytes": 16557,
+   "hash": "93155ac94113"
+  },
+  "kip.counter_claim.aggressive.1": {
+   "seconds": 3.56,
+   "bytes": 14733,
+   "hash": "adadb2eccde3"
+  },
+  "kip.counter_claim.nervous.1": {
+   "seconds": 3.21,
+   "bytes": 13293,
+   "hash": "854fef05dc33"
+  },
+  "kip.reveal_wolf.calm.1": {
+   "seconds": 3.37,
+   "bytes": 13965,
+   "hash": "dacf40b37cfd"
+  },
+  "kip.reveal_wolf.aggressive.1": {
+   "seconds": 5.54,
+   "bytes": 22605,
+   "hash": "adc810f48615"
+  },
+  "kip.reveal_wolf.nervous.1": {
+   "seconds": 4.58,
+   "bytes": 18765,
+   "hash": "f3c62672d01c"
+  },
+  "kip.reveal_clear.calm.1": {
+   "seconds": 4.04,
+   "bytes": 16653,
+   "hash": "8c07cb08c5fa"
+  },
+  "kip.reveal_clear.nervous.1": {
+   "seconds": 6.44,
+   "bytes": 26253,
+   "hash": "5256423b9f71"
+  },
+  "kip.reveal_clear.aggressive.1": {
+   "seconds": 4.78,
+   "bytes": 19629,
+   "hash": "7fe2cd012912"
+  },
+  "kip.vote.nervous.1": {
+   "seconds": 3.16,
+   "bytes": 13101,
+   "hash": "d7e515cd2cc5"
+  },
+  "kip.vote.calm.1": {
+   "seconds": 4.99,
+   "bytes": 20397,
+   "hash": "d4bfce72c94f"
+  },
+  "kip.vote.aggressive.1": {
+   "seconds": 2.53,
+   "bytes": 10605,
+   "hash": "f8837693dad1"
+  },
+  "kip.vote.sarcastic.1": {
+   "seconds": 3.17,
+   "bytes": 13101,
+   "hash": "4ba88cd5ff50"
+  },
+  "kip.greet.aggressive.1": {
+   "seconds": 3.03,
+   "bytes": 12621,
+   "hash": "1a284d6c82c4"
+  },
+  "kip.greet.nervous.1": {
+   "seconds": 3.29,
+   "bytes": 13677,
+   "hash": "d0686b845fdd"
+  },
+  "kip.greet.calm.1": {
+   "seconds": 2.77,
+   "bytes": 11565,
+   "hash": "4fb687a599ad"
+  },
+  "kip.mourn.calm.1": {
+   "seconds": 5.18,
+   "bytes": 21165,
+   "hash": "b1083d574b40"
+  },
+  "kip.mourn.aggressive.1": {
+   "seconds": 3.45,
+   "bytes": 14253,
+   "hash": "93307cc8b503"
+  },
+  "kip.rebuke.nervous.1": {
+   "seconds": 2.22,
+   "bytes": 9357,
+   "hash": "0d1ff3e2c27a"
+  },
+  "kip.rebuke.calm.1": {
+   "seconds": 4.09,
+   "bytes": 16845,
+   "hash": "646d37a827e1"
+  },
+  "kip.mourn.nervous.1": {
+   "seconds": 3.73,
+   "bytes": 15405,
+   "hash": "57720c65c41b"
+  },
+  "kip.rebuke.aggressive.1": {
+   "seconds": 2.6,
+   "bytes": 10893,
+   "hash": "cbb55313ed96"
+  },
+  "rook.accuse_evidence.calm.1": {
+   "seconds": 6.68,
+   "bytes": 27213,
+   "hash": "ecacb40f68ea"
+  },
+  "rook.accuse_evidence.calm.2": {
+   "seconds": 5.52,
+   "bytes": 22605,
+   "hash": "0669cce01e67"
+  },
+  "rook.accuse_evidence.nervous.2": {
+   "seconds": 8.84,
+   "bytes": 35853,
+   "hash": "71777c838c04"
+  },
+  "rook.accuse_evidence.nervous.1": {
+   "seconds": 6.35,
+   "bytes": 25869,
+   "hash": "f76f9065d3f2"
+  },
+  "rook.accuse_evidence.calm.3": {
+   "seconds": 10.68,
+   "bytes": 43245,
+   "hash": "734d0c5770ec"
+  },
+  "rook.accuse_evidence.aggressive.2": {
+   "seconds": 8.4,
+   "bytes": 34029,
+   "hash": "d092eed6c096"
+  },
+  "rook.accuse_evidence.aggressive.1": {
+   "seconds": 6.26,
+   "bytes": 25485,
+   "hash": "87411d95fbbc"
+  },
+  "rook.accuse_evidence.aggressive.3": {
+   "seconds": 6.08,
+   "bytes": 24813,
+   "hash": "02d7f2213b4b"
+  },
+  "rook.accuse_evidence.sarcastic.1": {
+   "seconds": 11.63,
+   "bytes": 46989,
+   "hash": "8be5b72f2353"
+  },
+  "rook.accuse_evidence.pleading.1": {
+   "seconds": 9.85,
+   "bytes": 39885,
+   "hash": "bff1f933e802"
+  },
+  "rook.accuse_evidence.pleading.2": {
+   "seconds": 8.99,
+   "bytes": 36429,
+   "hash": "a8f1a35cee80"
+  },
+  "rook.accuse_evidence.sarcastic.2": {
+   "seconds": 11.47,
+   "bytes": 46317,
+   "hash": "4d2613311e8c"
+  },
+  "rook.accuse_evidence.sarcastic.3": {
+   "seconds": 11.77,
+   "bytes": 47565,
+   "hash": "efee32b86e87"
+  },
+  "rook.accuse_bare.calm.1": {
+   "seconds": 8.71,
+   "bytes": 35277,
+   "hash": "4f0f88a837d7"
+  },
+  "rook.accuse_bare.calm.2": {
+   "seconds": 7.01,
+   "bytes": 28557,
+   "hash": "ac29d4f1ec75"
+  },
+  "rook.accuse_bare.nervous.1": {
+   "seconds": 9.46,
+   "bytes": 38253,
+   "hash": "587d74e25a80"
+  },
+  "rook.accuse_bare.aggressive.2": {
+   "seconds": 7.29,
+   "bytes": 29613,
+   "hash": "5e14bb23755a"
+  },
+  "rook.accuse_bare.nervous.2": {
+   "seconds": 9.27,
+   "bytes": 37581,
+   "hash": "89332b70dc5a"
+  },
+  "rook.accuse_bare.sarcastic.2": {
+   "seconds": 8.66,
+   "bytes": 35085,
+   "hash": "2726b356a1b6"
+  },
+  "rook.accuse_bare.aggressive.1": {
+   "seconds": 4.95,
+   "bytes": 20301,
+   "hash": "34139b089ff0"
+  },
+  "rook.accuse_bare.pleading.1": {
+   "seconds": 6.97,
+   "bytes": 28365,
+   "hash": "eb5dd97c6e0a"
+  },
+  "rook.accuse_bare.pleading.2": {
+   "seconds": 7.7,
+   "bytes": 31245,
+   "hash": "6c936cf90437"
+  },
+  "rook.accuse_bare.sarcastic.1": {
+   "seconds": 13.29,
+   "bytes": 53613,
+   "hash": "e5da21b72503"
+  },
+  "rook.defend_self.calm.1": {
+   "seconds": 9.37,
+   "bytes": 37965,
+   "hash": "ad86bf39f7b3"
+  },
+  "rook.defend_self.calm.2": {
+   "seconds": 6.12,
+   "bytes": 24909,
+   "hash": "9e6f711a327b"
+  },
+  "rook.defend_self.nervous.1": {
+   "seconds": 7.83,
+   "bytes": 31821,
+   "hash": "58bf78460f3d"
+  },
+  "rook.defend_self.aggressive.1": {
+   "seconds": 7.89,
+   "bytes": 32013,
+   "hash": "3e7b8ae62180"
+  },
+  "rook.defend_self.nervous.2": {
+   "seconds": 6.42,
+   "bytes": 26157,
+   "hash": "a53d74355841"
+  },
+  "rook.defend_self.aggressive.2": {
+   "seconds": 7.87,
+   "bytes": 31917,
+   "hash": "8e7e6c803c3c"
+  },
+  "rook.defend_self.sarcastic.1": {
+   "seconds": 11.79,
+   "bytes": 47661,
+   "hash": "3437deb5b223"
+  },
+  "rook.defend_self.sarcastic.2": {
+   "seconds": 9.97,
+   "bytes": 40365,
+   "hash": "335ad3a8bfff"
+  },
+  "rook.defend_self.pleading.1": {
+   "seconds": 8.02,
+   "bytes": 32589,
+   "hash": "2236ca0bdde6"
+  },
+  "rook.defend_other.calm.1": {
+   "seconds": 6.66,
+   "bytes": 27117,
+   "hash": "a1456ded82bf"
+  },
+  "rook.defend_self.pleading.2": {
+   "seconds": 8.73,
+   "bytes": 35373,
+   "hash": "a3634fb3382a"
+  },
+  "rook.defend_other.calm.2": {
+   "seconds": 7.31,
+   "bytes": 29709,
+   "hash": "4864e2db86bb"
+  },
+  "rook.defend_other.nervous.2": {
+   "seconds": 4.16,
+   "bytes": 17133,
+   "hash": "2e21152f5298"
+  },
+  "rook.defend_other.nervous.1": {
+   "seconds": 7.48,
+   "bytes": 30381,
+   "hash": "6cb5adb5a584"
+  },
+  "rook.defend_other.aggressive.2": {
+   "seconds": 7.41,
+   "bytes": 30093,
+   "hash": "76346f6072f4"
+  },
+  "rook.defend_other.aggressive.1": {
+   "seconds": 7.96,
+   "bytes": 32301,
+   "hash": "03227f859cef"
+  },
+  "rook.defend_other.sarcastic.1": {
+   "seconds": 9.13,
+   "bytes": 37005,
+   "hash": "bb3af1582905"
+  },
+  "rook.defend_other.pleading.1": {
+   "seconds": 9.34,
+   "bytes": 37869,
+   "hash": "a42d2ec71130"
+  },
+  "rook.defend_other.sarcastic.2": {
+   "seconds": 13.13,
+   "bytes": 53037,
+   "hash": "7800382b98b3"
+  },
+  "rook.defend_other.pleading.2": {
+   "seconds": 6.71,
+   "bytes": 27309,
+   "hash": "0524123ffcf2"
+  },
+  "rook.question.nervous.2": {
+   "seconds": 3.65,
+   "bytes": 15021,
+   "hash": "837350f1a5da"
+  },
+  "rook.question.calm.1": {
+   "seconds": 6.48,
+   "bytes": 26445,
+   "hash": "8da2abee23e9"
+  },
+  "rook.question.nervous.1": {
+   "seconds": 4.27,
+   "bytes": 17517,
+   "hash": "b1074357c896"
+  },
+  "rook.question.calm.2": {
+   "seconds": 5.23,
+   "bytes": 21357,
+   "hash": "6b0af8e10164"
+  },
+  "rook.question.aggressive.1": {
+   "seconds": 3.54,
+   "bytes": 14637,
+   "hash": "33916159cc32"
+  },
+  "rook.question.aggressive.2": {
+   "seconds": 5.35,
+   "bytes": 21933,
+   "hash": "212b8babc810"
+  },
+  "rook.question.sarcastic.2": {
+   "seconds": 7.3,
+   "bytes": 29613,
+   "hash": "b2f5165cfbef"
+  },
+  "rook.question.pleading.2": {
+   "seconds": 6.82,
+   "bytes": 27789,
+   "hash": "f2f1db611af0"
+  },
+  "rook.question.sarcastic.1": {
+   "seconds": 10.15,
+   "bytes": 41133,
+   "hash": "64dfea157469"
+  },
+  "rook.answer.calm.2": {
+   "seconds": 6.99,
+   "bytes": 28461,
+   "hash": "606d4d45d481"
+  },
+  "rook.answer.calm.1": {
+   "seconds": 9.67,
+   "bytes": 39117,
+   "hash": "9834a432cf9c"
+  },
+  "rook.answer.nervous.1": {
+   "seconds": 5.97,
+   "bytes": 24333,
+   "hash": "d2e83d1ffcef"
+  },
+  "rook.answer.nervous.2": {
+   "seconds": 5.69,
+   "bytes": 23277,
+   "hash": "215468a7c15b"
+  },
+  "rook.answer.aggressive.1": {
+   "seconds": 6.73,
+   "bytes": 27405,
+   "hash": "63f5cc6524eb"
+  },
+  "rook.answer.aggressive.2": {
+   "seconds": 5.64,
+   "bytes": 23085,
+   "hash": "befc8ed421b7"
+  },
+  "rook.answer.sarcastic.2": {
+   "seconds": 6.06,
+   "bytes": 24717,
+   "hash": "906e57a2c00f"
+  },
+  "rook.answer.sarcastic.1": {
+   "seconds": 9.16,
+   "bytes": 37101,
+   "hash": "237062e69d26"
+  },
+  "rook.answer.pleading.1": {
+   "seconds": 8.26,
+   "bytes": 33549,
+   "hash": "8b4968998ebd"
+  },
+  "rook.deflect.calm.1": {
+   "seconds": 5.45,
+   "bytes": 22317,
+   "hash": "b087b7b9fa3a"
+  },
+  "rook.answer.pleading.2": {
+   "seconds": 5.76,
+   "bytes": 23565,
+   "hash": "d7cdb031514c"
+  },
+  "rook.deflect.nervous.1": {
+   "seconds": 6.17,
+   "bytes": 25197,
+   "hash": "e27c4f3eda6a"
+  },
+  "rook.deflect.aggressive.1": {
+   "seconds": 4.18,
+   "bytes": 17229,
+   "hash": "ec4c105b1662"
+  },
+  "rook.deflect.calm.2": {
+   "seconds": 5,
+   "bytes": 20493,
+   "hash": "126742bdef46"
+  },
+  "rook.deflect.nervous.2": {
+   "seconds": 4.76,
+   "bytes": 19533,
+   "hash": "4534d0f81698"
+  },
+  "rook.deflect.aggressive.2": {
+   "seconds": 5.79,
+   "bytes": 23661,
+   "hash": "9898eee0a4e8"
+  },
+  "rook.deflect.sarcastic.2": {
+   "seconds": 6.42,
+   "bytes": 26157,
+   "hash": "cb5c9eaf4c26"
+  },
+  "rook.deflect.sarcastic.1": {
+   "seconds": 7.77,
+   "bytes": 31533,
+   "hash": "c25be60cf72b"
+  },
+  "rook.deflect.pleading.1": {
+   "seconds": 6.27,
+   "bytes": 25581,
+   "hash": "a75797869fca"
+  },
+  "rook.chatter.calm.2": {
+   "seconds": 4.91,
+   "bytes": 20109,
+   "hash": "1e76ea72db65"
+  },
+  "rook.chatter.calm.1": {
+   "seconds": 7.76,
+   "bytes": 31533,
+   "hash": "3315f8a4f19e"
+  },
+  "rook.chatter.nervous.1": {
+   "seconds": 4.98,
+   "bytes": 20397,
+   "hash": "70e882dd5adc"
+  },
+  "rook.chatter.nervous.2": {
+   "seconds": 5.33,
+   "bytes": 21741,
+   "hash": "23c4ee86b99e"
+  },
+  "rook.chatter.aggressive.2": {
+   "seconds": 4.74,
+   "bytes": 19437,
+   "hash": "d617fe9d062a"
+  },
+  "rook.deflect.pleading.2": {
+   "seconds": 6.54,
+   "bytes": 26637,
+   "hash": "e4ac375820e8"
+  },
+  "rook.chatter.aggressive.1": {
+   "seconds": 6.22,
+   "bytes": 25389,
+   "hash": "c10be32aa141"
+  },
+  "rook.chatter.sarcastic.1": {
+   "seconds": 7.79,
+   "bytes": 31629,
+   "hash": "15e15c0753f6"
+  },
+  "rook.chatter.sarcastic.2": {
+   "seconds": 7.35,
+   "bytes": 29901,
+   "hash": "2d5110b0c2c9"
+  },
+  "rook.chatter.pleading.1": {
+   "seconds": 4.7,
+   "bytes": 19245,
+   "hash": "706179810ecf"
+  },
+  "rook.claim_seer.calm.1": {
+   "seconds": 6.15,
+   "bytes": 25101,
+   "hash": "a64ab40b58d7"
+  },
+  "rook.chatter.pleading.2": {
+   "seconds": 5.96,
+   "bytes": 24333,
+   "hash": "cfbf226547a5"
+  },
+  "rook.claim_seer.aggressive.1": {
+   "seconds": 5.46,
+   "bytes": 22317,
+   "hash": "4d433dc72a67"
+  },
+  "rook.counter_claim.calm.1": {
+   "seconds": 7.68,
+   "bytes": 31149,
+   "hash": "4afefffa4f97"
+  },
+  "rook.claim_seer.nervous.1": {
+   "seconds": 5.33,
+   "bytes": 21837,
+   "hash": "5d45a712ffb9"
+  },
+  "rook.counter_claim.nervous.1": {
+   "seconds": 4.87,
+   "bytes": 19917,
+   "hash": "f7dd740c8070"
+  },
+  "rook.counter_claim.aggressive.1": {
+   "seconds": 5.88,
+   "bytes": 24045,
+   "hash": "58fd4184d7c9"
+  },
+  "rook.reveal_wolf.aggressive.1": {
+   "seconds": 4.13,
+   "bytes": 17037,
+   "hash": "3a70a1e88da6"
+  },
+  "rook.reveal_wolf.calm.1": {
+   "seconds": 6.69,
+   "bytes": 27213,
+   "hash": "b1795d051ae6"
+  },
+  "rook.reveal_clear.nervous.1": {
+   "seconds": 7.81,
+   "bytes": 31725,
+   "hash": "483057b98300"
+  },
+  "rook.reveal_wolf.nervous.1": {
+   "seconds": 5.37,
+   "bytes": 21933,
+   "hash": "05f0349ea599"
+  },
+  "rook.reveal_clear.aggressive.1": {
+   "seconds": 7.92,
+   "bytes": 32205,
+   "hash": "fe64d10c2722"
+  },
+  "rook.reveal_clear.calm.1": {
+   "seconds": 5.98,
+   "bytes": 24429,
+   "hash": "d2d7b6ca3345"
+  },
+  "rook.vote.calm.1": {
+   "seconds": 6.7,
+   "bytes": 27309,
+   "hash": "3aa1b1bf9229"
+  },
+  "rook.vote.aggressive.1": {
+   "seconds": 2.19,
+   "bytes": 9261,
+   "hash": "a3c8cc421695"
+  },
+  "rook.vote.nervous.1": {
+   "seconds": 5.61,
+   "bytes": 22893,
+   "hash": "951aec2e6af8"
+  },
+  "rook.greet.nervous.1": {
+   "seconds": 6.42,
+   "bytes": 26157,
+   "hash": "960f05ee4f2d"
+  },
+  "rook.greet.aggressive.1": {
+   "seconds": 6.35,
+   "bytes": 25869,
+   "hash": "13cd868e89bb"
+  },
+  "rook.vote.sarcastic.1": {
+   "seconds": 8.77,
+   "bytes": 35565,
+   "hash": "6f4032291705"
+  },
+  "rook.mourn.calm.1": {
+   "seconds": 6.04,
+   "bytes": 24621,
+   "hash": "366a3a3220a3"
+  },
+  "rook.greet.calm.1": {
+   "seconds": 8.08,
+   "bytes": 32781,
+   "hash": "e40194678822"
+  },
+  "rook.mourn.nervous.1": {
+   "seconds": 5.17,
+   "bytes": 21165,
+   "hash": "4e7c651ac368"
+  },
+  "rook.mourn.aggressive.1": {
+   "seconds": 7.88,
+   "bytes": 32013,
+   "hash": "3d3add3e5779"
+  },
+  "rook.rebuke.nervous.1": {
+   "seconds": 4.2,
+   "bytes": 17229,
+   "hash": "6acab2cba815"
+  },
+  "rook.rebuke.calm.1": {
+   "seconds": 6.41,
+   "bytes": 26061,
+   "hash": "63dca04b7413"
+  },
+  "rook.rebuke.aggressive.1": {
+   "seconds": 4.13,
+   "bytes": 17037,
+   "hash": "5d6e8d63f0db"
+  },
+  "rook.rebuke.sarcastic.1": {
+   "seconds": 7.06,
+   "bytes": 28653,
+   "hash": "857153c6b0f9"
+  },
+  "sol.accuse_evidence.calm.2": {
+   "seconds": 9.9,
+   "bytes": 40077,
+   "hash": "c74999b90f94"
+  },
+  "sol.accuse_evidence.nervous.1": {
+   "seconds": 10.91,
+   "bytes": 44109,
+   "hash": "8180e60c0952"
+  },
+  "sol.accuse_evidence.calm.3": {
+   "seconds": 7.88,
+   "bytes": 32013,
+   "hash": "564f41d3141f"
+  },
+  "sol.accuse_evidence.aggressive.2": {
+   "seconds": 6.18,
+   "bytes": 25197,
+   "hash": "df00e74add52"
+  },
+  "sol.accuse_evidence.aggressive.1": {
+   "seconds": 4.64,
+   "bytes": 19053,
+   "hash": "4249b1d5f4ae"
+  },
+  "sol.accuse_evidence.nervous.2": {
+   "seconds": 7.24,
+   "bytes": 29421,
+   "hash": "fd1e64afd223"
+  },
+  "sol.accuse_evidence.aggressive.3": {
+   "seconds": 7.63,
+   "bytes": 30957,
+   "hash": "85cda27a043b"
+  },
+  "sol.accuse_evidence.sarcastic.1": {
+   "seconds": 11.71,
+   "bytes": 47277,
+   "hash": "454f03a2a887"
+  },
+  "sol.accuse_evidence.sarcastic.2": {
+   "seconds": 8.76,
+   "bytes": 35565,
+   "hash": "dfa5663fcda9"
+  },
+  "sol.accuse_evidence.pleading.1": {
+   "seconds": 11.53,
+   "bytes": 46605,
+   "hash": "008129d69f5d"
+  },
+  "sol.accuse_evidence.pleading.2": {
+   "seconds": 10.41,
+   "bytes": 42093,
+   "hash": "154f7c9ac803"
+  },
+  "sol.accuse_bare.calm.1": {
+   "seconds": 4.99,
+   "bytes": 20397,
+   "hash": "00e7aeb2287d"
+  },
+  "sol.accuse_bare.calm.2": {
+   "seconds": 10.93,
+   "bytes": 44205,
+   "hash": "8a12cf07550a"
+  },
+  "sol.accuse_bare.nervous.2": {
+   "seconds": 8.87,
+   "bytes": 35949,
+   "hash": "08820acf254b"
+  },
+  "sol.accuse_bare.aggressive.1": {
+   "seconds": 1.89,
+   "bytes": 8013,
+   "hash": "1919b1ba9161"
+  },
+  "sol.accuse_bare.pleading.1": {
+   "seconds": 6.28,
+   "bytes": 25581,
+   "hash": "f009e4c10b0c"
+  },
+  "sol.accuse_bare.pleading.2": {
+   "seconds": 7.94,
+   "bytes": 32205,
+   "hash": "7430c8d92e73"
+  },
+  "sol.accuse_bare.aggressive.2": {
+   "seconds": 5.4,
+   "bytes": 22029,
+   "hash": "8077ffb3d14b"
+  },
+  "sol.defend_self.aggressive.1": {
+   "seconds": 3.39,
+   "bytes": 14061,
+   "hash": "6755c9e9c18e"
+  },
+  "sol.defend_self.calm.1": {
+   "seconds": 6.53,
+   "bytes": 26637,
+   "hash": "dc14f286c6cb"
+  },
+  "sol.defend_self.nervous.2": {
+   "seconds": 5.5,
+   "bytes": 22509,
+   "hash": "d5d89f0d1077"
+  },
+  "sol.defend_self.nervous.1": {
+   "seconds": 6.78,
+   "bytes": 27597,
+   "hash": "3ca36ca97a26"
+  },
+  "sol.defend_self.aggressive.2": {
+   "seconds": 5.68,
+   "bytes": 23181,
+   "hash": "213e143c4fca"
+  },
+  "sol.defend_self.sarcastic.2": {
+   "seconds": 9.03,
+   "bytes": 36621,
+   "hash": "de2b8a09af3b"
+  },
+  "sol.defend_self.sarcastic.1": {
+   "seconds": 9.75,
+   "bytes": 39501,
+   "hash": "664f9642f038"
+  },
+  "sol.defend_other.calm.1": {
+   "seconds": 7.07,
+   "bytes": 28749,
+   "hash": "eccff33bd58d"
+  },
+  "sol.defend_other.nervous.2": {
+   "seconds": 6.8,
+   "bytes": 27693,
+   "hash": "1b0bae2353c9"
+  },
+  "sol.defend_other.nervous.1": {
+   "seconds": 4.74,
+   "bytes": 19437,
+   "hash": "02a67ede7964"
+  },
+  "sol.defend_other.aggressive.2": {
+   "seconds": 3.96,
+   "bytes": 16269,
+   "hash": "0c1cacd3c6c1"
+  },
+  "sol.defend_other.sarcastic.2": {
+   "seconds": 11.22,
+   "bytes": 45357,
+   "hash": "3f5b7cf1693d"
+  },
+  "sol.defend_other.pleading.1": {
+   "seconds": 7.99,
+   "bytes": 32493,
+   "hash": "53c973ff4263"
+  },
+  "sol.defend_other.sarcastic.1": {
+   "seconds": 8.67,
+   "bytes": 35181,
+   "hash": "5a265eb48a86"
+  },
+  "sol.question.calm.2": {
+   "seconds": 3.18,
+   "bytes": 13197,
+   "hash": "3e4219cb1042"
+  },
+  "sol.defend_other.calm.2": {
+   "seconds": 9.62,
+   "bytes": 38925,
+   "hash": "84019ea1fe9b"
+  },
+  "sol.question.calm.1": {
+   "seconds": 5.65,
+   "bytes": 23085,
+   "hash": "27534e42e09d"
+  },
+  "sol.question.nervous.1": {
+   "seconds": 3.59,
+   "bytes": 14829,
+   "hash": "6cfba6350c7d"
+  },
+  "sol.question.aggressive.1": {
+   "seconds": 1.58,
+   "bytes": 6765,
+   "hash": "47361a851578"
+  },
+  "sol.question.aggressive.2": {
+   "seconds": 1.71,
+   "bytes": 7341,
+   "hash": "93a67befcfc4"
+  },
+  "sol.question.nervous.2": {
+   "seconds": 2.81,
+   "bytes": 11661,
+   "hash": "1ef84724e19d"
+  },
+  "sol.question.sarcastic.1": {
+   "seconds": 4.62,
+   "bytes": 18957,
+   "hash": "a979897b14de"
+  },
+  "sol.question.sarcastic.2": {
+   "seconds": 5.15,
+   "bytes": 21069,
+   "hash": "5e31cf8b3e5c"
+  },
+  "sol.question.pleading.2": {
+   "seconds": 4.3,
+   "bytes": 17709,
+   "hash": "870d6608dcd7"
+  },
+  "sol.answer.calm.1": {
+   "seconds": 6.4,
+   "bytes": 26061,
+   "hash": "f87dcd1a9795"
+  },
+  "sol.answer.calm.2": {
+   "seconds": 5.26,
+   "bytes": 21549,
+   "hash": "d5fdeea927c7"
+  },
+  "sol.answer.nervous.2": {
+   "seconds": 2.76,
+   "bytes": 11469,
+   "hash": "cc987db32231"
+  },
+  "sol.answer.aggressive.2": {
+   "seconds": 3.06,
+   "bytes": 12717,
+   "hash": "2d29e055b65d"
+  },
+  "sol.answer.nervous.1": {
+   "seconds": 6.54,
+   "bytes": 26637,
+   "hash": "b228b5076293"
+  },
+  "sol.answer.aggressive.1": {
+   "seconds": 3.07,
+   "bytes": 12717,
+   "hash": "703854c630cd"
+  },
+  "sol.answer.pleading.1": {
+   "seconds": 5.3,
+   "bytes": 21645,
+   "hash": "4470107d222c"
+  },
+  "sol.answer.sarcastic.2": {
+   "seconds": 6.68,
+   "bytes": 27213,
+   "hash": "31e537693dbb"
+  },
+  "sol.deflect.calm.1": {
+   "seconds": 3.84,
+   "bytes": 15789,
+   "hash": "8d49658aea30"
+  },
+  "sol.deflect.calm.2": {
+   "seconds": 6.37,
+   "bytes": 25965,
+   "hash": "6586b7d93012"
+  },
+  "sol.answer.pleading.2": {
+   "seconds": 4.51,
+   "bytes": 18477,
+   "hash": "ac565aa2095d"
+  },
+  "sol.deflect.nervous.2": {
+   "seconds": 3.53,
+   "bytes": 14541,
+   "hash": "f48166ee0d9b"
+  },
+  "sol.deflect.nervous.1": {
+   "seconds": 5.66,
+   "bytes": 23085,
+   "hash": "7a0447c877e7"
+  },
+  "sol.deflect.aggressive.1": {
+   "seconds": 2.69,
+   "bytes": 11277,
+   "hash": "6e28aa28a8bf"
+  },
+  "sol.deflect.aggressive.2": {
+   "seconds": 3.27,
+   "bytes": 13581,
+   "hash": "bb2d6d1daaf1"
+  },
+  "sol.deflect.pleading.1": {
+   "seconds": 5.19,
+   "bytes": 21261,
+   "hash": "5d665430f369"
+  },
+  "sol.deflect.sarcastic.2": {
+   "seconds": 6.09,
+   "bytes": 24813,
+   "hash": "d02597decb11"
+  },
+  "sol.chatter.calm.2": {
+   "seconds": 5.12,
+   "bytes": 20973,
+   "hash": "f113951ba95b"
+  },
+  "sol.chatter.nervous.1": {
+   "seconds": 3.72,
+   "bytes": 15405,
+   "hash": "b407aa2be04f"
+  },
+  "sol.chatter.nervous.2": {
+   "seconds": 3.7,
+   "bytes": 15309,
+   "hash": "97d649b915ba"
+  },
+  "sol.chatter.aggressive.2": {
+   "seconds": 2.68,
+   "bytes": 11181,
+   "hash": "c86562bfc399"
+  },
+  "sol.chatter.sarcastic.1": {
+   "seconds": 5.38,
+   "bytes": 22029,
+   "hash": "38052bc5019d"
+  },
+  "sol.chatter.aggressive.1": {
+   "seconds": 3.32,
+   "bytes": 13773,
+   "hash": "a5c3e9d8177a"
+  },
+  "sol.chatter.pleading.1": {
+   "seconds": 3.43,
+   "bytes": 14253,
+   "hash": "a1a21cd9a107"
+  },
+  "sol.chatter.sarcastic.2": {
+   "seconds": 6.15,
+   "bytes": 25101,
+   "hash": "46e4e5dc3ba3"
+  },
+  "sol.chatter.pleading.2": {
+   "seconds": 4.89,
+   "bytes": 20013,
+   "hash": "4df5d0b4829d"
+  },
+  "sol.claim_seer.calm.1": {
+   "seconds": 6.82,
+   "bytes": 27789,
+   "hash": "91665f4876d2"
+  },
+  "sol.claim_seer.nervous.1": {
+   "seconds": 3.91,
+   "bytes": 16173,
+   "hash": "e9af342a0bc6"
+  },
+  "sol.claim_seer.aggressive.1": {
+   "seconds": 4.2,
+   "bytes": 17229,
+   "hash": "dc26dbfc37b4"
+  },
+  "sol.reveal_wolf.calm.1": {
+   "seconds": 3.22,
+   "bytes": 13389,
+   "hash": "199f52fc15f7"
+  },
+  "sol.counter_claim.nervous.1": {
+   "seconds": 6.27,
+   "bytes": 25581,
+   "hash": "ba17cb6240bf"
+  },
+  "sol.counter_claim.aggressive.1": {
+   "seconds": 9.4,
+   "bytes": 38061,
+   "hash": "34f6212445d9",
+   "suspect": true
+  },
+  "sol.counter_claim.calm.1": {
+   "seconds": 7.67,
+   "bytes": 31149,
+   "hash": "a9b54d8562b8"
+  },
+  "sol.reveal_clear.calm.1": {
+   "seconds": 4.68,
+   "bytes": 19245,
+   "hash": "e17f4d21081f"
+  },
+  "sol.reveal_wolf.nervous.1": {
+   "seconds": 5.16,
+   "bytes": 21165,
+   "hash": "ae1fb9370524"
+  },
+  "sol.reveal_wolf.aggressive.1": {
+   "seconds": 5.15,
+   "bytes": 21069,
+   "hash": "90163358fcaa"
+  },
+  "sol.reveal_clear.nervous.1": {
+   "seconds": 7.17,
+   "bytes": 29133,
+   "hash": "89a1ae0c4b4b"
+  },
+  "sol.vote.aggressive.1": {
+   "seconds": 1.74,
+   "bytes": 7437,
+   "hash": "3ba2b6fbc132"
+  },
+  "sol.vote.nervous.1": {
+   "seconds": 3.76,
+   "bytes": 15501,
+   "hash": "4f3b2bad9bef"
+  },
+  "sol.vote.calm.1": {
+   "seconds": 3.05,
+   "bytes": 12621,
+   "hash": "83fd72d567fb"
+  },
+  "sol.reveal_clear.aggressive.1": {
+   "seconds": 6.61,
+   "bytes": 26925,
+   "hash": "a9fba65bad68"
+  },
+  "sol.greet.aggressive.1": {
+   "seconds": 4.03,
+   "bytes": 16557,
+   "hash": "950f79e23abd"
+  },
+  "sol.mourn.calm.1": {
+   "seconds": 7.35,
+   "bytes": 29901,
+   "hash": "133d05cf4cc9"
+  },
+  "mara.stranger.calm": {
+   "seconds": 1.13,
+   "bytes": 5037,
+   "hash": "c5c968a7ec7b"
+  },
+  "sol.rebuke.calm.1": {
+   "seconds": 2.81,
+   "bytes": 11757,
+   "hash": "b14cccb33c20"
+  },
+  "sol.mourn.aggressive.1": {
+   "seconds": 4.75,
+   "bytes": 19437,
+   "hash": "0a903f1f2a36"
+  },
+  "sol.rebuke.aggressive.1": {
+   "seconds": 2.67,
+   "bytes": 11181,
+   "hash": "f125fb763238"
+  },
+  "sol.rebuke.nervous.1": {
+   "seconds": 2.91,
+   "bytes": 12141,
+   "hash": "d90372ed825c"
+  },
+  "sol.mourn.nervous.1": {
+   "seconds": 4.57,
+   "bytes": 18765,
+   "hash": "8a16d04c716e"
+  },
+  "mara.stranger.nervous": {
+   "seconds": 2.25,
+   "bytes": 9453,
+   "hash": "9e189bf16e60"
+  },
+  "mara.stranger.aggressive": {
+   "seconds": 0.99,
+   "bytes": 4461,
+   "hash": "9790468a1366"
+  },
+  "mara.tomas.nervous": {
+   "seconds": 0.7,
+   "bytes": 3309,
+   "hash": "73606fb890f9"
+  },
+  "mara.stranger.sarcastic": {
+   "seconds": 2.51,
+   "bytes": 10509,
+   "suspect": true,
+   "hash": "f311fd2cd831"
+  },
+  "mara.tomas.calm": {
+   "seconds": 1.08,
+   "bytes": 4845,
+   "hash": "982758cb1dcb"
+  },
+  "mara.tomas.aggressive": {
+   "seconds": 0.86,
+   "bytes": 3885,
+   "hash": "64681ac58f39"
+  },
+  "mara.stranger.pleading": {
+   "seconds": 1.1,
+   "bytes": 4845,
+   "hash": "ae8903df261d"
+  },
+  "mara.tomas.pleading": {
+   "seconds": 1.06,
+   "bytes": 4749,
+   "hash": "a730178df94c"
+  },
+  "mara.bel.calm": {
+   "seconds": 0.97,
+   "bytes": 4365,
+   "hash": "0b0240d1ddaf"
+  },
+  "mara.tomas.sarcastic": {
+   "seconds": 1.76,
+   "bytes": 7533,
+   "hash": "0b4e1c3766d7"
+  },
+  "mara.bel.pleading": {
+   "seconds": 0.64,
+   "bytes": 3021,
+   "hash": "578fbc5f90aa"
+  },
+  "mara.bel.aggressive": {
+   "seconds": 0.75,
+   "bytes": 3501,
+   "hash": "36ee7ed7bd96"
+  },
+  "mara.bel.sarcastic": {
+   "seconds": 1.14,
+   "bytes": 5037,
+   "hash": "02e57a4100ff"
+  },
+  "mara.bel.nervous": {
+   "seconds": 2.52,
+   "bytes": 10605,
+   "suspect": true,
+   "hash": "0264f3b263d4"
+  },
+  "mara.ines.calm": {
+   "seconds": 1.13,
+   "bytes": 5037,
+   "hash": "bf193d0e9fd5"
+  },
+  "mara.ines.nervous": {
+   "seconds": 0.77,
+   "bytes": 3597,
+   "hash": "c4ba71ccde08"
+  },
+  "mara.ines.aggressive": {
+   "seconds": 0.89,
+   "bytes": 4077,
+   "hash": "96b5f08ab2f2"
+  },
+  "mara.ines.sarcastic": {
+   "seconds": 2.01,
+   "bytes": 8493,
+   "hash": "a8f815d2d90a"
+  },
+  "mara.kip.calm": {
+   "seconds": 0.67,
+   "bytes": 3117,
+   "hash": "3fcfd93c3d7e"
+  },
+  "mara.kip.aggressive": {
+   "seconds": 0.67,
+   "bytes": 3117,
+   "hash": "bfee91ae9eb3"
+  },
+  "mara.kip.sarcastic": {
+   "seconds": 1.12,
+   "bytes": 4941,
+   "hash": "766617c44b91"
+  },
+  "mara.kip.nervous": {
+   "seconds": 0.72,
+   "bytes": 3405,
+   "hash": "fb304363b6dd"
+  },
+  "mara.kip.pleading": {
+   "seconds": 0.66,
+   "bytes": 3117,
+   "hash": "f1181543dfce"
+  },
+  "mara.ines.pleading": {
+   "seconds": 1.01,
+   "bytes": 4557,
+   "hash": "81abbcda0c5c"
+  },
+  "mara.rook.calm": {
+   "seconds": 0.86,
+   "bytes": 3885,
+   "hash": "77d10afc5002"
+  },
+  "mara.rook.aggressive": {
+   "seconds": 0.88,
+   "bytes": 3981,
+   "hash": "e377d64a9b5b"
+  },
+  "mara.rook.pleading": {
+   "seconds": 0.81,
+   "bytes": 3693,
+   "hash": "e7b7d0b0fc89"
+  },
+  "mara.sol.nervous": {
+   "seconds": 0.74,
+   "bytes": 3405,
+   "hash": "e7969ee7fe10"
+  },
+  "mara.rook.sarcastic": {
+   "seconds": 1.35,
+   "bytes": 5901,
+   "hash": "fd142122537b"
+  },
+  "mara.sol.calm": {
+   "seconds": 0.96,
+   "bytes": 4269,
+   "hash": "6d93d35f8162"
+  },
+  "mara.sol.aggressive": {
+   "seconds": 0.95,
+   "bytes": 4269,
+   "hash": "0951e5cb24de"
+  },
+  "mara.sol.sarcastic": {
+   "seconds": 1.16,
+   "bytes": 5133,
+   "hash": "fdae4b640bf4"
+  },
+  "tomas.stranger.calm": {
+   "seconds": 0.91,
+   "bytes": 4173,
+   "hash": "4bc03e83e85a"
+  },
+  "tomas.stranger.aggressive": {
+   "seconds": 0.72,
+   "bytes": 3405,
+   "hash": "1ec858609825"
+  },
+  "mara.sol.pleading": {
+   "seconds": 0.91,
+   "bytes": 4077,
+   "hash": "3abe2fe2bf78"
+  },
+  "tomas.stranger.nervous": {
+   "seconds": 0.79,
+   "bytes": 3693,
+   "hash": "f3b77a8530ca"
+  },
+  "tomas.stranger.sarcastic": {
+   "seconds": 2.79,
+   "bytes": 11661,
+   "suspect": true,
+   "hash": "0a45be40dfb2"
+  },
+  "tomas.stranger.pleading": {
+   "seconds": 0.85,
+   "bytes": 3885,
+   "hash": "bfee2e3d3209"
+  },
+  "tomas.mara.calm": {
+   "seconds": 0.8,
+   "bytes": 3693,
+   "hash": "84f1860175f3"
+  },
+  "tomas.mara.nervous": {
+   "seconds": 1.01,
+   "bytes": 4461,
+   "hash": "d27f2c804d1c"
+  },
+  "tomas.mara.sarcastic": {
+   "seconds": 1.3,
+   "bytes": 5709,
+   "hash": "f174f6262d5f"
+  },
+  "tomas.mara.pleading": {
+   "seconds": 0.67,
+   "bytes": 3117,
+   "hash": "2c93d71bdab2"
+  },
+  "tomas.mara.aggressive": {
+   "seconds": 0.64,
+   "bytes": 3021,
+   "hash": "04d57efad80c"
+  },
+  "tomas.bel.calm": {
+   "seconds": 0.52,
+   "bytes": 2541,
+   "hash": "6ccb56440aed"
+  },
+  "tomas.bel.nervous": {
+   "seconds": 2.46,
+   "bytes": 10317,
+   "suspect": true,
+   "hash": "215bd6a357a0"
+  },
+  "tomas.bel.aggressive": {
+   "seconds": 0.49,
+   "bytes": 2445,
+   "hash": "a49d04f27a13"
+  },
+  "tomas.bel.sarcastic": {
+   "seconds": 1.2,
+   "bytes": 5229,
+   "hash": "0d29037b22ca"
+  },
+  "tomas.bel.pleading": {
+   "seconds": 0.45,
+   "bytes": 2253,
+   "hash": "f33667fdd114"
+  },
+  "tomas.ines.calm": {
+   "seconds": 0.84,
+   "bytes": 3789,
+   "hash": "b984656c362b"
+  },
+  "tomas.ines.aggressive": {
+   "seconds": 0.67,
+   "bytes": 3213,
+   "hash": "c1cf1c093f92"
+  },
+  "tomas.ines.nervous": {
+   "seconds": 1.07,
+   "bytes": 4749,
+   "hash": "cdfa9d84fed2"
+  },
+  "tomas.ines.pleading": {
+   "seconds": 0.97,
+   "bytes": 4365,
+   "hash": "2d8cfde4c6a0"
+  },
+  "tomas.ines.sarcastic": {
+   "seconds": 1.68,
+   "bytes": 7245,
+   "hash": "2e4988583e84"
+  },
+  "tomas.kip.calm": {
+   "seconds": 0.42,
+   "bytes": 2157,
+   "hash": "9d8f33ac1c66"
+  },
+  "tomas.kip.nervous": {
+   "seconds": 0.75,
+   "bytes": 3501,
+   "hash": "ea0f7efcf0c8"
+  },
+  "tomas.kip.aggressive": {
+   "seconds": 0.52,
+   "bytes": 2541,
+   "hash": "b38cae1559f9"
+  },
+  "tomas.kip.pleading": {
+   "seconds": 0.56,
+   "bytes": 2733,
+   "hash": "3244adbe29f1"
+  },
+  "tomas.kip.sarcastic": {
+   "seconds": 3.53,
+   "bytes": 14637,
+   "suspect": true,
+   "hash": "96093a99be31"
+  },
+  "tomas.rook.nervous": {
+   "seconds": 1.69,
+   "bytes": 7245,
+   "hash": "e99322f7547a"
+  },
+  "tomas.rook.calm": {
+   "seconds": 0.68,
+   "bytes": 3213,
+   "hash": "0eacefb07984"
+  },
+  "tomas.rook.aggressive": {
+   "seconds": 0.56,
+   "bytes": 2733,
+   "hash": "e1b86e445b25"
+  },
+  "tomas.rook.sarcastic": {
+   "seconds": 2.26,
+   "bytes": 9549,
+   "suspect": true,
+   "hash": "441b0ecf4567"
+  },
+  "tomas.rook.pleading": {
+   "seconds": 0.5,
+   "bytes": 2445,
+   "hash": "4c2ba875b457"
+  },
+  "tomas.sol.nervous": {
+   "seconds": 0.61,
+   "bytes": 2925,
+   "hash": "947a54ebf6f1"
+  },
+  "tomas.sol.aggressive": {
+   "seconds": 0.64,
+   "bytes": 3021,
+   "hash": "b6b990c933b0"
+  },
+  "bel.stranger.calm": {
+   "seconds": 1.2,
+   "bytes": 5229,
+   "hash": "d631fe20f0ca"
+  },
+  "tomas.sol.sarcastic": {
+   "seconds": 1.42,
+   "bytes": 6189,
+   "hash": "d24eca080eec"
+  },
+  "tomas.sol.pleading": {
+   "seconds": 0.66,
+   "bytes": 3117,
+   "hash": "5b3b25f281ed"
+  },
+  "bel.mara.calm": {
+   "seconds": 0.91,
+   "bytes": 4173,
+   "hash": "b2ed56920b15"
+  },
+  "bel.tomas.pleading": {
+   "seconds": 1.09,
+   "bytes": 4845,
+   "hash": "851dd83e7004"
+  },
+  "bel.tomas.calm": {
+   "seconds": 0.96,
+   "bytes": 4365,
+   "hash": "76cf2292e2c8"
+  },
+  "bel.ines.calm": {
+   "seconds": 0.96,
+   "bytes": 4365,
+   "hash": "08d0bba0aa36"
+  },
+  "bel.ines.pleading": {
+   "seconds": 0.95,
+   "bytes": 4269,
+   "hash": "d18113d8b432"
+  },
+  "bel.kip.calm": {
+   "seconds": 0.51,
+   "bytes": 2541,
+   "hash": "7c06ab3997a0"
+  },
+  "bel.rook.calm": {
+   "seconds": 0.83,
+   "bytes": 3789,
+   "hash": "4e0d679a3834"
+  },
+  "bel.sol.calm": {
+   "seconds": 0.9,
+   "bytes": 4077,
+   "hash": "e18987ed3a4b"
+  },
+  "ines.stranger.aggressive": {
+   "seconds": 0.88,
+   "bytes": 3981,
+   "hash": "f47aa010cbda"
+  },
+  "bel.sol.pleading": {
+   "seconds": 0.93,
+   "bytes": 4173,
+   "hash": "7fe86578e56f"
+  },
+  "ines.stranger.calm": {
+   "seconds": 1.41,
+   "bytes": 6093,
+   "hash": "b64c7cc8f109"
+  },
+  "ines.stranger.nervous": {
+   "seconds": 1.22,
+   "bytes": 5325,
+   "hash": "882e5447bbe5"
+  },
+  "ines.stranger.sarcastic": {
+   "seconds": 1.66,
+   "bytes": 7149,
+   "hash": "85b31fd2b1b4"
+  },
+  "ines.stranger.pleading": {
+   "seconds": 1.41,
+   "bytes": 6093,
+   "hash": "683f2b20659f"
+  },
+  "ines.mara.calm": {
+   "seconds": 0.97,
+   "bytes": 4365,
+   "hash": "8ec04aa957c9"
+  },
+  "ines.mara.aggressive": {
+   "seconds": 0.71,
+   "bytes": 3309,
+   "hash": "495ebfe39bb7"
+  },
+  "ines.mara.sarcastic": {
+   "seconds": 1.63,
+   "bytes": 7053,
+   "hash": "c60c2e4142e3"
+  },
+  "ines.mara.nervous": {
+   "seconds": 0.78,
+   "bytes": 3597,
+   "hash": "049f7b021610"
+  },
+  "mara.rook.nervous": {
+   "seconds": 1.3,
+   "bytes": 5709,
+   "hash": "2965397a519d"
+  },
+  "ines.mara.pleading": {
+   "seconds": 0.84,
+   "bytes": 3789,
+   "hash": "5c60fc92ec10"
+  },
+  "ines.tomas.nervous": {
+   "seconds": 0.9,
+   "bytes": 4077,
+   "hash": "755a37f66fe0"
+  },
+  "ines.tomas.calm": {
+   "seconds": 1.27,
+   "bytes": 5613,
+   "hash": "42b3c730dc5a"
+  },
+  "ines.tomas.aggressive": {
+   "seconds": 2.48,
+   "bytes": 10413,
+   "suspect": true,
+   "hash": "847db210aeff"
+  },
+  "ines.tomas.sarcastic": {
+   "seconds": 3.29,
+   "bytes": 13581,
+   "suspect": true,
+   "hash": "701e41faad7a"
+  },
+  "ines.tomas.pleading": {
+   "seconds": 1.26,
+   "bytes": 5517,
+   "hash": "b31e40bcb800"
+  },
+  "ines.bel.calm": {
+   "seconds": 0.91,
+   "bytes": 4077,
+   "hash": "5192c0dfbddd"
+  },
+  "ines.bel.nervous": {
+   "seconds": 0.71,
+   "bytes": 3309,
+   "hash": "db43f1da681e"
+  },
+  "ines.bel.aggressive": {
+   "seconds": 0.7,
+   "bytes": 3309,
+   "hash": "e6c8c1413830"
+  },
+  "ines.bel.sarcastic": {
+   "seconds": 1.65,
+   "bytes": 7053,
+   "hash": "30a42dc31c60"
+  },
+  "ines.kip.calm": {
+   "seconds": 0.92,
+   "bytes": 4173,
+   "hash": "2e94a9270732"
+  },
+  "ines.bel.pleading": {
+   "seconds": 0.84,
+   "bytes": 3885,
+   "hash": "95e0044ce702"
+  },
+  "ines.kip.nervous": {
+   "seconds": 2.07,
+   "bytes": 8781,
+   "hash": "024d02bfb378"
+  },
+  "ines.kip.aggressive": {
+   "seconds": 0.62,
+   "bytes": 2925,
+   "hash": "5f871dd32a8a"
+  },
+  "ines.kip.pleading": {
+   "seconds": 0.81,
+   "bytes": 3693,
+   "hash": "ac354bf65110"
+  },
+  "ines.rook.calm": {
+   "seconds": 0.89,
+   "bytes": 4077,
+   "hash": "56dc2f8e74b4"
+  },
+  "ines.kip.sarcastic": {
+   "seconds": 1.32,
+   "bytes": 5709,
+   "hash": "67b4a3f8ea64"
+  },
+  "ines.rook.nervous": {
+   "seconds": 1.6,
+   "bytes": 6861,
+   "hash": "f08c27752b77"
+  },
+  "ines.rook.aggressive": {
+   "seconds": 0.72,
+   "bytes": 3405,
+   "hash": "60dd412bc0fe"
+  },
+  "ines.rook.pleading": {
+   "seconds": 0.81,
+   "bytes": 3693,
+   "hash": "782f822b29aa"
+  },
+  "ines.rook.sarcastic": {
+   "seconds": 2.31,
+   "bytes": 9741,
+   "suspect": true,
+   "hash": "4d8bf3be2368"
+  },
+  "ines.sol.aggressive": {
+   "seconds": 0.8,
+   "bytes": 3693,
+   "hash": "b297fcbbde64"
+  },
+  "ines.sol.calm": {
+   "seconds": 1.02,
+   "bytes": 4557,
+   "hash": "52e5a21a7253"
+  },
+  "ines.sol.nervous": {
+   "seconds": 0.89,
+   "bytes": 4077,
+   "hash": "e2c3ddf08b2c"
+  },
+  "ines.sol.sarcastic": {
+   "seconds": 1.4,
+   "bytes": 6093,
+   "hash": "2ef01ff9314e"
+  },
+  "ines.sol.pleading": {
+   "seconds": 1.2,
+   "bytes": 5325,
+   "hash": "a17ed0c871f5"
+  },
+  "kip.stranger.calm": {
+   "seconds": 0.93,
+   "bytes": 4173,
+   "hash": "8762cec47690"
+  },
+  "kip.stranger.nervous": {
+   "seconds": 0.85,
+   "bytes": 3885,
+   "hash": "af7c00cd427b"
+  },
+  "kip.stranger.aggressive": {
+   "seconds": 1.83,
+   "bytes": 7821,
+   "hash": "e89022bdc2bb"
+  },
+  "kip.stranger.sarcastic": {
+   "seconds": 2.34,
+   "bytes": 9837,
+   "suspect": true,
+   "hash": "4ed6ff8cbf6e"
+  },
+  "kip.mara.calm": {
+   "seconds": 0.9,
+   "bytes": 4077,
+   "hash": "8a31231fa4ef"
+  },
+  "kip.stranger.pleading": {
+   "seconds": 1.75,
+   "bytes": 7437,
+   "hash": "331a074269b3"
+  },
+  "kip.mara.sarcastic": {
+   "seconds": 1.08,
+   "bytes": 4845,
+   "hash": "ccea06db733e"
+  },
+  "kip.mara.nervous": {
+   "seconds": 2.48,
+   "bytes": 10413,
+   "suspect": true,
+   "hash": "8aa893dd3b91"
+  },
+  "kip.mara.aggressive": {
+   "seconds": 0.85,
+   "bytes": 3885,
+   "hash": "0349eb15b51d"
+  },
+  "kip.mara.pleading": {
+   "seconds": 0.81,
+   "bytes": 3693,
+   "hash": "a9dc7fc606cd"
+  },
+  "kip.tomas.calm": {
+   "seconds": 1.02,
+   "bytes": 4557,
+   "hash": "7d0b9510a229"
+  },
+  "kip.tomas.aggressive": {
+   "seconds": 0.92,
+   "bytes": 4173,
+   "hash": "e5f4dca0a4f8"
+  },
+  "kip.tomas.nervous": {
+   "seconds": 1.72,
+   "bytes": 7341,
+   "hash": "d50a86b5ceac"
+  },
+  "kip.tomas.sarcastic": {
+   "seconds": 1.75,
+   "bytes": 7437,
+   "hash": "caa64f9e22fc"
+  },
+  "kip.tomas.pleading": {
+   "seconds": 0.92,
+   "bytes": 4173,
+   "hash": "a697e471ee29"
+  },
+  "kip.bel.calm": {
+   "seconds": 0.48,
+   "bytes": 2445,
+   "hash": "8666a1d71f05"
+  },
+  "kip.bel.nervous": {
+   "seconds": 1.52,
+   "bytes": 6573,
+   "hash": "eb2e7199bbb0"
+  },
+  "kip.bel.aggressive": {
+   "seconds": 0.49,
+   "bytes": 2445,
+   "hash": "286676dd7804"
+  },
+  "kip.bel.sarcastic": {
+   "seconds": 0.93,
+   "bytes": 4173,
+   "hash": "f69e33effc76"
+  },
+  "kip.bel.pleading": {
+   "seconds": 1.61,
+   "bytes": 6957,
+   "hash": "29570f79db32"
+  },
+  "kip.ines.nervous": {
+   "seconds": 1.01,
+   "bytes": 4461,
+   "hash": "18d875539bff"
+  },
+  "kip.ines.calm": {
+   "seconds": 3.34,
+   "bytes": 13869,
+   "suspect": true,
+   "hash": "b4434b1f3f44"
+  },
+  "kip.ines.pleading": {
+   "seconds": 0.84,
+   "bytes": 3789,
+   "hash": "a89b1bfe2657"
+  },
+  "kip.ines.sarcastic": {
+   "seconds": 1.2,
+   "bytes": 5229,
+   "hash": "e75335d66187"
+  },
+  "tomas.sol.calm": {
+   "seconds": 0.64,
+   "bytes": 3021,
+   "hash": "a7e01459a346"
+  },
+  "kip.rook.calm": {
+   "seconds": 0.87,
+   "bytes": 3981,
+   "hash": "216728a664de"
+  },
+  "kip.rook.nervous": {
+   "seconds": 0.66,
+   "bytes": 3117,
+   "hash": "69a6c0337108"
+  },
+  "kip.rook.sarcastic": {
+   "seconds": 1.08,
+   "bytes": 4749,
+   "hash": "0032f4f51cb5"
+  },
+  "kip.rook.aggressive": {
+   "seconds": 0.69,
+   "bytes": 3213,
+   "hash": "6181fab12fce"
+  },
+  "kip.rook.pleading": {
+   "seconds": 0.69,
+   "bytes": 3213,
+   "hash": "bfde95498317"
+  },
+  "kip.ines.aggressive": {
+   "seconds": 0.7,
+   "bytes": 3309,
+   "hash": "77ff93ab33cb"
+  },
+  "kip.sol.calm": {
+   "seconds": 2.43,
+   "bytes": 10221,
+   "suspect": true,
+   "hash": "73859e576062"
+  },
+  "kip.sol.nervous": {
+   "seconds": 1.5,
+   "bytes": 6477,
+   "hash": "39c6139ed82d"
+  },
+  "kip.sol.sarcastic": {
+   "seconds": 1.77,
+   "bytes": 7533,
+   "hash": "4e397ac73b70"
+  },
+  "rook.stranger.calm": {
+   "seconds": 1.57,
+   "bytes": 6765,
+   "hash": "63eba03da0da"
+  },
+  "kip.sol.pleading": {
+   "seconds": 0.76,
+   "bytes": 3501,
+   "hash": "15e6bdc2e6fb"
+  },
+  "kip.sol.aggressive": {
+   "seconds": 0.63,
+   "bytes": 3021,
+   "hash": "0fc88fd074c5"
+  },
+  "rook.stranger.nervous": {
+   "seconds": 2.24,
+   "bytes": 9453,
+   "hash": "a0c3ad4f6344"
+  },
+  "rook.stranger.aggressive": {
+   "seconds": 1.37,
+   "bytes": 5901,
+   "hash": "f6e9a08955b5"
+  },
+  "rook.stranger.sarcastic": {
+   "seconds": 1.7,
+   "bytes": 7245,
+   "hash": "e83a3801a994"
+  },
+  "rook.stranger.pleading": {
+   "seconds": 1.67,
+   "bytes": 7149,
+   "hash": "bd73c3f51d26"
+  },
+  "rook.mara.aggressive": {
+   "seconds": 0.96,
+   "bytes": 4269,
+   "hash": "67679c6d1b9a"
+  },
+  "rook.mara.nervous": {
+   "seconds": 0.86,
+   "bytes": 3885,
+   "hash": "eafc475d0ce8"
+  },
+  "rook.mara.calm": {
+   "seconds": 1.2,
+   "bytes": 5229,
+   "hash": "372f7e77cf4e"
+  },
+  "rook.mara.sarcastic": {
+   "seconds": 1.47,
+   "bytes": 6381,
+   "hash": "6492b5356b3f"
+  },
+  "rook.mara.pleading": {
+   "seconds": 1.12,
+   "bytes": 4941,
+   "hash": "a9c069a178c1"
+  },
+  "rook.tomas.calm": {
+   "seconds": 1.02,
+   "bytes": 4557,
+   "hash": "0cde010b7756"
+  },
+  "rook.tomas.nervous": {
+   "seconds": 1.54,
+   "bytes": 6669,
+   "hash": "5141e2a12c4e"
+  },
+  "rook.tomas.sarcastic": {
+   "seconds": 1.51,
+   "bytes": 6573,
+   "hash": "42151c065a92"
+  },
+  "rook.tomas.aggressive": {
+   "seconds": 1.02,
+   "bytes": 4557,
+   "hash": "e80ce938f185"
+  },
+  "rook.bel.calm": {
+   "seconds": 1.02,
+   "bytes": 4557,
+   "hash": "bcb81c65e3e5"
+  },
+  "rook.bel.aggressive": {
+   "seconds": 0.55,
+   "bytes": 2637,
+   "hash": "134e3cc5cd3e"
+  },
+  "rook.bel.nervous": {
+   "seconds": 0.8,
+   "bytes": 3693,
+   "hash": "83239a0999bf"
+  },
+  "rook.tomas.pleading": {
+   "seconds": 0.97,
+   "bytes": 4365,
+   "hash": "5c57f5f4e128"
+  },
+  "rook.bel.sarcastic": {
+   "seconds": 1.6,
+   "bytes": 6861,
+   "hash": "1256213f74c8"
+  },
+  "rook.bel.pleading": {
+   "seconds": 1.03,
+   "bytes": 4557,
+   "hash": "3eddde16fe90"
+  },
+  "rook.ines.nervous": {
+   "seconds": 1.28,
+   "bytes": 5613,
+   "hash": "feb7141f9641"
+  },
+  "rook.ines.aggressive": {
+   "seconds": 0.98,
+   "bytes": 4365,
+   "hash": "9314fe1bcc4a"
+  },
+  "rook.ines.sarcastic": {
+   "seconds": 1.5,
+   "bytes": 6477,
+   "hash": "041ab38ee57e"
+  },
+  "rook.ines.calm": {
+   "seconds": 1.09,
+   "bytes": 4845,
+   "hash": "966fc341fb63"
+  },
+  "rook.ines.pleading": {
+   "seconds": 1.05,
+   "bytes": 4653,
+   "hash": "a4076cab290e"
+  },
+  "rook.kip.nervous": {
+   "seconds": 0.51,
+   "bytes": 2541,
+   "hash": "5c1f7a0930b3"
+  },
+  "rook.kip.calm": {
+   "seconds": 0.53,
+   "bytes": 2637,
+   "hash": "0971fe4e4506"
+  },
+  "rook.sol.nervous": {
+   "seconds": 0.7,
+   "bytes": 3309,
+   "hash": "ea5ec4d802e6"
+  },
+  "rook.kip.sarcastic": {
+   "seconds": 1.16,
+   "bytes": 5133,
+   "hash": "1c42fb6a89eb"
+  },
+  "rook.sol.aggressive": {
+   "seconds": 1.04,
+   "bytes": 4653,
+   "hash": "9677431bb78c"
+  },
+  "rook.sol.calm": {
+   "seconds": 0.96,
+   "bytes": 4365,
+   "hash": "a2ecb96477f0"
+  },
+  "rook.kip.aggressive": {
+   "seconds": 0.62,
+   "bytes": 2925,
+   "hash": "bf0d1d9766e9"
+  },
+  "rook.sol.sarcastic": {
+   "seconds": 1.22,
+   "bytes": 5325,
+   "hash": "7114ff56f6e3"
+  },
+  "rook.sol.pleading": {
+   "seconds": 1.27,
+   "bytes": 5517,
+   "hash": "c0a12848890d"
+  },
+  "rook.kip.pleading": {
+   "seconds": 0.78,
+   "bytes": 3597,
+   "hash": "92a644ae957b"
+  },
+  "sol.stranger.calm": {
+   "seconds": 1.02,
+   "bytes": 4557,
+   "hash": "71881556c2cb"
+  },
+  "sol.stranger.aggressive": {
+   "seconds": 1.14,
+   "bytes": 5037,
+   "hash": "f89b75b8c4ae"
+  },
+  "sol.stranger.pleading": {
+   "seconds": 1.32,
+   "bytes": 5805,
+   "hash": "18639a744e46"
+  },
+  "sol.stranger.nervous": {
+   "seconds": 0.71,
+   "bytes": 3309,
+   "hash": "66edaf9b9a43"
+  },
+  "sol.mara.calm": {
+   "seconds": 0.99,
+   "bytes": 4461,
+   "hash": "4719c1c5d277"
+  },
+  "sol.mara.aggressive": {
+   "seconds": 0.8,
+   "bytes": 3693,
+   "hash": "133a58f09f42"
+  },
+  "sol.mara.sarcastic": {
+   "seconds": 1.21,
+   "bytes": 5325,
+   "hash": "5c05e71d9720"
+  },
+  "sol.mara.nervous": {
+   "seconds": 0.74,
+   "bytes": 3405,
+   "hash": "6060a9523ceb"
+  },
+  "sol.tomas.calm": {
+   "seconds": 1.08,
+   "bytes": 4749,
+   "hash": "d743b643ae3e"
+  },
+  "sol.tomas.aggressive": {
+   "seconds": 0.88,
+   "bytes": 3981,
+   "hash": "5b591e2fbd0b"
+  },
+  "sol.tomas.nervous": {
+   "seconds": 1.81,
+   "bytes": 7725,
+   "hash": "22f278e85fb5"
+  },
+  "sol.mara.pleading": {
+   "seconds": 1.13,
+   "bytes": 5037,
+   "hash": "9dc3decd2087"
+  },
+  "sol.tomas.pleading": {
+   "seconds": 1.01,
+   "bytes": 4461,
+   "hash": "0e24739083d4"
+  },
+  "sol.bel.calm": {
+   "seconds": 0.75,
+   "bytes": 3501,
+   "hash": "9bce245a3f85"
+  },
+  "sol.tomas.sarcastic": {
+   "seconds": 1.44,
+   "bytes": 6285,
+   "hash": "aacb4035c10e"
+  },
+  "sol.bel.aggressive": {
+   "seconds": 0.85,
+   "bytes": 3885,
+   "hash": "2c210a812ff8"
+  },
+  "sol.bel.sarcastic": {
+   "seconds": 1.19,
+   "bytes": 5229,
+   "hash": "7c357e84931d"
+  },
+  "sol.bel.pleading": {
+   "seconds": 0.68,
+   "bytes": 3213,
+   "hash": "06026674bf5b"
+  },
+  "sol.ines.calm": {
+   "seconds": 0.99,
+   "bytes": 4461,
+   "hash": "e471aadb86c7"
+  },
+  "sol.ines.nervous": {
+   "seconds": 0.73,
+   "bytes": 3405,
+   "hash": "7938ff765d65"
+  },
+  "sol.ines.sarcastic": {
+   "seconds": 1.26,
+   "bytes": 5517,
+   "hash": "bc547594be27"
+  },
+  "sol.ines.aggressive": {
+   "seconds": 0.83,
+   "bytes": 3789,
+   "hash": "3793dc422721"
+  },
+  "sol.bel.nervous": {
+   "seconds": 0.57,
+   "bytes": 2733,
+   "hash": "2739248384e3"
+  },
+  "sol.kip.calm": {
+   "seconds": 0.77,
+   "bytes": 3597,
+   "hash": "1a350314e591"
+  },
+  "sol.ines.pleading": {
+   "seconds": 1.1,
+   "bytes": 4845,
+   "hash": "fb23582f6e91"
+  },
+  "sol.kip.nervous": {
+   "seconds": 1.46,
+   "bytes": 6285,
+   "hash": "adcca8c0de1e"
+  },
+  "sol.kip.sarcastic": {
+   "seconds": 0.93,
+   "bytes": 4173,
+   "hash": "40a0d7c905db"
+  },
+  "sol.kip.pleading": {
+   "seconds": 0.67,
+   "bytes": 3213,
+   "hash": "95d27fecba58"
+  },
+  "sol.kip.aggressive": {
+   "seconds": 0.57,
+   "bytes": 2733,
+   "hash": "8546447331ae"
+  },
+  "sol.rook.calm": {
+   "seconds": 0.74,
+   "bytes": 3405,
+   "hash": "241c17ffff56"
+  },
+  "sol.rook.nervous": {
+   "seconds": 0.92,
+   "bytes": 4173,
+   "hash": "0e61063522d3"
+  },
+  "sol.rook.aggressive": {
+   "seconds": 0.72,
+   "bytes": 3309,
+   "hash": "87d2e679805e"
+  },
+  "sol.rook.sarcastic": {
+   "seconds": 1.18,
+   "bytes": 5229,
+   "hash": "ed01970837e8"
+  },
+  "sol.rook.pleading": {
+   "seconds": 0.92,
+   "bytes": 4173,
+   "hash": "f4f8b9801150"
+  },
+  "tomas.accuse_evidence.pleading.1": {
+   "seconds": 7.27,
+   "bytes": 29517,
+   "hash": "7c32ed371973"
+  },
+  "bel.deflect.pleading.1": {
+   "seconds": 4.84,
+   "bytes": 19821,
+   "hash": "c1cd83023559"
+  },
+  "kip.chatter.sarcastic.2": {
+   "seconds": 5.43,
+   "bytes": 22221,
+   "hash": "f3b4f50a8b9d"
+  },
+  "tomas.chatter.nervous.1": {
+   "seconds": 4.44,
+   "bytes": 18189,
+   "hash": "e6f32f37c1fa"
+  },
+  "sol.accuse_bare.nervous.1": {
+   "seconds": 4.12,
+   "bytes": 16941,
+   "hash": "7d41063488aa"
+  },
+  "rook.question.pleading.1": {
+   "seconds": 8.1,
+   "bytes": 32877,
+   "hash": "870a0ffb28b5"
+  },
+  "sol.accuse_evidence.calm.1": {
+   "seconds": 7.51,
+   "bytes": 30477,
+   "hash": "4f4981c4bab9"
+  },
+  "sol.accuse_bare.sarcastic.1": {
+   "seconds": 12.3,
+   "bytes": 49677,
+   "hash": "cca26017f38d"
+  },
+  "sol.accuse_bare.sarcastic.2": {
+   "seconds": 11.31,
+   "bytes": 45741,
+   "hash": "79a9445af0c7"
+  },
+  "sol.defend_self.pleading.2": {
+   "seconds": 7.08,
+   "bytes": 28749,
+   "hash": "5ec8f74548d5"
+  },
+  "sol.defend_other.aggressive.1": {
+   "seconds": 5.5,
+   "bytes": 22509,
+   "hash": "711bb53e4009"
+  },
+  "sol.defend_self.pleading.1": {
+   "seconds": 7.35,
+   "bytes": 29901,
+   "hash": "ddc5bc0517c3"
+  },
+  "sol.defend_other.pleading.2": {
+   "seconds": 8.59,
+   "bytes": 34797,
+   "hash": "3def744eaf69"
+  },
+  "sol.defend_self.calm.2": {
+   "seconds": 6.68,
+   "bytes": 27213,
+   "hash": "aaf8a531ca85"
+  },
+  "sol.answer.sarcastic.1": {
+   "seconds": 7.28,
+   "bytes": 29613,
+   "hash": "94be1abbd6c2"
+  },
+  "sol.deflect.sarcastic.1": {
+   "seconds": 6.92,
+   "bytes": 28173,
+   "hash": "2240cd83c940"
+  },
+  "sol.chatter.calm.1": {
+   "seconds": 3.82,
+   "bytes": 15789,
+   "hash": "bdcd9b56f947"
+  },
+  "sol.greet.calm.1": {
+   "seconds": 5.04,
+   "bytes": 20589,
+   "hash": "d5af4ae03aa4"
+  },
+  "sol.deflect.pleading.2": {
+   "seconds": 6.18,
+   "bytes": 25197,
+   "hash": "a6effdfa2056"
+  },
+  "sol.greet.nervous.1": {
+   "seconds": 4.49,
+   "bytes": 18381,
+   "hash": "ebe039a7b350"
+  },
+  "sol.question.pleading.1": {
+   "seconds": 4.02,
+   "bytes": 16557,
+   "hash": "ccecd609ddd9"
+  },
+  "bel.stranger.aggressive": {
+   "seconds": 1.01,
+   "bytes": 4461,
+   "hash": "b5f25907682c"
+  },
+  "bel.stranger.pleading": {
+   "seconds": 1.96,
+   "bytes": 8301,
+   "hash": "82cc360e2e73"
+  },
+  "bel.stranger.nervous": {
+   "seconds": 2.16,
+   "bytes": 9069,
+   "hash": "7a90091b629f"
+  },
+  "bel.stranger.sarcastic": {
+   "seconds": 2.48,
+   "bytes": 10413,
+   "hash": "4fce32ca2bd4",
+   "suspect": true
+  },
+  "bel.tomas.nervous": {
+   "seconds": 2.36,
+   "bytes": 9933,
+   "hash": "02e7c2a6fd37",
+   "suspect": true
+  },
+  "bel.kip.nervous": {
+   "seconds": 0.78,
+   "bytes": 3597,
+   "hash": "b809f02b4dbb"
+  },
+  "bel.kip.aggressive": {
+   "seconds": 0.7,
+   "bytes": 3309,
+   "hash": "5b406ba1346c"
+  },
+  "bel.kip.pleading": {
+   "seconds": 0.48,
+   "bytes": 2349,
+   "hash": "daa662edd978"
+  },
+  "bel.kip.sarcastic": {
+   "seconds": 1.22,
+   "bytes": 5325,
+   "hash": "94bafcc1184f"
+  },
+  "bel.rook.nervous": {
+   "seconds": 0.96,
+   "bytes": 4269,
+   "hash": "69da36443759"
+  },
+  "bel.rook.aggressive": {
+   "seconds": 0.75,
+   "bytes": 3501,
+   "hash": "55fdd24b1cf8"
+  },
+  "bel.rook.pleading": {
+   "seconds": 0.81,
+   "bytes": 3693,
+   "hash": "2bfcc090cf84"
+  },
+  "bel.sol.nervous": {
+   "seconds": 1.82,
+   "bytes": 7725,
+   "hash": "ffcbabc974dc"
+  },
+  "bel.sol.aggressive": {
+   "seconds": 1.05,
+   "bytes": 4653,
+   "hash": "53a5e2972f74"
+  },
+  "bel.sol.sarcastic": {
+   "seconds": 1.35,
+   "bytes": 5901,
+   "hash": "d7cc2accf616"
+  },
+  "sol.stranger.sarcastic": {
+   "seconds": 1.31,
+   "bytes": 5709,
+   "hash": "0a974c9d7b5d"
+  },
+  "bel.mara.aggressive": {
+   "seconds": 0.96,
+   "bytes": 4365,
+   "hash": "33d45d0d0715"
+  },
+  "bel.mara.pleading": {
+   "seconds": 0.62,
+   "bytes": 2925,
+   "hash": "1a6e7f9918d1"
+  },
+  "bel.mara.sarcastic": {
+   "seconds": 1.26,
+   "bytes": 5517,
+   "hash": "f5ced89331f7"
+  },
+  "bel.mara.nervous": {
+   "seconds": 1.59,
+   "bytes": 6861,
+   "hash": "6e7deb63c719"
+  },
+  "bel.ines.nervous": {
+   "seconds": 0.69,
+   "bytes": 3213,
+   "hash": "802e115986b3"
+  },
+  "bel.tomas.aggressive": {
+   "seconds": 0.97,
+   "bytes": 4365,
+   "hash": "37262e4bc897"
+  },
+  "bel.tomas.sarcastic": {
+   "seconds": 1.78,
+   "bytes": 7533,
+   "hash": "ea62b66507f0"
+  },
+  "bel.ines.aggressive": {
+   "seconds": 0.87,
+   "bytes": 3981,
+   "hash": "e7d1c3b46c7f"
+  },
+  "bel.ines.sarcastic": {
+   "seconds": 1.65,
+   "bytes": 7053,
+   "hash": "333e8fabecc6"
+  },
+  "bel.rook.sarcastic": {
+   "seconds": 2.08,
+   "bytes": 8781,
+   "hash": "a4a3ac5f28c6"
+  }
+ }
+}

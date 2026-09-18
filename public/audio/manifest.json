@@ -1,0 +1,102 @@
+{
+  "sfx": {
+    "send": {
+      "file": "/audio/sfx/send.mp3",
+      "seconds": 0.64,
+      "loop": false,
+      "gainDb": 0
+    },
+    "tick-up": {
+      "file": "/audio/sfx/tick-up.mp3",
+      "seconds": 0.43,
+      "loop": false,
+      "gainDb": 0
+    },
+    "tick-down": {
+      "file": "/audio/sfx/tick-down.mp3",
+      "seconds": 0.55,
+      "loop": false,
+      "gainDb": -11
+    },
+    "turn": {
+      "file": "/audio/sfx/turn.mp3",
+      "seconds": 0.52,
+      "loop": false,
+      "gainDb": -2
+    },
+    "vote": {
+      "file": "/audio/sfx/vote.mp3",
+      "seconds": 0.9,
+      "loop": false,
+      "gainDb": 0
+    },
+    "toll": {
+      "file": "/audio/sfx/toll.mp3",
+      "seconds": 3,
+      "loop": false,
+      "gainDb": 0
+    },
+    "reveal-wolf": {
+      "file": "/audio/sfx/reveal-wolf.mp3",
+      "seconds": 2.08,
+      "loop": false,
+      "gainDb": 0
+    },
+    "reveal-villager": {
+      "file": "/audio/sfx/reveal-villager.mp3",
+      "seconds": 2.1,
+      "loop": false,
+      "gainDb": 0
+    },
+    "night": {
+      "file": "/audio/sfx/night.mp3",
+      "seconds": 5,
+      "loop": true,
+      "gainDb": 0
+    },
+    "dawn": {
+      "file": "/audio/sfx/dawn.mp3",
+      "seconds": 3.58,
+      "loop": false,
+      "gainDb": 0
+    },
+    "death": {
+      "file": "/audio/sfx/death.mp3",
+      "seconds": 2.4,
+      "loop": false,
+      "gainDb": 0
+    },
+    "win": {
+      "file": "/audio/sfx/win.mp3",
+      "seconds": 3.2,
+      "loop": false,
+      "gainDb": 0
+    },
+    "lose": {
+      "file": "/audio/sfx/lose.mp3",
+      "seconds": 3.8,
+      "loop": false,
+      "gainDb": 0
+    },
+    "click": {
+      "file": "/audio/sfx/click.mp3",
+      "seconds": 0.18,
+      "loop": false,
+      "gainDb": -4
+    }
+  },
+  "music": {
+    "day": {
+      "file": "/audio/music/day.mp3",
+      "seconds": 147.57
+    },
+    "night": {
+      "file": "/audio/music/night.mp3",
+      "seconds": 167.98
+    },
+    "title": {
+      "file": "/audio/music/title.mp3",
+      "seconds": 119.96
+    }
+  }
+}
