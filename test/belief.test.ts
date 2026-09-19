@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { DISPLAY_CAP, credibility, logit, normalised, priorLogOdds, rowOffset, sigmoid, standing } from "../src/engine/belief";
-import { movements, renormalisedStep } from "../src/engine/explain";
+import { renormalisedStep, standingStep, steps } from "../src/engine/explain";
 import { openQuestionFor } from "../src/engine/facts";
 import { createGame, reduce } from "../src/engine/game";
 import { LOG_ODDS_MAX, LOG_ODDS_MIN, PERSONALITY, THRESHOLDS } from "../src/engine/personality";
@@ -334,14 +334,20 @@ describe("explaining the board", () => {
     expect(step!).toBeCloseTo(s.history[at][mara][ines] - s.history[at - 1][mara][ines], 3);
     // Kip's own cell is explained by its update, not as a renormalisation.
     expect(renormalisedStep(s, mara, kip, at)).toBeNull();
-    const mv = movements(s, mara, ines, at);
-    expect(mv).toHaveLength(1);
-    expect(mv[0].kind).toBe("renormalised");
-    if (mv[0].kind === "renormalised") {
-      expect(mv[0].at).toBe(at);
-      expect(mv[0].because).toMatch(/^after Kip \+\d\.\d\d \(accuses_with_evidence\)$/);
-    }
-    expect(movements(s, mara, kip, at).map((m) => m.kind)).toEqual(["direct"]);
+    const st = steps(s, mara, ines, at);
+    expect(st).toHaveLength(1);
+    expect(st[0].renormalised).toBe(true);
+    expect(st[0].at).toBe(at);
+    expect(st[0].after - st[0].before).toBeCloseTo(step!, 3);
+    // The cause names the cell that moved, in displayed probability.
+    expect(st[0].because).toMatch(/^after Kip \.\d\d → \.\d\d \(accuses_with_evidence\)$/);
+    const direct = steps(s, mara, kip, at);
+    expect(direct).toHaveLength(1);
+    expect(direct[0].renormalised).toBe(false);
+    expect(direct[0].updates.map((u) => u.signal)).toEqual(["accuses_with_evidence"]);
+    expect(direct[0].after).toBeGreaterThan(direct[0].before);
+    // The human's standing fell a little as Kip took the row's suspicion.
+    expect(standingStep(s, HUMAN, at)).toBeLessThan(0);
   });
 
   it("a measurement that arrives later rewrites the snapshot of the message it measured", () => {
@@ -354,7 +360,7 @@ describe("explaining the board", () => {
     s = reduce(s, { t: "measure", at, m: accuseWithEvidence("Kip") }, L);
     expect(s.history).toHaveLength(s.log.length);
     expect(s.history[at][mara][kip]).toBeGreaterThan(before);
-    expect(movements(s, mara, kip, at).map((m) => m.kind)).toEqual(["direct"]);
+    expect(steps(s, mara, kip, at).map((m) => m.renormalised)).toEqual([false]);
     // And the same game with the measurement inline lands on the same board.
     let inline = createGame("late", { humanRole: "villager" });
     inline = reduce(inline, { t: "human", text: "Kip voted badly.", m: accuseWithEvidence("Kip") }, L);
@@ -390,13 +396,11 @@ describe("explaining the board", () => {
     const mind = Object.values(s.minds).find((m) => s.players[m.id].alive)!.id;
     const other = s.players.find((p) => p.alive && p.id !== mind && p.id !== HUMAN)!.id;
     expect(s.updates.some((u) => u.mind === mind && u.about === other && u.at === at)).toBe(false);
-    const mv = movements(s, mind, other, at).filter((m) => m.at === at);
-    expect(mv).toHaveLength(1);
-    expect(mv[0].kind).toBe("renormalised");
-    if (mv[0].kind === "renormalised") {
-      expect(mv[0].delta).toBeGreaterThan(0);
-      expect(mv[0].because).toBe(`after ${s.players[dawn.killed].name} left the table`);
-    }
+    const st = steps(s, mind, other, at).filter((m) => m.at === at);
+    expect(st).toHaveLength(1);
+    expect(st[0].renormalised).toBe(true);
+    expect(st[0].after).toBeGreaterThan(st[0].before);
+    expect(st[0].because).toBe(`after ${s.players[dawn.killed].name} left the table`);
   });
 });
 

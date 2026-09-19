@@ -1,6 +1,6 @@
 import { useMemo } from "react";
-import { HUMAN, movements, renormalisedStep, type BeliefUpdate, type Board as BoardData, type GameState } from "../engine";
-import { prob, signed, sprite } from "./format";
+import { HUMAN, displayedStep, renormalisedStep, steps, type BeliefUpdate, type Board as BoardData, type CellStep, type GameState } from "../engine";
+import { prob, signed, signedProb, sprite } from "./format";
 import type { Selection } from "./Play";
 
 interface Props {
@@ -24,12 +24,19 @@ function lastUpdates(updates: BeliefUpdate[], upTo: number): Map<string, BeliefU
   return out;
 }
 
-function describe(u: BeliefUpdate, game: GameState): string {
-  const by = u.by < 0 ? "rule" : u.by === HUMAN ? "you" : game.players[u.by].name;
+/** The mechanics of one update, in log-odds. */
+function describe(u: BeliefUpdate): string {
   const gate = u.threshold > 0 && u.threshold < 1 ? `${u.p.toFixed(2)} ≥ ${u.threshold.toFixed(2)}` : u.threshold === 0 ? `${u.p.toFixed(2)}` : "";
   const factors = u.factors.map((f) => `${f.name} ${f.value.toFixed(2)}`).join(" · ");
   const w = u.weight ? `w ${u.weight.toFixed(2)}` : "";
-  return [u.signal, gate, w, factors].filter(Boolean).join(" · ") + ` → ${signed(u.delta)}   d${u.day} · ${by}`;
+  return [u.signal, gate, w, factors].filter(Boolean).join(" · ") + ` · Δlogit ${signed(u.delta)}`;
+}
+
+/** Who a step is attributed to. */
+function stepBy(st: CellStep, game: GameState): string {
+  if (st.renormalised) return "renormalised";
+  if (st.by === null || st.by < 0) return "rule";
+  return st.by === HUMAN ? "you" : game.players[st.by].name;
 }
 
 export function Board({ game, board, hard, selected, onSelect, standing, lastJudgeMs, scrub }: Props) {
@@ -50,7 +57,7 @@ export function Board({ game, board, hard, selected, onSelect, standing, lastJud
   const livingOthers = players.filter((p) => p.alive).length - 1;
   const hidden = players.filter((p) => p.alive && p.role === "wolf").length;
   const baseline = livingOthers > 0 ? Math.min(1, hidden / livingOthers) : 0;
-  const trace = selected && board[selected.mind] ? movements(game, selected.mind, selected.about, upTo).slice(-7).reverse() : [];
+  const trace = selected && board[selected.mind] ? steps(game, selected.mind, selected.about, upTo).slice(-6).reverse() : [];
 
   return (
     <>
@@ -121,6 +128,8 @@ export function Board({ game, board, hard, selected, onSelect, standing, lastJud
                       const v = board[m][p.id];
                       const u = last.get(`${m}:${p.id}`);
                       const shifted = renormalisedStep(game, m, p.id, upTo);
+                      // The arrow is the change in displayed probability at the last signal that hit this cell.
+                      const moved = u ? (displayedStep(game, m, p.id, u.at) ?? 0) : 0;
                       const sel = selected?.mind === m && selected.about === p.id;
                       const hot = v >= 0.55;
                       return (
@@ -130,12 +139,12 @@ export function Board({ game, board, hard, selected, onSelect, standing, lastJud
                             {shifted !== null ? (
                               <span key={`r${upTo}`} className="d renorm fresh" title="moved because the row was renormalised, not by a signal about this player">
                                 {shifted > 0 ? "↑" : "↓"}
-                                {Math.abs(shifted).toFixed(2)}
+                                {Math.abs(shifted).toFixed(2).slice(1)}
                               </span>
-                            ) : u ? (
-                              <span key={u.at} className={`d ${u.delta > 0 ? "up" : "down"}${u.at === upTo ? " fresh" : ""}`}>
-                                {u.delta > 0 ? "▲" : "▼"}
-                                {Math.abs(u.delta).toFixed(2)}
+                            ) : u && Math.abs(moved) >= 0.005 ? (
+                              <span key={u.at} className={`d ${moved > 0 ? "up" : "down"}${u.at === upTo ? " fresh" : ""}`} title={`${u.signal}: ${signed(u.delta)} in log-odds`}>
+                                {moved > 0 ? "▲" : "▼"}
+                                {Math.abs(moved).toFixed(2).slice(1)}
                               </span>
                             ) : (
                               <span className="d none">·</span>
@@ -162,17 +171,27 @@ export function Board({ game, board, hard, selected, onSelect, standing, lastJud
                 {trace.length === 0 ? (
                   <div className="why-line dim">= no signal has crossed a threshold yet; the prior is two wolves among seven</div>
                 ) : (
-                  trace.map((mv, i) =>
-                    mv.kind === "direct" ? (
-                      <div key={`${mv.at}-${i}`} className={`why-line${mv.update.delta > 0 ? " up" : " down"}`}>
-                        = {describe(mv.update, game)}
+                  trace.map((st) => (
+                    <div key={st.at} className={`why-step${st.renormalised ? " renorm" : st.after > st.before ? " up" : " down"}`}>
+                      <div className="why-step-head">
+                        <span>
+                          d{st.day} · {stepBy(st, game)} · {prob(st.before)} → {prob(st.after)}
+                        </span>
+                        <b>{signedProb(st.after - st.before)}</b>
                       </div>
-                    ) : (
-                      <div key={`${mv.at}-${i}`} className="why-line renorm" title="the row is shifted so it sums to the hidden wolves; when one cell moves, the rest move with it">
-                        = renormalised {signed(mv.delta)} · {mv.because}   d{mv.day}
-                      </div>
-                    ),
-                  )
+                      {st.renormalised ? (
+                        <div className="why-line renorm" title="the row is shifted so it sums to the hidden wolves; when one cell moves, the rest move with it">
+                          = {st.because}
+                        </div>
+                      ) : (
+                        st.updates.map((u, i) => (
+                          <div key={i} className="why-line">
+                            = {describe(u)}
+                          </div>
+                        ))
+                      )}
+                    </div>
+                  ))
                 )}
               </>
             ) : (

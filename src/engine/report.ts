@@ -1,6 +1,7 @@
 // The end-of-game report: what the numbers say about how you played.
 
 import { normalised } from "./belief";
+import { standingStep } from "./explain";
 import { messages } from "./facts";
 import { THRESHOLDS } from "./personality";
 import { HUMAN } from "./roster";
@@ -19,9 +20,9 @@ export interface Report {
   contradictions: number;
   /** Human messages that dodged something pending. */
   deflections: number;
-  /** The single human message that raised suspicion of the human the most. */
+  /** The human message after which the table's mean suspicion of the human rose most; delta in probability. */
   costliest: { text: string; day: number; delta: number } | null;
-  /** The single human message that lowered suspicion of the human the most. */
+  /** The human message after which it fell most. */
   best: { text: string; day: number; delta: number } | null;
   /** Living AI minds' final belief in the human, by name. */
   finalStanding: { name: string; belief: number }[];
@@ -42,19 +43,17 @@ export function buildReport(state: GameState): Report {
   const contradictions = mine.filter((m) => m.measurements!.nouls.contradicts_own_claim >= THRESHOLDS.contradicts_own_claim || m.measurements!.nouls.contradicts_fact >= THRESHOLDS.contradicts_fact).length;
   const deflections = mine.filter((m) => m.measurements!.nouls.deflects >= THRESHOLDS.deflects).length;
 
-  // Net change in suspicion of the human caused by each of the human's messages.
-  const byMessage = new Map<number, number>();
-  for (const u of state.updates) {
-    if (u.about !== HUMAN || u.by !== HUMAN) continue;
-    byMessage.set(u.at, (byMessage.get(u.at) ?? 0) + u.delta);
-  }
+  // How the table's mean suspicion of the human moved after each of their messages, in probability.
   let costliest: Report["costliest"] = null;
   let best: Report["best"] = null;
-  for (const [at, delta] of byMessage) {
+  for (let at = 1; at < state.log.length; at++) {
     const e = state.log[at];
-    if (!e || e.kind !== "message") continue;
-    if (delta > 0 && (!costliest || delta > costliest.delta)) costliest = { text: e.text, day: e.day, delta: Math.round(delta * 100) / 100 };
-    if (delta < 0 && (!best || delta < best.delta)) best = { text: e.text, day: e.day, delta: Math.round(delta * 100) / 100 };
+    if (e.kind !== "message" || e.speaker !== HUMAN) continue;
+    const step = standingStep(state, HUMAN, at);
+    if (step === null) continue;
+    const delta = Math.round(step * 100) / 100;
+    if (delta > 0 && (!costliest || delta > costliest.delta)) costliest = { text: e.text, day: e.day, delta };
+    if (delta < 0 && (!best || delta < best.delta)) best = { text: e.text, day: e.day, delta };
   }
 
   const finalStanding = Object.values(state.minds)

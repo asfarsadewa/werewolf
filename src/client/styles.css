@@ -1296,6 +1296,36 @@ tr.hit .bar i {
   color: var(--ink-3);
 }
 
+.why-step {
+  margin-bottom: 8px;
+}
+
+.why-step-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--ink);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.why-step.renorm .why-step-head {
+  color: var(--ink-3);
+  font-weight: 400;
+}
+
+.why-step-head b {
+  font-weight: 600;
+}
+
+.why-step.up .why-step-head b {
+  color: var(--error);
+}
+
+.why-step.down .why-step-head b {
+  color: var(--help);
+}
+
 /* report */
 
 .report {

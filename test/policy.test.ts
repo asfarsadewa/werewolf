@@ -225,8 +225,9 @@ describe("votes, kills and checks", () => {
     expect(voteChoice(s, wolf, {})).toBe(victim);
     // Two votes already on the partner: the shield is dropped and the wolf votes with the room.
     expect(voteChoice(s, wolf, { [partner]: 2 })).toBe(partner);
-    // One vote is not a lead worth buying cover for.
+    // One vote is not a lead worth buying cover for, and neither is a tie.
     expect(voteChoice(s, wolf, { [partner]: 1 })).toBe(victim);
+    expect(voteChoice(s, wolf, { [partner]: 2, [victim]: 2 })).toBe(victim);
   });
 
   it("Tomas votes with the plurality when his own suspect is not clear", () => {

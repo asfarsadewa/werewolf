@@ -302,10 +302,19 @@ export function voteLine(state: GameState, voter: number, target: number, librar
   return lines[0] ?? null;
 }
 
+/** The player alone in the lead of the cast votes, or null when the lead is tied or empty. */
 function leader(cast: Readonly<Record<number, number>>): number | null {
   let lead: number | null = null;
-  for (const [id, n] of Object.entries(cast)) if (lead === null || n > cast[lead]) lead = Number(id);
-  return lead;
+  let tied = false;
+  for (const [id, n] of Object.entries(cast)) {
+    if (lead === null || n > cast[lead]) {
+      lead = Number(id);
+      tied = false;
+    } else if (n === cast[lead]) {
+      tied = true;
+    }
+  }
+  return tied ? null : lead;
 }
 
 /** One AI's vote, given the votes already cast today. */

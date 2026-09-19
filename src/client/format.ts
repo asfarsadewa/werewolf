@@ -11,8 +11,15 @@ export function prob(p: number): string {
   return p.toFixed(2).slice(1);
 }
 
+/** A signed log-odds or count: +0.78 */
 export function signed(d: number, places = 2): string {
   const s = Math.abs(d).toFixed(places);
+  return d >= 0 ? `+${s}` : `−${s}`;
+}
+
+/** A signed change in displayed probability, without the leading zero: +.18 */
+export function signedProb(d: number): string {
+  const s = Math.abs(d).toFixed(2).slice(1);
   return d >= 0 ? `+${s}` : `−${s}`;
 }
 

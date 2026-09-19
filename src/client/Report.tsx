@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { HUMAN, type GameState, type Report as ReportData } from "../engine";
 import type { Driver } from "./game";
-import { prob, signed, sprite } from "./format";
+import { prob, signedProb, sprite } from "./format";
 
 interface Props {
   report: ReportData;
@@ -58,7 +58,7 @@ export function Report({ report, game, driver, onQuit }: Props) {
             <tr>
               <th>costliest line</th>
               <td>
-                <q>{r.costliest.text}</q> <span className="bad">{signed(r.costliest.delta)}</span> <span className="dim">d{r.costliest.day}</span>
+                <q>{r.costliest.text}</q> <span className="bad">{signedProb(r.costliest.delta)}</span> <span className="dim">d{r.costliest.day}</span>
               </td>
             </tr>
           ) : null}
@@ -66,7 +66,7 @@ export function Report({ report, game, driver, onQuit }: Props) {
             <tr>
               <th>best line</th>
               <td>
-                <q>{r.best.text}</q> <span className="good">{signed(r.best.delta)}</span> <span className="dim">d{r.best.day}</span>
+                <q>{r.best.text}</q> <span className="good">{signedProb(r.best.delta)}</span> <span className="dim">d{r.best.day}</span>
               </td>
             </tr>
           ) : null}

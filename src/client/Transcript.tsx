@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { HUMAN, renderLine, voteLine, type LogEntry, type Measurements } from "../engine";
+import { HUMAN, renderLine, standingStep, voteLine, type LogEntry, type Measurements } from "../engine";
 import { ALL_LINES } from "../engine/lines";
 import type { View } from "./game";
-import { allSignals, fired, prob, roleWord, signed, sprite } from "./format";
+import { allSignals, fired, prob, roleWord, signedProb, sprite } from "./format";
 import type { Selection } from "./Play";
 
 interface Props {
@@ -16,11 +16,10 @@ function Signals({ m, at, view }: { m: Measurements; at: number; view: View }) {
   const hits = fired(m);
   const target = m.choices.target.choice;
   const targetP = m.choices.target.probabilities[target] ?? 0;
-  // Net effect of this message on the speaker's own standing.
+  // How the table's mean suspicion of the speaker moved after this message, in probability.
   const e = view.game.log[at];
   const speaker = e.kind === "message" ? e.speaker : -1;
-  const own = view.game.updates.filter((u) => u.at === at && u.about === speaker && u.by === speaker);
-  const net = own.length ? own.reduce((s, u) => s + u.delta, 0) / own.length : 0;
+  const net = speaker >= 0 ? standingStep(view.game, speaker, at) : null;
   return (
     <div className="signals">
       <button type="button" className="signal-toggle" onClick={() => setOpen((o) => !o)} title="every measurement for this message">
@@ -37,9 +36,9 @@ function Signals({ m, at, view }: { m: Measurements; at: number; view: View }) {
           → {target}
         </span>
       ) : null}
-      {own.length ? (
-        <span className={`chip ${net > 0 ? "bad" : "good"}`} title="mean change in suspicion of the speaker, in log-odds">
-          self {signed(net)}
+      {net !== null && Math.abs(net) >= 0.005 ? (
+        <span className={`chip ${net > 0 ? "bad" : "good"}`} title="change in the table's mean suspicion of the speaker after this message">
+          self {signedProb(net)}
         </span>
       ) : null}
       {open && (
