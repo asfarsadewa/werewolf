@@ -32,7 +32,7 @@ The probabilities are the game mechanic. Every message is measured once (about t
 ## Environment notes
 
 - `TYPESAFE_API_KEY` is set at Windows user scope. New shells inherit it.
-- `CLOUDFLARE_API_TOKEN` (Account.Turnstile:Edit only) is set at Windows user scope but shells started earlier do not see it; read it with `[Environment]::GetEnvironmentVariable('CLOUDFLARE_API_TOKEN','User')` and pass it only to `wrangler turnstile widget ...` together with `CLOUDFLARE_ACCOUNT_ID=0c2d9127ae2095948325cb0ff08583cb`. Deploys and `secret put` must run without that token in the environment; they use the OAuth login, which has no Turnstile scope.
+- `CLOUDFLARE_API_TOKEN` (Account.Turnstile:Edit only) is set at Windows user scope but shells started earlier do not see it; read it with `[Environment]::GetEnvironmentVariable('CLOUDFLARE_API_TOKEN','User')` and pass it only to `wrangler turnstile widget ...` together with `CLOUDFLARE_ACCOUNT_ID`, which is also set at Windows user scope. Do not write the id into any committed file. Deploys and `secret put` must run without that token in the environment; they use the OAuth login, which has no Turnstile scope.
 - The zone `asfarlab.fun` is on this Cloudflare account; custom domains are declared in `wrangler.jsonc` `routes` with `custom_domain: true`.
 - Vite dev server quirk: after it restarts itself, served modules can reference stale dependency hashes and the page hangs blank. Stop and restart `npm run dev`. Pin React in `optimizeDeps.include` and set `holdUntilCrawlEnd: false` as in the sibling project.
 - Shell heredocs in this environment truncate above roughly 10 KB and mangle backslash escapes; write large or escape-heavy files with the Write tool.
