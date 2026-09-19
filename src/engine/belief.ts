@@ -87,32 +87,45 @@ export function hiddenWolves(players: Player[]): number {
   return players.filter((p) => p.role === "wolf" && p.alive).length;
 }
 
+/** No displayed belief exceeds this; certainty comes only from a revealed role. */
+export const DISPLAY_CAP = 0.99;
+
 /**
- * Displayed beliefs: sigmoid of log-odds over living players other than the
- * mind itself, scaled so they sum to the number of hidden wolves. Scaling is
- * iterative so no cell exceeds 0.99.
+ * The common log-odds offset that makes a mind's row sum to the number of
+ * hidden wolves: the c with sum_i min(CAP, sigmoid(l_i + c)) = wolves over
+ * the living others. A shift, not a scale, so differences between cells stay
+ * exactly what the evidence made them; found by bisection, the sum being
+ * monotone in c.
+ */
+export function rowOffset(mind: Mind, players: Player[]): number {
+  const living = players.filter((p) => p.alive && p.id !== mind.id).map((p) => p.id);
+  if (living.length === 0) return 0;
+  const target = Math.min(hiddenWolves(players), living.length * DISPLAY_CAP);
+  const sum = (c: number): number => living.reduce((s, id) => s + Math.min(DISPLAY_CAP, sigmoid(mind.logOdds[id] + c)), 0);
+  let lo = -40;
+  let hi = 40;
+  if (sum(lo) >= target) return lo;
+  if (sum(hi) <= target) return hi;
+  for (let i = 0; i < 80; i++) {
+    const mid = (lo + hi) / 2;
+    if (sum(mid) < target) lo = mid;
+    else hi = mid;
+  }
+  return (lo + hi) / 2;
+}
+
+/**
+ * Displayed beliefs: sigmoid of each living other's log-odds plus the row's
+ * common offset, so the row sums to the number of hidden wolves and no cell
+ * exceeds DISPLAY_CAP. Raising one cell therefore lowers the rest of the row;
+ * `movements` in explain.ts reports that as a renormalisation.
  */
 export function normalised(mind: Mind, players: Player[]): number[] {
   const out = new Array<number>(players.length).fill(0);
   const living = players.filter((p) => p.alive && p.id !== mind.id).map((p) => p.id);
-  const wolves = hiddenWolves(players);
   if (living.length === 0) return out;
-  const raw = living.map((id) => Math.min(0.99, sigmoid(mind.logOdds[id])));
-  const total = Math.min(wolves, living.length);
-  let scaled = [...raw];
-  for (let iter = 0; iter < 6; iter++) {
-    const fixed = scaled.map((v) => v >= 0.99);
-    const fixedSum = scaled.reduce((s, v, i) => (fixed[i] ? s + v : s), 0);
-    const freeSum = scaled.reduce((s, v, i) => (fixed[i] ? s : s + v), 0);
-    const budget = Math.max(0, total - fixedSum);
-    if (freeSum <= 0) break;
-    const k = budget / freeSum;
-    scaled = scaled.map((v, i) => (fixed[i] ? v : Math.min(0.99, v * k)));
-    if (Math.abs(scaled.reduce((s, v) => s + v, 0) - total) < 1e-6) break;
-  }
-  living.forEach((id, i) => {
-    out[id] = round(scaled[i]);
-  });
+  const c = rowOffset(mind, players);
+  for (const id of living) out[id] = round(Math.min(DISPLAY_CAP, sigmoid(mind.logOdds[id] + c)));
   return out;
 }
 

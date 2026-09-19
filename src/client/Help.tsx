@@ -49,8 +49,10 @@ export function Help({ open, onClose }: Props) {
         </p>
         <h2>THE BOARD</h2>
         <p>
-          Rows are villagers, columns are players. A cell is that villager's belief that the player is a wolf, scaled so each row sums to the number
-          of wolves still hidden. Your column is what matters. Click any cell to read why it moved: signal, probability, threshold, weight, delta.
+          Rows are villagers, columns are players. A cell is that villager's belief that the player is a wolf. Each row is shifted by one common
+          amount in log-odds so it sums to the number of wolves still hidden, which means that when one cell rises the rest of the row eases; the
+          board marks those moves as renormalised. Your column is what matters. Click any cell to read why it moved: signal, probability,
+          threshold, weight, delta.
         </p>
         <h2>THRESHOLDS</h2>
         <table className="man-rules">

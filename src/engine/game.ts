@@ -98,9 +98,15 @@ export function createGame(seed: string, opts: GameOptions = {}): GameState {
   return state;
 }
 
-function snapshot(state: GameState): void {
+/**
+ * Records the board as it stands for every log entry from `from` onward, and
+ * for any earlier entry still missing one. `history[i]` is the board after
+ * entry i, which is what replay and the why-trace read; a measurement that
+ * arrives as its own action rewrites the snapshot of the message it measured.
+ */
+function snapshot(state: GameState, from = state.log.length - 1): void {
   const b = board(state);
-  while (state.history.length < state.log.length) state.history.push(b);
+  for (let i = 0; i < state.log.length; i++) if (i >= from || state.history[i] === undefined) state.history[i] = b;
 }
 
 export function nextStep(state: GameState): Step {
@@ -380,6 +386,7 @@ function tally(state: GameState, humanVote: number | null): void {
     order.push(HUMAN);
   }
   for (const voter of order) state.log.push({ kind: "vote", day, voter, target: state.votes[voter] ?? null });
+  snapshot(state);
   const counts: Record<number, number> = {};
   for (const voter of order) {
     const t = state.votes[voter];
@@ -404,6 +411,7 @@ function tally(state: GameState, humanVote: number | null): void {
   state.log.push(entry);
   const at = state.log.length - 1;
   if (eliminated !== null) reveal(state, eliminated, at);
+  snapshot(state);
   state.votes = {};
   if (checkWin(state)) return;
   state.phase = "night";
@@ -428,6 +436,7 @@ function resolveNight(state: GameState, choice: { kill?: number; check?: number 
         mind.unrevealed.push(target);
         fix(state.updates, state.log.length - 1, day, mind, target, wolf, "seer_check", seer.id);
       }
+      snapshot(state);
     }
   }
   let kill: number | null;
@@ -499,6 +508,7 @@ export function reduce(input: GameState, action: Action, library: readonly LineS
     }
     case "measure": {
       applyMeasurements(state, action.at, action.m);
+      snapshot(state, action.at);
       break;
     }
     case "call_vote": {

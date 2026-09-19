@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { HUMAN, type BeliefUpdate, type Board as BoardData, type GameState } from "../engine";
+import { HUMAN, movements, renormalisedStep, type BeliefUpdate, type Board as BoardData, type GameState } from "../engine";
 import { prob, signed, sprite } from "./format";
 import type { Selection } from "./Play";
 
@@ -50,7 +50,7 @@ export function Board({ game, board, hard, selected, onSelect, standing, lastJud
   const livingOthers = players.filter((p) => p.alive).length - 1;
   const hidden = players.filter((p) => p.alive && p.role === "wolf").length;
   const baseline = livingOthers > 0 ? Math.min(1, hidden / livingOthers) : 0;
-  const trace = selected ? game.updates.filter((u) => u.mind === selected.mind && u.about === selected.about && u.at <= upTo).slice(-6).reverse() : [];
+  const trace = selected && board[selected.mind] ? movements(game, selected.mind, selected.about, upTo).slice(-7).reverse() : [];
 
   return (
     <>
@@ -120,13 +120,19 @@ export function Board({ game, board, hard, selected, onSelect, standing, lastJud
                       }
                       const v = board[m][p.id];
                       const u = last.get(`${m}:${p.id}`);
+                      const shifted = renormalisedStep(game, m, p.id, upTo);
                       const sel = selected?.mind === m && selected.about === p.id;
                       const hot = v >= 0.55;
                       return (
                         <td key={p.id} className={`cell${p.id === HUMAN ? " you" : ""}${sel ? " sel" : ""}${hot ? " hot" : ""}`} style={{ "--pct": `${Math.round(Math.min(1, v) * 88)}%` } as React.CSSProperties}>
                           <button type="button" onClick={() => onSelect({ mind: m, about: p.id })} title={`${players[m].name} on ${p.id === HUMAN ? "you" : p.name}: ${prob(v)}`}>
                             <span className="v">{prob(v)}</span>
-                            {u ? (
+                            {shifted !== null ? (
+                              <span key={`r${upTo}`} className="d renorm fresh" title="moved because the row was renormalised, not by a signal about this player">
+                                {shifted > 0 ? "↑" : "↓"}
+                                {Math.abs(shifted).toFixed(2)}
+                              </span>
+                            ) : u ? (
                               <span key={u.at} className={`d ${u.delta > 0 ? "up" : "down"}${u.at === upTo ? " fresh" : ""}`}>
                                 {u.delta > 0 ? "▲" : "▼"}
                                 {Math.abs(u.delta).toFixed(2)}
@@ -156,11 +162,17 @@ export function Board({ game, board, hard, selected, onSelect, standing, lastJud
                 {trace.length === 0 ? (
                   <div className="why-line dim">= no signal has crossed a threshold yet; the prior is two wolves among seven</div>
                 ) : (
-                  trace.map((u, i) => (
-                    <div key={`${u.at}-${i}`} className={`why-line${u.delta > 0 ? " up" : " down"}`}>
-                      = {describe(u, game)}
-                    </div>
-                  ))
+                  trace.map((mv, i) =>
+                    mv.kind === "direct" ? (
+                      <div key={`${mv.at}-${i}`} className={`why-line${mv.update.delta > 0 ? " up" : " down"}`}>
+                        = {describe(mv.update, game)}
+                      </div>
+                    ) : (
+                      <div key={`${mv.at}-${i}`} className="why-line renorm" title="the row is shifted so it sums to the hidden wolves; when one cell moves, the rest move with it">
+                        = renormalised {signed(mv.delta)} · {mv.because}   d{mv.day}
+                      </div>
+                    ),
+                  )
                 )}
               </>
             ) : (

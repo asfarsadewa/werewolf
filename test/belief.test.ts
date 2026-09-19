@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { credibility, normalised, priorLogOdds, sigmoid, standing } from "../src/engine/belief";
+import { DISPLAY_CAP, credibility, logit, normalised, priorLogOdds, rowOffset, sigmoid, standing } from "../src/engine/belief";
+import { movements, renormalisedStep } from "../src/engine/explain";
 import { openQuestionFor } from "../src/engine/facts";
 import { createGame, reduce } from "../src/engine/game";
 import { LOG_ODDS_MAX, LOG_ODDS_MIN, PERSONALITY, THRESHOLDS } from "../src/engine/personality";
@@ -33,6 +34,25 @@ describe("prior and normalisation", () => {
     const row = normalised(mind, s.players);
     expect(row.reduce((a, b) => a + b, 0)).toBeCloseTo(2, 2);
     expect(Math.max(...row)).toBeLessThanOrEqual(0.99);
+  });
+
+  it("shifts the row by a common offset: log-odds differences survive, and the offset is what makes the sum", () => {
+    const s = createGame("shift");
+    const mind = s.minds[3];
+    mind.logOdds = mind.logOdds.map((_, i) => [0.4, -1.2, 1.8, 0, -0.5, 0.9, -2, 0.2][i]);
+    const row = normalised(mind, s.players);
+    const c = rowOffset(mind, s.players);
+    const ids = s.players.filter((p) => p.id !== mind.id).map((p) => p.id);
+    expect(ids.reduce((sum, id) => sum + row[id], 0)).toBeCloseTo(2, 2);
+    for (const a of ids) {
+      for (const b of ids) {
+        if (row[a] >= DISPLAY_CAP || row[b] >= DISPLAY_CAP) continue;
+        expect(logit(row[a]) - logit(row[b])).toBeCloseTo(mind.logOdds[a] - mind.logOdds[b], 1);
+      }
+    }
+    for (const id of ids) expect(row[id]).toBeCloseTo(sigmoid(mind.logOdds[id] + c), 2);
+    // A uniform row needs no shift at all.
+    expect(rowOffset(createGame("flat").minds[1], s.players)).toBeCloseTo(0, 3);
   });
 
   it("drops the target sum when a wolf is dead", () => {
@@ -294,6 +314,89 @@ describe("reveals and memory", () => {
     const silence = s.updates.filter((u) => u.signal === "silence");
     expect(silence.length).toBeGreaterThan(0);
     expect(silence.some((u) => u.about === HUMAN)).toBe(false);
+  });
+});
+
+describe("explaining the board", () => {
+  it("a cell that moved only because the row was renormalised says so, naming the cause", () => {
+    const s0 = createGame("renorm", { humanRole: "villager" });
+    const s = say(s0, accuseWithEvidence("Kip"));
+    const at = s.log.length - 1;
+    const mara = id(s, "Mara");
+    const kip = id(s, "Kip");
+    const ines = id(s, "Ines");
+    // Kip rose by a direct update; Ines fell with no update of her own.
+    expect(s.updates.some((u) => u.mind === mara && u.about === ines && u.at === at)).toBe(false);
+    expect(s.history[at][mara][ines]).toBeLessThan(s.history[at - 1][mara][ines]);
+    const step = renormalisedStep(s, mara, ines, at);
+    expect(step).not.toBeNull();
+    expect(step!).toBeLessThan(0);
+    expect(step!).toBeCloseTo(s.history[at][mara][ines] - s.history[at - 1][mara][ines], 3);
+    // Kip's own cell is explained by its update, not as a renormalisation.
+    expect(renormalisedStep(s, mara, kip, at)).toBeNull();
+    const mv = movements(s, mara, ines, at);
+    expect(mv).toHaveLength(1);
+    expect(mv[0].kind).toBe("renormalised");
+    if (mv[0].kind === "renormalised") {
+      expect(mv[0].at).toBe(at);
+      expect(mv[0].because).toMatch(/^after Kip \+\d\.\d\d \(accuses_with_evidence\)$/);
+    }
+    expect(movements(s, mara, kip, at).map((m) => m.kind)).toEqual(["direct"]);
+  });
+
+  it("a measurement that arrives later rewrites the snapshot of the message it measured", () => {
+    let s = createGame("late", { humanRole: "villager" });
+    s = reduce(s, { t: "human", text: "Kip voted badly." }, L);
+    const at = s.log.length - 1;
+    const mara = id(s, "Mara");
+    const kip = id(s, "Kip");
+    const before = s.history[at][mara][kip];
+    s = reduce(s, { t: "measure", at, m: accuseWithEvidence("Kip") }, L);
+    expect(s.history).toHaveLength(s.log.length);
+    expect(s.history[at][mara][kip]).toBeGreaterThan(before);
+    expect(movements(s, mara, kip, at).map((m) => m.kind)).toEqual(["direct"]);
+    // And the same game with the measurement inline lands on the same board.
+    let inline = createGame("late", { humanRole: "villager" });
+    inline = reduce(inline, { t: "human", text: "Kip voted badly.", m: accuseWithEvidence("Kip") }, L);
+    expect(inline.history[at]).toEqual(s.history[at]);
+  });
+
+  it("every log entry carries the board as it stood after that entry", () => {
+    let s = createGame("entries", { humanRole: "villager" });
+    s.queue = [];
+    s = reduce(s, { t: "call_vote" }, L);
+    const victim = s.players.find((p) => p.id !== HUMAN && p.role === "villager")!.id;
+    for (const k of Object.keys(s.votes)) s.votes[Number(k)] = victim;
+    s = reduce(s, { t: "vote", target: victim }, L);
+    const tallyAt = s.log.findIndex((e) => e.kind === "tally");
+    const firstVoteAt = s.log.findIndex((e) => e.kind === "vote");
+    const mind = Object.values(s.minds).find((m) => m.id !== victim)!.id;
+    // Before the tally the victim's cell is a live number; after it, zero.
+    expect(s.history[firstVoteAt][mind][victim]).toBeGreaterThan(0);
+    expect(s.history[tallyAt][mind][victim]).toBe(0);
+    expect(s.history).toHaveLength(s.log.length);
+  });
+
+  it("a death rescales the row and is named as the cause", () => {
+    let s = createGame("death-renorm", { humanRole: "villager" });
+    s.queue = [];
+    s = reduce(s, { t: "call_vote" }, L);
+    for (const k of Object.keys(s.votes)) s.votes[Number(k)] = null;
+    s = reduce(s, { t: "vote", target: null }, L);
+    s = reduce(s, { t: "night" }, L);
+    const at = s.log.length - 1;
+    const dawn = s.log[at];
+    if (dawn.kind !== "dawn" || dawn.killed === null) return;
+    const mind = Object.values(s.minds).find((m) => s.players[m.id].alive)!.id;
+    const other = s.players.find((p) => p.alive && p.id !== mind && p.id !== HUMAN)!.id;
+    expect(s.updates.some((u) => u.mind === mind && u.about === other && u.at === at)).toBe(false);
+    const mv = movements(s, mind, other, at).filter((m) => m.at === at);
+    expect(mv).toHaveLength(1);
+    expect(mv[0].kind).toBe("renormalised");
+    if (mv[0].kind === "renormalised") {
+      expect(mv[0].delta).toBeGreaterThan(0);
+      expect(mv[0].because).toBe(`after ${s.players[dawn.killed].name} left the table`);
+    }
   });
 });
 

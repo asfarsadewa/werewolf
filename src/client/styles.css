@@ -1229,6 +1229,14 @@ tr.hit .bar i {
   color: var(--ink-3);
 }
 
+.cell .d.renorm {
+  color: var(--ink-3);
+}
+
+.cell.hot .d.renorm {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .cell .d.fresh {
   animation: pop 700ms ease-out;
 }
@@ -1281,6 +1289,10 @@ tr.hit .bar i {
 
 .why-line.up::first-letter,
 .why-line.down::first-letter {
+  color: var(--ink-3);
+}
+
+.why-line.renorm {
   color: var(--ink-3);
 }
 

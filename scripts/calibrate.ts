@@ -60,7 +60,7 @@ function stateFor(line: LineSpec): JudgeState {
   const other = line.who === "mara" ? "Rook" : "Mara";
   const message = renderLine(line.text, target);
   const needs = line.needs ?? [];
-  const facts = ["Day 2.", "Night 1: Ines was killed; Ines was the seer.", "Day 1 vote: Tomas 3, Kip 2, Sol 1; nobody was eliminated."];
+  const facts = ["Day 2.", "Night 1: Ines was killed; Ines was a villager.", "Day 1 vote: Tomas 3, Kip 2, Sol 1; nobody was eliminated."];
   if (needs.includes("fact:vote")) facts.push(`Day 1 vote: Tomas 4, Kip 2; Tomas was eliminated and was a villager.`);
   if (needs.includes("claim_exists") || needs.includes("fact:claim")) facts.push(`${target} claimed to be the seer on day 2.`);
   // The note the table would see under an evidence line, worded as the engine words it.
