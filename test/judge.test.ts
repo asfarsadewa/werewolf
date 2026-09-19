@@ -52,6 +52,7 @@ describe("questions", () => {
     expect(js.recent).toEqual(["Stranger: Kip, why did you go quiet?"]);
     expect(js.accusations_against_speaker).toEqual([]);
     expect(js.asked_of_speaker).toBeNull();
+    expect(js.cited_fact).toBeNull();
     // Kip's turn state carries the open question.
     const kip = s.players.findIndex((p) => p.name === "Kip");
     const ts = buildTurnState(s, kip, ["Here."]);
@@ -108,6 +109,40 @@ describe("questions", () => {
     s = reduce(s, { t: "vote", target: null }, L);
     s = reduce(s, { t: "night" }, L);
     expect(openQuestionFor(s, rook)).toBeNull();
+  });
+
+  it("sends the fact a line cites, and names the role of the night's victim", () => {
+    let s = createGame("cited", { humanRole: "villager" });
+    const kip = s.players.findIndex((p) => p.name === "Kip");
+    const mara = s.players.findIndex((p) => p.name === "Mara");
+    // Kip contradicts himself; Mara accuses with evidence, citing it.
+    s.queue = [{ speaker: kip }, { speaker: mara }];
+    s = reduce(s, { t: "ai", speaker: kip, lineId: "kip.chatter.calm.1", target: null, m: measure({ nouls: { contradicts_own_claim: 0.9 } }) }, L);
+    const evidence = L.find((l) => l.who === "mara" && l.intent === "accuse_evidence")!;
+    s = reduce(s, { t: "ai", speaker: mara, lineId: evidence.id, target: kip }, L);
+    const at = s.log.length - 1;
+    const entry = s.log[at];
+    expect(entry.kind === "message" && entry.fact?.kind).toBe("contradiction");
+    const js = buildJudgeState(s, at);
+    expect(js.cited_fact).toBe(entry.kind === "message" ? entry.fact!.text : "");
+    expect(js.cited_fact).toMatch(/^Kip changed their story today/);
+    // The turn state carries the same fact for the pick.
+    const ts = buildTurnState(s, mara, ["x"], entry.kind === "message" ? entry.fact : undefined);
+    expect(ts.cited_fact).toBe(js.cited_fact);
+    // A night death tells the table the victim's role.
+    let n = createGame("dawnrole", { humanRole: "villager" });
+    n.queue = [];
+    n = reduce(n, { t: "call_vote" }, L);
+    for (const k of Object.keys(n.votes)) n.votes[Number(k)] = null;
+    n = reduce(n, { t: "vote", target: null }, L);
+    n = reduce(n, { t: "night" }, L);
+    const dawn = n.log.at(-1)!;
+    if (dawn.kind === "dawn" && dawn.killed !== null) {
+      const victim = n.players[dawn.killed];
+      const word = victim.role === "seer" ? "the seer" : `a ${victim.role}`;
+      n = reduce(n, { t: "human", text: "Morning." }, L);
+      expect(buildJudgeState(n, n.log.length - 1).facts).toContain(`Night 1: ${victim.name} was killed; ${victim.name} was ${word}.`);
+    }
   });
 
   it("lists accusations against the speaker", () => {

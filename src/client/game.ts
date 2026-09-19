@@ -339,7 +339,7 @@ export class Driver {
     let pick: TurnPick | undefined;
     if (plan.candidates.length > 1) {
       const texts = plan.candidates.map((c) => renderLine(c.text, plan.target === null ? null : game.players[plan.target].name));
-      const { candidates: _omit, ...context } = buildTurnState(game, speaker, texts);
+      const { candidates: _omit, ...context } = buildTurnState(game, speaker, texts, plan.fact);
       try {
         const r = await turn(
           this.session,

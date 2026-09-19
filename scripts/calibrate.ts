@@ -60,10 +60,17 @@ function stateFor(line: LineSpec): JudgeState {
   const other = line.who === "mara" ? "Rook" : "Mara";
   const message = renderLine(line.text, target);
   const needs = line.needs ?? [];
-  const facts = ["Day 2.", "Night 1: Ines was killed.", "Day 1 vote: Tomas 3, Kip 2, Sol 1; nobody was eliminated."];
+  const facts = ["Day 2.", "Night 1: Ines was killed; Ines was the seer.", "Day 1 vote: Tomas 3, Kip 2, Sol 1; nobody was eliminated."];
   if (needs.includes("fact:vote")) facts.push(`Day 1 vote: Tomas 4, Kip 2; Tomas was eliminated and was a villager.`);
   if (needs.includes("claim_exists") || needs.includes("fact:claim")) facts.push(`${target} claimed to be the seer on day 2.`);
-  if (needs.includes("past_vote") && !needs.includes("fact:vote")) facts.push("Day 1 vote: Tomas 3, Kip 2, Sol 1; nobody was eliminated.");
+  // The note the table would see under an evidence line, worded as the engine words it.
+  let cited: string | null = null;
+  if (needs.includes("fact:vote")) cited = `${target} voted for Tomas on day 1; Tomas was a villager.`;
+  else if (needs.includes("fact:contradiction") || needs.includes("fact:any")) cited = `${target} changed their story today: contradiction 0.86.`;
+  else if (needs.includes("fact:deflect")) cited = `${target} dodged a direct question today: deflects 0.81.`;
+  else if (needs.includes("fact:bandwagon")) cited = `${target} repeated an accusation without adding anything: bandwagon 0.78.`;
+  else if (needs.includes("fact:quiet")) cited = `${target} has said nothing today.`;
+  else if (needs.includes("fact:claim")) cited = `${target} claimed to be the seer; so did ${other}.`;
   const recent: string[] = [`${other}: Someone here is lying and I would like to know who.`];
   if (needs.includes("fact:contradiction")) recent.push(`${target}: I was with Sol all night.`, `${target}: I never said I was with anyone.`);
   if (needs.includes("fact:deflect")) recent.push(`${other}: ${target}, where were you last night?`, `${target}: Why is nobody asking ${other} that?`);
@@ -83,6 +90,7 @@ function stateFor(line: LineSpec): JudgeState {
     recent,
     accusations_against_speaker: accusations,
     asked_of_speaker: asked,
+    cited_fact: line.intent === "accuse_evidence" ? cited : null,
   };
 }
 

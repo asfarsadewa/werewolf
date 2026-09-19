@@ -22,7 +22,8 @@ export function publicFacts(state: GameState, limit = 8): string[] {
   const out: string[] = [];
   for (const e of state.log) {
     if (e.kind === "dawn" && e.day > 1) {
-      out.push(e.killed === null ? `Night ${e.day - 1}: nobody died.` : `Night ${e.day - 1}: ${name(state, e.killed)} was killed.`);
+      if (e.killed === null) out.push(`Night ${e.day - 1}: nobody died.`);
+      else out.push(`Night ${e.day - 1}: ${name(state, e.killed)} was killed; ${name(state, e.killed)} was ${ROLE_WORD[state.players[e.killed].role]}.`);
     } else if (e.kind === "tally") {
       const parts = Object.entries(e.counts)
         .filter(([, n]) => n > 0)

@@ -4,7 +4,7 @@
 
 import type { Questions, SystemOneResult } from "@typesafe-ai/sdk";
 import { accusationsAgainst, earlierStatements, publicFacts, questionFor, recentTalk } from "../engine/facts";
-import type { ChoiceMeasure, GameState, Measurements, MirrorMeasure, ScoreMeasure, TurnPick } from "../engine/types";
+import type { ChoiceMeasure, GameState, Measurements, MirrorMeasure, ScoreMeasure, TargetFact, TurnPick } from "../engine/types";
 
 export const MODEL = "jev-latest";
 
@@ -44,7 +44,7 @@ export const NOULS: readonly NoulSpec[] = [
   {
     id: "accuses_with_evidence",
     instructions:
-      "`message` says or implies that a named player is a wolf, is suspicious, or should be voted out, and gives a specific reason: a vote, an earlier statement, a contradiction, a dodge, or an item in `facts`.",
+      "`message` says or implies that a named player is a wolf, is suspicious, or should be voted out, and gives a specific reason: a vote, an earlier statement, a contradiction, a dodge, an item in `facts`, or the `cited_fact` shown with the message.",
     criteria: {
       true: "A player is named as suspect and a concrete reason is given, even if the message is phrased as a demand for an explanation.",
       false: "Nobody is cast as suspect, or the suspicion comes with no reason.",
@@ -154,6 +154,8 @@ export type JudgeState = {
   recent: string[];
   accusations_against_speaker: string[];
   asked_of_speaker: string | null;
+  /** The fact the table sees under the message, when the speaker cited one. */
+  cited_fact: string | null;
 }
 
 export function buildJudgeState(state: GameState, at: number): JudgeState {
@@ -168,6 +170,7 @@ export function buildJudgeState(state: GameState, at: number): JudgeState {
     recent: recentTalk(state, at),
     accusations_against_speaker: accusationsAgainst(state, e.speaker, at),
     asked_of_speaker: questionFor(state, e.speaker, at),
+    cited_fact: e.fact?.text ?? null,
   };
 }
 
@@ -192,12 +195,12 @@ export function buildJudgeQuestions(players: readonly string[]): Questions {
   };
   questions.specificity = {
     type: "score",
-    instructions: "How specific is `message` about who it suspects and why?",
+    instructions: "How specific is `message`, together with its `cited_fact` when there is one, about who it suspects and why?",
     criteria: [...SPECIFICITY_LEVELS],
   };
   questions.persuasiveness = {
     type: "score",
-    instructions: "How persuasive would `message` be to the other players at the table, given `facts` and `recent`?",
+    instructions: "How persuasive would `message` be to the other players at the table, given `facts`, `recent`, and the `cited_fact` it points at when there is one?",
     criteria: [...PERSUASIVENESS_LEVELS],
   };
   return questions;
@@ -245,9 +248,11 @@ export type TurnState = {
   recent: string[];
   accusations_against_speaker: string[];
   asked_of_speaker: string | null;
+  /** The fact every candidate would cite, when the turn accuses with evidence. */
+  cited_fact: string | null;
 }
 
-export function buildTurnState(state: GameState, speaker: number, candidates: string[]): TurnState {
+export function buildTurnState(state: GameState, speaker: number, candidates: string[], fact?: TargetFact): TurnState {
   const at = state.log.length;
   return {
     speaker: state.players[speaker].name,
@@ -257,6 +262,7 @@ export function buildTurnState(state: GameState, speaker: number, candidates: st
     recent: recentTalk(state, at),
     accusations_against_speaker: accusationsAgainst(state, speaker, at),
     asked_of_speaker: questionFor(state, speaker, at),
+    cited_fact: fact?.text ?? null,
   };
 }
 
@@ -271,7 +277,7 @@ export function buildTurnQuestions(candidates: readonly string[], mirror: boolea
   questions.pick = {
     type: "choice",
     instructions:
-      "Which entry of `candidates`, spoken next by `speaker`, best continues the discussion in `recent`? Prefer the one that responds to what was just said and to `asked_of_speaker` or `accusations_against_speaker` when they exist.",
+      "Which entry of `candidates`, spoken next by `speaker`, best continues the discussion in `recent`? Prefer the one that responds to what was just said and to `asked_of_speaker` or `accusations_against_speaker` when they exist, and that fits `cited_fact` when there is one.",
     criteria,
   };
   if (mirror) {

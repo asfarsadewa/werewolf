@@ -90,6 +90,15 @@ describe("parseJudgeRequest", () => {
     const r = parseJudgeRequest({ session: "s", state: { speaker: "Kip", message: "hi", players: ["Kip", "Stranger"] } });
     expect(r.state.facts).toEqual([]);
     expect(r.state.asked_of_speaker).toBeNull();
+    expect(r.state.cited_fact).toBeNull();
+  });
+
+  it("carries a bounded cited fact", () => {
+    const withFact = parseJudgeRequest({ ...good, state: { ...good.state, cited_fact: "Kip voted for Ines on day 1; Ines was a villager." } });
+    expect(withFact.state.cited_fact).toBe("Kip voted for Ines on day 1; Ines was a villager.");
+    expect(parseJudgeRequest({ ...good, state: { ...good.state, cited_fact: "   " } }).state.cited_fact).toBeNull();
+    expect(() => parseJudgeRequest({ ...good, state: { ...good.state, cited_fact: 7 } })).toThrow(/cited_fact/);
+    expect(() => parseJudgeRequest({ ...good, state: { ...good.state, cited_fact: "x".repeat(201) } })).toThrow(/too long/);
   });
 });
 
@@ -106,6 +115,9 @@ describe("parseTurnRequest", () => {
     expect(r.state.candidates[1]).toBe(plain.text);
     expect(r.mirror).toBe(true);
     expect(parseTurnRequest({ ...base, candidates: [plain.id] }).mirror).toBe(false);
+    expect(r.state.cited_fact).toBeNull();
+    const cited = parseTurnRequest({ ...base, state: { ...base.state, cited_fact: "Kip has said nothing today." }, candidates: [plain.id] });
+    expect(cited.state.cited_fact).toBe("Kip has said nothing today.");
   });
 
   it("rejects unknown lines, other villagers' lines, missing targets and duplicates", () => {
